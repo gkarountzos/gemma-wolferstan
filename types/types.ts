@@ -32,7 +32,3 @@ export interface BackgroundGradientAnimationProps {
   containerClassName?: string;
 }
 
-export interface FooterLinkProps {
-  href: string;
-  text: string;
-}
