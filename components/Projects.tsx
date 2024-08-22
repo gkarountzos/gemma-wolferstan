@@ -21,7 +21,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="max-w-4xl mx-auto">
-      <h2 className="text-4xl font-bold text-[#ccd6f6] mb-8">Projects</h2>
+      <h2 className="text-4xl font-bold text-[#ffffff] mb-8">Projects</h2>
       <div className="space-y-16">
         {projects.map((project, index) => (
           <div key={index} className="flex flex-col md:flex-row md:space-x-8">
@@ -35,10 +35,10 @@ export default function Projects() {
               />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-[#ccd6f6] mb-2">
+              <h3 className="text-lg font-semibold text-[#FEF8EE] mb-2">
                 {project.title}
               </h3>
-              <p className="text-sm text-[#8892b0] mb-4">
+              <p className="text-sm text-[#FEF8EE] mb-4">
                 {project.description}
               </p>
               <a

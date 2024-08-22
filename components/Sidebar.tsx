@@ -23,8 +23,8 @@ export default function Sidebar() {
   return (
     <div>
       <div>
-        <h1 className="text-4xl font-bold">Gemma Wolferstan</h1>
-        <p className="text-xl mt-2 text-[#ccd6f6]">Junior Game Designer</p>
+        <h1 className="text-5xl font-bold">Gemma Wolferstan</h1>
+        <p className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</p>
         <nav className="text-lg space-y-4 mt-16">
           {sections.map((section) => (
             <Link
@@ -32,8 +32,8 @@ export default function Sidebar() {
               href={section.href}
               className={`block py-1 text-lg tracking-wide ${
                 pathname === section.href
-                  ? "text-[#64ffda]"
-                  : "text-[#8892b0] hover:text-[#64ffda]"
+                  ? "text-[#FEF8EE]"
+                  : "text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-150 hover:-translate-y-0.5 w-fit h-fit"
               }`}
             >
               {section.name}
@@ -44,7 +44,10 @@ export default function Sidebar() {
       <div className="flex space-x-6 mt-60 pt-60">
         {socialLinks.map(({ href, icon: Icon }, index) => (
           <a key={index} href={href} target="_blank" rel="noopener noreferrer">
-            <Icon className="text-[#ccd6f6] hover:text-[#64ffda]" size={24} />
+            <Icon
+              className="text-[#ccd6f6] hover:text-[#e6c9eb] transition-transform duration-200 hover:-translate-y-1"
+              size={24}
+            />
           </a>
         ))}
       </div>
