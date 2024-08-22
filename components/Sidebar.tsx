@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
 
 const sections = [
   { name: "About", href: "#about" },
@@ -11,10 +11,16 @@ const sections = [
 ];
 
 const socialLinks = [
-  { href: "https://github.com/", icon: FaGithub },
-  { href: "https://linkedin.com/", icon: FaLinkedin },
-  { href: "https://instagram.com/", icon: FaInstagram },
-  { href: "https://twitter.com/", icon: FaTwitter },
+  { href: "https://github.com/Gemma-Wolferstan", icon: FaGithub },
+  {
+    href: "https://www.linkedin.com/in/gemma-wolferstan-8727982b0/",
+    icon: FaLinkedin,
+  },
+  { href: "https://gemma-wolferstan.itch.io/", icon: FaItchIo },
+  {
+    href: "https://www.youtube.com/channel/UCpiF_8l6y212ZxKuF0sy4Xw",
+    icon: FaYoutube,
+  },
 ];
 
 export default function Sidebar() {
