@@ -1,23 +1,10 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
+import React from "react";
 
-export const BackgroundGradientAnimation = ({
-  gradientBackgroundStart = "#D1A1D8",
-  gradientBackgroundEnd = "#040060",
-  firstColor = "76, 61, 126", // Desaturated medium slate blue
-  secondColor = "98, 75, 146", // Muted medium purple
-  thirdColor = "70, 43, 120", // Darker blue-violet
-  fourthColor = "108, 70, 141", // Darker medium orchid
-  fifthColor = "116, 91, 117", // Darker thistle (soft purple)
-  pointerColor = "103, 34, 136",
-  size = "80%",
-  blendingValue = "soft-light",
-  children,
-  className,
-  interactive = true,
-  containerClassName,
-}: {
+interface BackgroundGradientAnimationProps {
   gradientBackgroundStart?: string;
   gradientBackgroundEnd?: string;
   firstColor?: string;
@@ -32,6 +19,25 @@ export const BackgroundGradientAnimation = ({
   className?: string;
   interactive?: boolean;
   containerClassName?: string;
+}
+
+export const BackgroundGradientAnimation: React.FC<
+  BackgroundGradientAnimationProps
+> = ({
+  gradientBackgroundStart = "#D1A1D8",
+  gradientBackgroundEnd = "#040060",
+  firstColor = "76, 61, 126",
+  secondColor = "98, 75, 146",
+  thirdColor = "70, 43, 120",
+  fourthColor = "108, 70, 141",
+  fifthColor = "116, 91, 117",
+  pointerColor = "103, 34, 136",
+  size = "80%",
+  blendingValue = "soft-light",
+  children,
+  className,
+  interactive = true,
+  containerClassName,
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
 
@@ -39,39 +45,48 @@ export const BackgroundGradientAnimation = ({
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
-  useEffect(() => {
-    document.body.style.setProperty(
-      "--gradient-background-start",
-      gradientBackgroundStart
-    );
-    document.body.style.setProperty(
-      "--gradient-background-end",
-      gradientBackgroundEnd
-    );
-    document.body.style.setProperty("--first-color", firstColor);
-    document.body.style.setProperty("--second-color", secondColor);
-    document.body.style.setProperty("--third-color", thirdColor);
-    document.body.style.setProperty("--fourth-color", fourthColor);
-    document.body.style.setProperty("--fifth-color", fifthColor);
-    document.body.style.setProperty("--pointer-color", pointerColor);
-    document.body.style.setProperty("--size", size);
-    document.body.style.setProperty("--blending-value", blendingValue);
-  }, []);
 
   useEffect(() => {
-    function move() {
-      if (!interactiveRef.current) {
-        return;
-      }
-      setCurX(curX + (tgX - curX) / 20);
-      setCurY(curY + (tgY - curY) / 20);
+    const updateBodyStyle = (property: string, value: string) => {
+      document.body.style.setProperty(property, value);
+    };
+
+    updateBodyStyle("--gradient-background-start", gradientBackgroundStart);
+    updateBodyStyle("--gradient-background-end", gradientBackgroundEnd);
+    updateBodyStyle("--first-color", firstColor);
+    updateBodyStyle("--second-color", secondColor);
+    updateBodyStyle("--third-color", thirdColor);
+    updateBodyStyle("--fourth-color", fourthColor);
+    updateBodyStyle("--fifth-color", fifthColor);
+    updateBodyStyle("--pointer-color", pointerColor);
+    updateBodyStyle("--size", size);
+    updateBodyStyle("--blending-value", blendingValue);
+  }, [
+    gradientBackgroundStart,
+    gradientBackgroundEnd,
+    firstColor,
+    secondColor,
+    thirdColor,
+    fourthColor,
+    fifthColor,
+    pointerColor,
+    size,
+    blendingValue,
+  ]);
+
+  useEffect(() => {
+    const move = () => {
+      if (!interactiveRef.current) return;
+
+      setCurX((prev) => prev + (tgX - prev) / 20);
+      setCurY((prev) => prev + (tgY - prev) / 20);
       interactiveRef.current.style.transform = `translate(${Math.round(
         curX
       )}px, ${Math.round(curY)}px)`;
-    }
+    };
 
     move();
-  }, [tgX, tgY]);
+  }, [curX, curY, tgX, tgY]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {

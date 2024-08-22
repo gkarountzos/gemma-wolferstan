@@ -1,6 +1,8 @@
+import { Project } from "@/types/types";
 import Image from "next/image";
+import React from "react";
 
-const projects = [
+const projects: Project[] = [
   {
     title: "Ascension Dude",
     description:
@@ -15,18 +17,18 @@ const projects = [
     link: "https://gemma-wolferstan.itch.io/roly-holey",
     image: "/project-images/RH.png",
   },
-  // add more projects as needed
+  // add more projects if needed
 ];
 
-export default function Projects() {
+const Projects: React.FC = () => {
   return (
     <section id="projects" className="max-w-4xl mx-auto">
       <h2 className="text-4xl font-bold text-[#FEF8EE] mb-8">Projects</h2>
       <div className="space-y-16">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <div
-            key={index}
-            className="flex flex-col md:flex-row md:space-x-8 items-center p-4 rounded-xl transition transform hover:scale-105"
+            key={project.title}
+            className="flex flex-col md:flex-row md:space-x-8 items-center p-4 rounded-xl transition-transform transform hover:scale-105"
           >
             <div className="flex-shrink-0">
               <Image
@@ -58,4 +60,6 @@ export default function Projects() {
       </div>
     </section>
   );
-}
+};
+
+export default Projects;

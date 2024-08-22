@@ -3,14 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
+import React from "react";
+import { Section, SocialLink } from "@/types/types";
 
-const sections = [
+const sections: Section[] = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+  //add more categories to the sidebar here if needed
 ];
 
-const socialLinks = [
+const socialLinks: SocialLink[] = [
   { href: "https://github.com/Gemma-Wolferstan", icon: FaGithub },
   {
     href: "https://www.linkedin.com/in/gemma-wolferstan-8727982b0/",
@@ -21,6 +24,7 @@ const socialLinks = [
     href: "https://www.youtube.com/channel/UCpiF_8l6y212ZxKuF0sy4Xw",
     icon: FaYoutube,
   },
+  //add more links here if needed
 ];
 
 export default function Sidebar() {
@@ -48,8 +52,8 @@ export default function Sidebar() {
         </nav>
       </div>
       <div className="flex space-x-6 mt-60 pt-60">
-        {socialLinks.map(({ href, icon: Icon }, index) => (
-          <a key={index} href={href} target="_blank" rel="noopener noreferrer">
+        {socialLinks.map(({ href, icon: Icon }) => (
+          <a key={href} href={href} target="_blank" rel="noopener noreferrer">
             <Icon
               className="text-[#ccd6f6] hover:text-[#e6c9eb] transition-transform duration-200 hover:-translate-y-1"
               size={24}
