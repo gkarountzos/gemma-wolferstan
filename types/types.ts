@@ -31,3 +31,8 @@ export interface BackgroundGradientAnimationProps {
   interactive?: boolean;
   containerClassName?: string;
 }
+
+export interface FooterLinkProps {
+  href: string;
+  text: string;
+}
