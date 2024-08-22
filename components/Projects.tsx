@@ -21,20 +21,23 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="max-w-4xl mx-auto">
-      <h2 className="text-4xl font-bold text-[#ffffff] mb-8">Projects</h2>
+      <h2 className="text-4xl font-bold text-[#FEF8EE] mb-8">Projects</h2>
       <div className="space-y-16">
         {projects.map((project, index) => (
-          <div key={index} className="flex flex-col md:flex-row md:space-x-8">
+          <div
+            key={index}
+            className="flex flex-col md:flex-row md:space-x-8 items-center p-4 rounded-xl transition transform hover:scale-105"
+          >
             <div className="flex-shrink-0">
               <Image
                 src={project.image}
                 alt={project.title}
                 width={256}
                 height={160}
-                className="rounded-lg object-cover w-full md:w-64 h-40"
+                className="rounded-lg object-cover w-full md:w-64 h-40 transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
             </div>
-            <div>
+            <div className="text-center md:text-left md:flex-grow">
               <h3 className="text-lg font-semibold text-[#FEF8EE] mb-2">
                 {project.title}
               </h3>
@@ -43,7 +46,7 @@ export default function Projects() {
               </p>
               <a
                 href={project.link}
-                className="inline-flex items-center font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                className="inline-flex items-center font-medium text-[#e0dcd6] hover:text-[#D1A1D8] focus-visible:text-teal-300 group/link text-base"
                 target="_blank"
                 rel="noopener noreferrer"
               >
