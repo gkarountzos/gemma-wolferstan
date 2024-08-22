@@ -1,9 +1,5 @@
-import Image from "next/image";
+import Content from "@/components/Content";
 
 export default function Home() {
-  return (
-    <div className="flex justify-center items-center text-center h-screen">
-      <h1>Hello this is Gemma. You found what you were looking for.</h1>
-    </div>
-  );
+  return <Content />;
 }
