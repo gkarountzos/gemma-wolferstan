@@ -1,4 +1,3 @@
-// lib/projects.ts
 import { Project } from "@/types/types";
 
 export const projects: Project[] = [

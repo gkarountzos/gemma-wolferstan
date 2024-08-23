@@ -23,7 +23,7 @@ const socialLinks: SocialLink[] = [
     href: "https://www.youtube.com/channel/UCpiF_8l6y212ZxKuF0sy4Xw",
     icon: FaYoutube,
   },
-  // Aad more links here if needed
+  // add more links here if needed
 ];
 
 export default function Sidebar() {
@@ -72,13 +72,11 @@ export default function Sidebar() {
 
   const handleNavClick = (href: string) => (e: React.MouseEvent) => {
     if (pathname === "/") {
-      // On the homepage, just scroll to the section
       e.preventDefault();
       document.getElementById(href.substring(1))?.scrollIntoView({
         behavior: "smooth",
       });
     } else {
-      // Not on the homepage, navigate to the homepage and then scroll
       e.preventDefault();
       router.push(`/${href}`);
     }

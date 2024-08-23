@@ -1,4 +1,3 @@
-// app/projects/[slug]/page.tsx
 import { projects } from "@/lib/projects";
 import { ProjectProps } from "@/types/types";
 import { notFound } from "next/navigation";
