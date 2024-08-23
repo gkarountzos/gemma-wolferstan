@@ -5,7 +5,7 @@ import Projects from "./Projects";
 
 export default function Content() {
   return (
-    <div className="space-y-24">
+    <div className="space-y-28">
       <About />
       <Experience />
       <Projects />
