@@ -1,6 +1,6 @@
 import React from "react";
 
-const aboutText: string[] = ["Hungry cat"];
+const aboutText: string[] = ["Hungry cats"];
 
 const About: React.FC = () => {
   return (
