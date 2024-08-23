@@ -3,6 +3,12 @@ export interface Project {
   description: string;
   link: string;
   image: string;
+  slug?: string;
+  content?: string;
+}
+
+export interface ProjectProps {
+  params: { slug: string };
 }
 
 export interface Section {
@@ -31,4 +37,3 @@ export interface BackgroundGradientAnimationProps {
   interactive?: boolean;
   containerClassName?: string;
 }
-
