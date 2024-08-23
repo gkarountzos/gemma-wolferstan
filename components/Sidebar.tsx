@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
@@ -10,7 +9,7 @@ const sections: Section[] = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
-  //add more categories to the sidebar here if needed
+  // add more categories to the sidebar here if needed
 ];
 
 const socialLinks: SocialLink[] = [
@@ -24,11 +23,12 @@ const socialLinks: SocialLink[] = [
     href: "https://www.youtube.com/channel/UCpiF_8l6y212ZxKuF0sy4Xw",
     icon: FaYoutube,
   },
-  //add more links here if needed
+  // add more links here if needed
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [activeSection, setActiveSection] = useState<string>(sections[0].href);
 
   const sectionIds = useMemo(
@@ -70,6 +70,18 @@ export default function Sidebar() {
     };
   }, [sectionIds, handleIntersection]);
 
+  const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      document.getElementById(href.substring(1))?.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      e.preventDefault();
+      router.push(`/${href}`);
+    }
+  };
+
   return (
     <div>
       <div>
@@ -77,17 +89,18 @@ export default function Sidebar() {
         <p className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</p>
         <nav className="text-lg space-y-4 my-16">
           {sections.map((section) => (
-            <Link
+            <a
               key={section.name}
               href={section.href}
+              onClick={handleNavClick(section.href)}
               className={`w-fit h-fit block py-1 text-lg transition-all duration-150 ease-in-out ${
                 activeSection === section.href
-                  ? " text-[#FEF8EE] font-bold ]"
-                  : " text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-150 hover:-translate-y-0.5"
+                  ? "text-[#FEF8EE] font-bold"
+                  : "text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-150 hover:-translate-y-0.5"
               }`}
             >
               {section.name}
-            </Link>
+            </a>
           ))}
         </nav>
       </div>

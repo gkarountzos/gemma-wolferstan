@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className=" px-4 py-1">
-      <p className="text-gray-700 dark:text-gray-300">
+      <p className="text-[#FEF8EE]">
         Built by <Link href="https://github.com/gkarountzos">gkarountzos </Link>
         in
         <Link href="https://code.visualstudio.com/"> Visual Studio Code </Link>
@@ -13,7 +13,7 @@ const Footer = () => {
         <Link href="https://vercel.com/"> Vercel</Link>.
       </p>
       <br />
-      <p className="text-gray-700 dark:text-gray-300">Yours truly, Gemma.</p>
+      <p className=" text-[#FEF8EE]">Yours truly, Gemma.</p>
     </footer>
   );
 };
