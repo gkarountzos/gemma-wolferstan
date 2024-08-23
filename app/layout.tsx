@@ -23,7 +23,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0a192f] text-white`}>
+      <body className={`${inter.className} `}>
         <BackgroundGradientAnimation containerClassName="fixed inset-0 -z-10" />
         <div className={containerStyles}>
           <aside className={asideStyles}>
