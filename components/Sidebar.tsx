@@ -87,7 +87,7 @@ export default function Sidebar() {
       <div>
         <h1 className="text-5xl font-bold">Gemma Wolferstan</h1>
         <p className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</p>
-        <nav className="text-lg space-y-4 my-16">
+        <nav className="text-lg space-y-4 pt-16">
           {sections.map((section) => (
             <a
               key={section.name}

@@ -24,16 +24,16 @@ interface BackgroundGradientAnimationProps {
 export const BackgroundGradientAnimation: React.FC<
   BackgroundGradientAnimationProps
 > = ({
-  gradientBackgroundStart = "#D1A1D8",
-  gradientBackgroundEnd = "#040060",
-  firstColor = "76, 61, 126",
-  secondColor = "98, 75, 146",
-  thirdColor = "70, 43, 120",
-  fourthColor = "108, 70, 141",
-  fifthColor = "116, 91, 117",
-  pointerColor = "103, 34, 136",
-  size = "80%",
-  blendingValue = "soft-light",
+  gradientBackgroundStart = "#A072B3", // Darkened original color
+  gradientBackgroundEnd = "#020030", // Darkened original color
+  firstColor = "61, 48, 101", // Darkened and slightly desaturated
+  secondColor = "78, 60, 116", // Darkened and slightly desaturated
+  thirdColor = "55, 35, 95", // Darkened and slightly desaturated
+  fourthColor = "85, 55, 110", // Darkened and slightly desaturated
+  fifthColor = "91, 72, 92", // Darkened and slightly desaturated
+  pointerColor = "83, 24, 110", // Darkened and slightly desaturated
+  size = "70%", // Reduced size for subtlety
+  blendingValue = "overlay", // Changed blending mode for a more subtle effect
   children,
   className,
   interactive = true,

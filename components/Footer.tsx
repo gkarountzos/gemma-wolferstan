@@ -11,25 +11,16 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="px-4 py-1">
-      <p className="text-[#FEF8EE]">
+    <footer className="text-sm px-4 py-1">
+      <p className="text-[#fef8ee85]">
         Built by{" "}
         <Link
           href={footerLinks[0].href}
-          className="hover:text-[#D1A1D8]"
+          className="text-white hover:text-[#D1A1D8]"
           target="_blank"
           rel="noopener noreferrer"
         >
           {footerLinks[0].text}
-        </Link>{" "}
-        in{" "}
-        <Link
-          href={footerLinks[1].href}
-          className="hover:text-[#D1A1D8]"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {footerLinks[1].text}
         </Link>{" "}
         using{" "}
         <Link
@@ -58,7 +49,7 @@ const Footer = () => {
         >
           {footerLinks[4].text}
         </Link>
-        . Deployed by{" "}
+        . Deployed on{" "}
         <Link
           href={footerLinks[5].href}
           className="hover:text-[#D1A1D8]"
@@ -70,7 +61,7 @@ const Footer = () => {
         .
       </p>
       <br />
-      <p className="text-[#FEF8EE]">Yours truly, Gemma.</p>
+      <p className="text-[#fef8ee85]">Yours truly, Gemma.</p>
     </footer>
   );
 };

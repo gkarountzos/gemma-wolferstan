@@ -6,7 +6,7 @@ const experienceText: string[] = [
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="max-w-4xl mx-auto">
+    <section id="experience" className="max-w-4xl mx-auto text-justify">
       <h2 className="text-4xl font-bold text-[#FEF8EE] mb-4">Experience</h2>
       {experienceText.map((paragraph, index) => (
         <p
