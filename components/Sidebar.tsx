@@ -91,7 +91,7 @@ export default function Sidebar() {
           ))}
         </nav>
       </div>
-      <div className="flex space-x-6 my-60 py-20">
+      <div className="flex space-x-6 mt-80 py-20">
         {socialLinks.map(({ href, icon: Icon }) => (
           <a key={href} href={href} target="_blank" rel="noopener noreferrer">
             <Icon
