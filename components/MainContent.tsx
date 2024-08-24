@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Projects from "./Projects";
 import { TracingBeam } from "./ui/tracing-beam";
 
-export default function MainContent() {
+const MainContent = () => {
   return (
     <TracingBeam className="flex gap-4">
       <div className="space-y-28">
@@ -15,4 +15,6 @@ export default function MainContent() {
       </div>
     </TracingBeam>
   );
-}
+};
+
+export default MainContent;
