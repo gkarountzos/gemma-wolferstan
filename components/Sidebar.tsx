@@ -135,7 +135,7 @@ export default function Sidebar() {
           {socialLinks.map(({ href, icon: Icon }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
               <Icon
-                className="text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-200 hover:-translate-y-1"
+                className="text-[#FEF8EE] hover: transition-transform duration-200 hover:-translate-y-1"
                 size={24}
               />
             </a>

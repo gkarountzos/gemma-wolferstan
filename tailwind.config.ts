@@ -14,6 +14,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        main: "#FEF8EE",
+        anchor: "#D1A1D8",
+      },
       fontFamily: {
         mukta: ["Mukta", ...defaultTheme.fontFamily.sans],
       },
