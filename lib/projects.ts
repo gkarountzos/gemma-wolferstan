@@ -79,28 +79,44 @@ export const projects: Project[] = [
       "https://drive.google.com/file/d/1zyBvxuaerC0KiJNgZ06476SdPOjKCfKS/preview",
   },
   {
-    slug: "r6s-lvl-design",
-    title: "Rainbow Six Siege Level Design",
-    image: "/project-images/R6S/Key-Legend.png",
+    slug: "tilted",
+    title: "Tilted",
+    image: "/project-images/Tilted/SS2.png",
     description:
-      "Three original level design sketches and one greybox for Rainbow 6 Siege. The design caters to the different classes of weaponry and creates spaces which allow for inventive plays with tools and gadgets.",
+      "A small game made during a game jam with the theme “10 seconds”. The player must balance the circus ball on the board while the board tips and tilts erratically. This demonstrates my ability to create a full, polished game experience quickly.",
     content: [
-      "I made three 2D top-down sketches of original map concepts for Ubisoft's Rainbow 6 Siege's 'Secure Area' game mode",
-      "I focused on creating spaces that would cater to the different classes of weaponry; for example, by creating spaces with long line of sight (snipers), spaces that force proximity to 'danger zones' (shotguns), and spaces which allow for creative plays with the various tools and gadgets operators are given.",
+      " A small game made during a game jam with the theme “10 seconds”.",
+      "The player must balance the circus ball on the board for 10 consecutive seconds while the board tips and tilts erratically. A drum roll accompanies the gameplay to signify how much longer the player needs to balance the ball.",
+      "This project demonstrates my ability to create a full, polished game experience quickly.",
     ],
-    screenshots: [
-      "/project-images/R6S/Sketch 1 Attic.jpg",
-      "/project-images/R6S/Sketch 1 Basement.jpg",
-      "/project-images/R6S/Sketch 1 Ground Floor.jpg",
-      "/project-images/R6S/Sketch 1.png",
-      "/project-images/R6S/Sketch 2 1st Floor.jpg",
-      "/project-images/R6S/Sketch 2 Ground Floor A.jpg",
-      "/project-images/R6S/Sketch 2 Ground Floor B.jpg",
-      "/project-images/R6S/Sketch 2.png",
-      "/project-images/R6S/Sketch 3 1st Floor.jpg",
-      "/project-images/R6S/Sketch 3 Ground Floor.jpg",
-      "/project-images/R6S/Sketch 3.png",
-    ],
+    screenshots: [],
+    link: "https://gemma-wolferstan.itch.io/tilted",
+    video:
+      "https://drive.google.com/file/d/1LXALZP2GdHQkvxXXgwmVVaCYno89UKQw/preview",
   },
+  // {
+  //   slug: "r6s-lvl-design",
+  //   title: "Rainbow Six Siege Level Design",
+  //   image: "/project-images/R6S/Key-Legend.png",
+  //   description:
+  //     "Three original level design sketches and one greybox for Rainbow 6 Siege. The design caters to the different classes of weaponry and creates spaces which allow for inventive plays with tools and gadgets.",
+  //   content: [
+  //     "I made three 2D top-down sketches of original map concepts for Ubisoft's Rainbow 6 Siege's 'Secure Area' game mode",
+  //     "I focused on creating spaces that would cater to the different classes of weaponry; for example, by creating spaces with long line of sight (snipers), spaces that force proximity to 'danger zones' (shotguns), and spaces which allow for creative plays with the various tools and gadgets operators are given.",
+  //   ],
+  //   screenshots: [
+  //     "/project-images/R6S/Sketch 1 Attic.jpg",
+  //     "/project-images/R6S/Sketch 1 Basement.jpg",
+  //     "/project-images/R6S/Sketch 1 Ground Floor.jpg",
+  //     "/project-images/R6S/Sketch 1.png",
+  //     "/project-images/R6S/Sketch 2 1st Floor.jpg",
+  //     "/project-images/R6S/Sketch 2 Ground Floor A.jpg",
+  //     "/project-images/R6S/Sketch 2 Ground Floor B.jpg",
+  //     "/project-images/R6S/Sketch 2.png",
+  //     "/project-images/R6S/Sketch 3 1st Floor.jpg",
+  //     "/project-images/R6S/Sketch 3 Ground Floor.jpg",
+  //     "/project-images/R6S/Sketch 3.png",
+  //   ],
+  // },
   // Add more projects as needed
 ];
