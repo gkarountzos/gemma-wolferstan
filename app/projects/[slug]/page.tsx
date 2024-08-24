@@ -14,10 +14,10 @@ const ProjectPage = ({ params }: ProjectProps) => {
   return (
     <>
       <div className="flex gap-4 ">
-        <div className="w-1/2 py-24 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+        <div className=" py-24 lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <Sidebar />
         </div>
-        <div className="w-1/2 py-24">
+        <div className=" py-24">
           <section className="max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold text-[#FEF8EE] mb-8">
               {project.title}

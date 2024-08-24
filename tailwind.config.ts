@@ -12,6 +12,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        alike: ["Alike", ...defaultTheme.fontFamily.sans],
+        mukta: ["Mukta", ...defaultTheme.fontFamily.sans],
+        cairo: ["Cairo", ...defaultTheme.fontFamily.sans],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
