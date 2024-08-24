@@ -24,6 +24,8 @@ export const projects: Project[] = [
       "/project-images/asc-dude/5.png",
     ],
     link: "https://gemma-wolferstan.itch.io/ascension-dude",
+    video:
+      "https://drive.google.com/file/d/1JecXLpIe4icMBWd46b1bfsQXnpz8JZVa/preview",
   },
   {
     slug: "roly-holey",
@@ -45,6 +47,60 @@ export const projects: Project[] = [
       "/project-images/roly/5.png",
     ],
     link: "https://gemma-wolferstan.itch.io/roly-holey",
+    video:
+      "https://drive.google.com/file/d/1Z0840ppBOAji1WBsaScZFUFPQ4s2Qqf7/preview",
+  },
+  {
+    slug: "queen-of-hearts",
+    title: "Queen of Hearts",
+    image: "/project-images/queen/SS2.png",
+    description:
+      "A simple 2D platformer made in the early days of my degree which showcases my technical ability with programming and use of an engine to create a game experience, while also demonstrating use of level design techniques to communicate the game's goal without using words.",
+    content: [
+      "Queen of Hearts is a simple 2D platformer made in the early days of my degree which showcases my technical ability with programming and use of an engine to create a game experience, while also demonstrating use of level design techniques to communicate the game's goal without text-based exposition.",
+      "At the beginning of the level, I have provided a couple of small pits which the player must jump over to progress. This gives them an early understanding of how the jump feels, how far it goes, the strength of the game's gravity, etc.",
+      "They then encounter their first enemy and must use what they just learned - i.e. to jump to get past it. I made the ceiling low, so the player will likely take damage.",
+      "I then present the first health potion, which will heal the player and thus teach them their effect.",
+      "Shortly after, the player climbs a ladder and encounters the first heart pick up. They do not know what it is yet, but they will have it in mind as they descend the ladder and immediately meet the queen.",
+      "The queen does not use words, but has an animated speech bubble with some hearts in it that look identical to the pickup.",
+      "The level design funnels the player to the left, where they will encounter some challenges in the form of patrolling skeleton enemies and minor platforming, but will soon find another heart and some health potion pickups.",
+      "The level design loops back around to the queen so that the player does not have to backtrack.",
+      "The player will have found all 3 hearts by now and hopefully has realised that the queen requires them. They bring the hearts back to the queen and the game's goal is met, completing the experience.",
+    ],
+    screenshots: [
+      "/project-images/queen/SS1.png",
+      "/project-images/queen/SS3.png",
+      "/project-images/queen/SS4.png",
+      "/project-images/queen/SS5.png",
+      "/project-images/queen/SS6.png",
+    ],
+    link: "https://gemma-wolferstan.itch.io/queen-of-hearts",
+    video:
+      "https://drive.google.com/file/d/1zyBvxuaerC0KiJNgZ06476SdPOjKCfKS/preview",
+  },
+  {
+    slug: "r6s-lvl-design",
+    title: "Rainbow Six Siege Level Design",
+    image: "/project-images/R6S/Key-Legend.png",
+    description:
+      "Three original level design sketches and one greybox for Rainbow 6 Siege. The design caters to the different classes of weaponry and creates spaces which allow for inventive plays with tools and gadgets.",
+    content: [
+      "I made three 2D top-down sketches of original map concepts for Ubisoft's Rainbow 6 Siege's 'Secure Area' game mode",
+      "I focused on creating spaces that would cater to the different classes of weaponry; for example, by creating spaces with long line of sight (snipers), spaces that force proximity to 'danger zones' (shotguns), and spaces which allow for creative plays with the various tools and gadgets operators are given.",
+    ],
+    screenshots: [
+      "/project-images/R6S/Sketch 1 Attic.jpg",
+      "/project-images/R6S/Sketch 1 Basement.jpg",
+      "/project-images/R6S/Sketch 1 Ground Floor.jpg",
+      "/project-images/R6S/Sketch 1.png",
+      "/project-images/R6S/Sketch 2 1st Floor.jpg",
+      "/project-images/R6S/Sketch 2 Ground Floor A.jpg",
+      "/project-images/R6S/Sketch 2 Ground Floor B.jpg",
+      "/project-images/R6S/Sketch 2.png",
+      "/project-images/R6S/Sketch 3 1st Floor.jpg",
+      "/project-images/R6S/Sketch 3 Ground Floor.jpg",
+      "/project-images/R6S/Sketch 3.png",
+    ],
   },
   // Add more projects as needed
 ];
