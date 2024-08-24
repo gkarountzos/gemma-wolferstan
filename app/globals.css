@@ -46,17 +46,20 @@ h2 {
 
 h3 {
   font-family: "Mukta", sans-serif;
+  color: #fef8ee;
 }
 
 p {
   font-family: "Oxygen", sans-serif;
   text-align: justify;
+  color: #fef8ee;
 }
 
 a {
   font-family: "Mukta", sans-serif;
   color: inherit;
   text-decoration: none;
+  color: #fef8ee;
 }
 
 @layer utilities {
