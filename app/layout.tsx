@@ -18,10 +18,14 @@ export default function RootLayout({
   const containerStyles =
     "mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-22 lg:py-0";
 
+  const backgroundAnimationStyles = `fixed inset-0 -z-10 h-full w-full`;
+
   return (
     <html lang="en">
       <body className={`${inter.className} `}>
-        <BackgroundGradientAnimation containerClassName="fixed inset-0 -z-10" />
+        <BackgroundGradientAnimation
+          containerClassName={backgroundAnimationStyles}
+        />
         <div className={containerStyles}>
           <main>{children}</main>
         </div>

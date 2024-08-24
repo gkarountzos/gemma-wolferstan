@@ -2,6 +2,8 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
+import { TbMailFilled } from "react-icons/tb";
+
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
 import { projects } from "@/lib/projects"; // Import the projects list to check paths
@@ -14,15 +16,19 @@ const sections: Section[] = [
 ];
 
 const socialLinks: SocialLink[] = [
-  { href: "https://github.com/Gemma-Wolferstan", icon: FaGithub },
   {
     href: "https://www.linkedin.com/in/gemma-wolferstan-8727982b0/",
     icon: FaLinkedin,
   },
   { href: "https://gemma-wolferstan.itch.io/", icon: FaItchIo },
+  { href: "https://github.com/Gemma-Wolferstan", icon: FaGithub },
   {
     href: "https://www.youtube.com/channel/UCpiF_8l6y212ZxKuF0sy4Xw",
     icon: FaYoutube,
+  },
+  {
+    href: "mailto:g.wolferstan@gmail.com",
+    icon: TbMailFilled,
   },
   // add more links here if needed
 ];
@@ -95,7 +101,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sticky py-24 lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24">
+    <div className="sticky py-24 lg:top-0 lg:flex lg:max-h-screen  lg:flex-col lg:justify-between lg:py-24">
       <div className="flex flex-col h-screen justify-between">
         <div>
           <h1 className="text-5xl font-alike font-medium">Gemma Wolferstan</h1>
