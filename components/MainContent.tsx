@@ -5,7 +5,7 @@ import Projects from "./Projects";
 import { TracingBeam } from "./ui/tracing-beam";
 
 const MainContent = () => {
-  const slimLine = "mx-auto h-px w-4/6 bg-[#FEF8EE]";
+  const slimLine = " h-px w-3/6 bg-[#FEF8EE]";
 
   return (
     <TracingBeam className="flex gap-4">
