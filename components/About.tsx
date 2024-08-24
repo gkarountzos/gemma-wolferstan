@@ -7,7 +7,7 @@ const aboutText: string[] = [
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="max-w-4xl mx-auto text-justify">
+    <section id="about" className="max-w-4xl mx-auto ">
       <h2 className="text-4xl text-[#FEF8EE] mb-4 pt-2">About Me</h2>
       {aboutText.map((paragraph, index) => (
         <p
