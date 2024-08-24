@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
+import { projects } from "@/lib/projects"; // Import the projects list to check paths
 
 const sections: Section[] = [
   { name: "About", href: "#about" },
@@ -36,8 +37,19 @@ export default function Sidebar() {
     []
   );
 
+  // Determine if the current path is a project page
+  const isProjectPage = useMemo(() => {
+    if (!pathname) return false; // Return false if pathname is undefined
+    return (
+      pathname.startsWith("/projects") ||
+      projects.some((p) => pathname.includes(p.slug))
+    );
+  }, [pathname]);
+
   const handleIntersection = useCallback(
     (entries: IntersectionObserverEntry[]) => {
+      if (isProjectPage) return; // Prevent intersection observer from changing active section on project pages
+
       const visibleEntry = entries
         .filter((entry) => entry.isIntersecting)
         .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
@@ -51,7 +63,7 @@ export default function Sidebar() {
         }
       }
     },
-    []
+    [isProjectPage] // Add isProjectPage to dependency array
   );
 
   useEffect(() => {
@@ -87,14 +99,15 @@ export default function Sidebar() {
       <div>
         <h1 className="text-5xl font-bold">Gemma Wolferstan</h1>
         <p className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</p>
-        <nav className="text-lg space-y-4 my-16">
+        <nav className="text-lg space-y-4 pt-16">
           {sections.map((section) => (
             <a
               key={section.name}
               href={section.href}
               onClick={handleNavClick(section.href)}
               className={`w-fit h-fit block py-1 text-lg transition-all duration-150 ease-in-out ${
-                activeSection === section.href
+                (isProjectPage && section.href === "#projects") ||
+                (!isProjectPage && activeSection === section.href)
                   ? "text-[#FEF8EE] font-bold"
                   : "text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-150 hover:-translate-y-0.5"
               }`}

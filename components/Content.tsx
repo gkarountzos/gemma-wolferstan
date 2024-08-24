@@ -1,18 +1,19 @@
-import About from "./About";
-import Experience from "./Experience";
-import Footer from "./Footer";
-import Projects from "./Projects";
-import { TracingBeam } from "./ui/tracing-beam";
+import MainContent from "./MainContent";
+import Sidebar from "./Sidebar";
 
-export default function Content() {
+const Content = () => {
   return (
-    <TracingBeam className="flex gap-4">
-      <div className="space-y-28">
-        <About />
-        <Experience />
-        <Projects />
-        <Footer />
+    <>
+      <div className="flex justify-center gap-4 ">
+        <div className="w-1/2 py-24 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+          <Sidebar />
+        </div>
+        <div className="w-1/2 py-24">
+          <MainContent />
+        </div>
       </div>
-    </TracingBeam>
+    </>
   );
-}
+};
+
+export default Content;

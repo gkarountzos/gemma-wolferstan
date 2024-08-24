@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   link: string;
   image: string;
-  slug?: string;
+  slug: string;
   content?: string;
 }
 
