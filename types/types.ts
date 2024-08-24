@@ -5,7 +5,8 @@ export interface Project {
   image: string;
   content: string[];
   screenshots: string[];
-  link: string;
+  link?: string;
+  video?: string;
 }
 
 export interface ProjectProps {
