@@ -97,8 +97,8 @@ export default function Sidebar() {
   return (
     <div className="flex flex-col h-screen justify-between">
       <div>
-        <h1 className="text-5xl font-bold">Gemma Wolferstan</h1>
-        <p className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</p>
+        <h1 className="text-5xl font-alike font-medium">Gemma Wolferstan</h1>
+        <h3 className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</h3>
         <nav className="text-lg space-y-4 pt-16">
           {sections.map((section) => (
             <a
