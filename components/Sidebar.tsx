@@ -95,7 +95,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col h-screen justify-between">
       <div>
         <h1 className="text-5xl font-bold">Gemma Wolferstan</h1>
         <p className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</p>
@@ -117,7 +117,7 @@ export default function Sidebar() {
           ))}
         </nav>
       </div>
-      <div className="flex space-x-6 mt-80 py-20">
+      <div className="flex space-x-6 ">
         {socialLinks.map(({ href, icon: Icon }) => (
           <a key={href} href={href} target="_blank" rel="noopener noreferrer">
             <Icon
