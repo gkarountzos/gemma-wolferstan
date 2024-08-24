@@ -3,6 +3,7 @@ import { ProjectProps } from "@/types/types";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
+import ScreenshotSlider from "@/components/ScreenshotSlider";
 
 const ProjectPage = ({ params }: ProjectProps) => {
   const project = projects.find((p) => p.slug === params.slug);
@@ -13,15 +14,15 @@ const ProjectPage = ({ params }: ProjectProps) => {
 
   return (
     <>
-      <div className="flex gap-4 ">
-        <div className=" py-24 lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+      <div className="flex gap-4">
+        <div className="sticky py-24 lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <Sidebar />
         </div>
-        <div className=" py-24">
-          <section className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-[#FEF8EE] mb-8">
+        <div className="w-1/2 py-24">
+          <section className="max-w-4xl mx-auto flex flex-col ">
+            <h2 className="text-4xl font-medium text-[#FEF8EE] mb-8 ">
               {project.title}
-            </h1>
+            </h2>
             <Image
               src={project.image}
               alt={project.title}
@@ -29,13 +30,24 @@ const ProjectPage = ({ params }: ProjectProps) => {
               height={320}
               className="rounded-lg object-cover w-full md:w-64 h-40"
             />
-            <div
-              className="text-lg text-[#FEF8EE] mt-4"
-              dangerouslySetInnerHTML={{ __html: project.content || "" }}
-            />
+            <div className="text-lg text-[#FEF8EE] mt-4">
+              {project.content.map((paragraph, index) => (
+                <p key={index} className={`${index > 0 ? "pt-2" : ""}`}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            {project.screenshots.length > 0 && (
+              <div className="mt-8">
+                <h2 className="text-2xl text-center font-medium text-[#FEF8EE] mb-4">
+                  Screenshots
+                </h2>
+                <ScreenshotSlider images={project.screenshots} />
+              </div>
+            )}
             <a
               href={project.link}
-              className="inline-flex items-center font-medium text-[#e0dcd6] hover:text-[#D1A1D8] focus-visible:text-teal-300 text-base mt-4"
+              className=" flex justify-center font-semibold text-[#FEF8EE] hover:text-[#D1A1D8] focus-visible:text-teal-300 text-base mt-8"
               target="_blank"
               rel="noopener noreferrer"
             >

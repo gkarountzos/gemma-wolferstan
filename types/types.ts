@@ -1,10 +1,11 @@
 export interface Project {
+  slug: string;
   title: string;
   description: string;
-  link: string;
   image: string;
-  slug: string;
-  content?: string;
+  content: string[];
+  screenshots: string[];
+  link: string;
 }
 
 export interface ProjectProps {
