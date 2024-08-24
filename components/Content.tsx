@@ -8,7 +8,7 @@ const Content = () => {
         <div className="w-1/2">
           <Sidebar />
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 py-24">
           <MainContent />
         </div>
       </div>

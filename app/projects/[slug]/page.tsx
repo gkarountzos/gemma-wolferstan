@@ -19,7 +19,7 @@ const ProjectPage = ({ params }: ProjectProps) => {
           <Sidebar />
         </div>
         <div className="w-1/2 py-24">
-          <section className="max-w-4xl flex flex-col ">
+          <section className="max-w-4xl mx-auto flex flex-col ">
             <h2 className="text-4xl font-medium text-[#FEF8EE] mb-8 ">
               {project.title}
             </h2>

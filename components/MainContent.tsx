@@ -7,7 +7,7 @@ import { TracingBeam } from "./ui/tracing-beam";
 const MainContent = () => {
   return (
     <TracingBeam className="flex gap-4">
-      <div className="space-y-28 py-24">
+      <div className="space-y-28">
         <About />
         <Experience />
         <Projects />
