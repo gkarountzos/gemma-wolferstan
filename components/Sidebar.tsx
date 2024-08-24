@@ -104,7 +104,9 @@ export default function Sidebar() {
     <div className="sticky py-24 lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24">
       <div className="flex flex-col h-screen justify-between">
         <div>
-          <h1 className="text-5xl font-medium">Gemma Wolferstan</h1>
+          <h1 className="text-5xl font-medium text-[#FEF8EE]">
+            Gemma Wolferstan
+          </h1>
           <h3 className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</h3>
           <nav className="text-lg space-y-4 pt-16">
             {sections.map((section) => (
@@ -112,11 +114,16 @@ export default function Sidebar() {
                 key={section.name}
                 href={section.href}
                 onClick={handleNavClick(section.href)}
-                className={`w-fit h-fit block py-1 text-xl transition-transform duration-200 ${
+                className={`relative w-fit h-fit block py-1 text-xl transition-transform duration-200 ease-in-out ${
                   (isProjectPage && section.href === "#projects") ||
                   (!isProjectPage && activeSection === section.href)
                     ? "text-[#FEF8EE] font-extrabold"
                     : "text-[#FEF8EE] hover:translate-x-1.5"
+                } before:content-[''] before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[2px] before:bg-[#FEF8EE] before:scale-x-0 before:origin-left before:transition-transform before:duration-200 hover:before:scale-x-100 ${
+                  (!isProjectPage && activeSection === section.href) ||
+                  (isProjectPage && section.href === "#projects")
+                    ? "before:scale-x-100"
+                    : ""
                 }`}
               >
                 {section.name}

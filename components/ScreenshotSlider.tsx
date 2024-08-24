@@ -40,7 +40,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
   };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto">
+    <div className="relative w-full max-w-lg mx-auto ">
       <div className="overflow-hidden rounded-lg">
         <Image
           src={images[currentIndex]}

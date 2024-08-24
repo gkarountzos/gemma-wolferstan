@@ -47,7 +47,7 @@ const ProjectPage = ({ params }: ProjectProps) => {
             )}
             <a
               href={project.link}
-              className=" flex justify-center font-semibold text-[#FEF8EE] hover:text-[#D1A1D8] focus-visible:text-teal-300 text-base mt-8"
+              className="w-fit h-fit mx-auto font-semibold text-[#FEF8EE] hover:text-[#D1A1D8] focus-visible:text-teal-300 text-base mt-8"
               target="_blank"
               rel="noopener noreferrer"
             >
