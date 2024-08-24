@@ -95,37 +95,39 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="flex flex-col h-screen justify-between">
-      <div>
-        <h1 className="text-5xl font-alike font-medium">Gemma Wolferstan</h1>
-        <h3 className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</h3>
-        <nav className="text-lg space-y-4 pt-16">
-          {sections.map((section) => (
-            <a
-              key={section.name}
-              href={section.href}
-              onClick={handleNavClick(section.href)}
-              className={`w-fit h-fit block py-1 text-lg transition-all duration-150 ease-in-out ${
-                (isProjectPage && section.href === "#projects") ||
-                (!isProjectPage && activeSection === section.href)
-                  ? "text-[#FEF8EE] font-bold"
-                  : "text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-150 hover:-translate-y-0.5"
-              }`}
-            >
-              {section.name}
+    <div className="sticky py-24 lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24">
+      <div className="flex flex-col h-screen justify-between">
+        <div>
+          <h1 className="text-5xl font-alike font-medium">Gemma Wolferstan</h1>
+          <h3 className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</h3>
+          <nav className="text-lg space-y-4 pt-16">
+            {sections.map((section) => (
+              <a
+                key={section.name}
+                href={section.href}
+                onClick={handleNavClick(section.href)}
+                className={`w-fit h-fit block py-1 text-lg transition-all duration-150 ease-in-out ${
+                  (isProjectPage && section.href === "#projects") ||
+                  (!isProjectPage && activeSection === section.href)
+                    ? "text-[#FEF8EE] font-bold"
+                    : "text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-150 hover:-translate-y-0.5"
+                }`}
+              >
+                {section.name}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <div className="flex space-x-6 ">
+          {socialLinks.map(({ href, icon: Icon }) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer">
+              <Icon
+                className="text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-200 hover:-translate-y-1"
+                size={24}
+              />
             </a>
           ))}
-        </nav>
-      </div>
-      <div className="flex space-x-6 ">
-        {socialLinks.map(({ href, icon: Icon }) => (
-          <a key={href} href={href} target="_blank" rel="noopener noreferrer">
-            <Icon
-              className="text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-200 hover:-translate-y-1"
-              size={24}
-            />
-          </a>
-        ))}
+        </div>
       </div>
     </div>
   );
