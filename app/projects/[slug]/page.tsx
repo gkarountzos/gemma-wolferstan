@@ -23,16 +23,18 @@ const ProjectPage = ({ params }: ProjectProps) => {
             {project.title}
           </h2>
           {project.video && (
-            <div>
+            <div className="pb-8">
               <Video src={project.video} title={project.title} />
             </div>
           )}
-          <div className="text-lg text-[#FEF8EE] mt-4">
-            {project.content.map((paragraph, index) => (
-              <p key={index} className={`${index > 0 ? "pt-2" : ""}`}>
-                {paragraph}
-              </p>
-            ))}
+          <div className="relative px-8 py-4 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
+            <div className="text-lg text-[#FEF8EE]">
+              {project.content.map((paragraph, index) => (
+                <p key={index} className={`${index > 0 ? "pt-2" : ""}`}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
           {project.screenshots.length > 0 && (
             <div className="mt-8">
