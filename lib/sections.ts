@@ -1,4 +1,6 @@
 import { sectionsDataProps } from "@/types/types";
+import { FaRegUserCircle } from "react-icons/fa";
+import { BsFillBriefcaseFill } from "react-icons/bs";
 
 export const sectionsData: sectionsDataProps[] = [
   {

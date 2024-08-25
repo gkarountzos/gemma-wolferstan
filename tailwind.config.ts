@@ -22,6 +22,7 @@ const config: Config = {
       },
       fontFamily: {
         mukta: ["Mukta", ...defaultTheme.fontFamily.sans],
+        roboto: ["Roboto Slab", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
