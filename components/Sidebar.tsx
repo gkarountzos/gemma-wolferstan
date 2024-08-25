@@ -108,7 +108,7 @@ export default function Sidebar() {
         <div>
           <TypewriterEffectSmooth
             words={[{ text: "Gemma Wolferstan" }]}
-            className="font-roboto"
+            className="font-roboto text-main"
           />
           <h3
             className={`text-2xl mt-2 text-[#FEF8EE] transform transition-transform duration-700 ease-out ${
@@ -159,14 +159,14 @@ export default function Sidebar() {
           {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
               <span
-                className={`inline-block transform transition-transform duration-700 ease-out ${
+                className={`inline-block transform transition-transform duration-1000 ease-out ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-[700%] opacity-0"
                 }`}
                 style={{
                   transitionDelay: `${
-                    1200 + sections.length * 100 + index * 100
+                    1000 + sections.length * 100 + index * 100
                   }ms`, // Starts after the last nav link
                 }}
               >
