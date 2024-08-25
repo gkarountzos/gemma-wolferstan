@@ -18,7 +18,6 @@ const MainContent = () => {
               title={section.title}
               content={section.content}
             />
-            <div className={slimLine} />
           </React.Fragment>
         ))}
         <Projects />
