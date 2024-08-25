@@ -52,7 +52,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
           alt={`Screenshot ${currentIndex + 1}`}
           width={800}
           height={450}
-          className="object-contain w-full h-full"
+          className="object-contain w-full h-full cursor-pointer"
           onClick={handleImageClick}
         />
       </div>
@@ -70,7 +70,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
               alt={`Screenshot ${currentIndex + 1}`}
               width={1200}
               height={675}
-              className="object-contain w-full h-full"
+              className="object-contain w-full h-full cursor-pointer"
             />
             <ArrowButton direction="left" onClick={() => changeImage(-1)} />
             <ArrowButton direction="right" onClick={() => changeImage(1)} />
