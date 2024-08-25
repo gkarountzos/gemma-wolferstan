@@ -38,10 +38,7 @@ export default function Sidebar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1000);
-
+    const timer = setTimeout(() => setIsVisible(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -61,18 +58,14 @@ export default function Sidebar() {
   const handleIntersection = useCallback(
     (entries: IntersectionObserverEntry[]) => {
       if (isProjectPage) return;
-
       const visibleEntry = entries
         .filter((entry) => entry.isIntersecting)
         .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-
       if (visibleEntry) {
         const matchedSection = sections.find(
           (section) => section.href === `#${visibleEntry.target.id}`
         );
-        if (matchedSection) {
-          setActiveSection(matchedSection.href);
-        }
+        if (matchedSection) setActiveSection(matchedSection.href);
       }
     },
     [isProjectPage]
@@ -82,28 +75,31 @@ export default function Sidebar() {
     const observer = new IntersectionObserver(handleIntersection, {
       threshold: [0.7, 1],
     });
-
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
-
     elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, [sectionIds, handleIntersection]);
 
   const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
     if (pathname === "/") {
-      e.preventDefault();
-      document.getElementById(href.substring(1))?.scrollIntoView({
-        behavior: "smooth",
-      });
+      document
+        .getElementById(href.substring(1))
+        ?.scrollIntoView({ behavior: "smooth" });
     } else {
-      e.preventDefault();
-      router.push(`/${href}`);
+      router.push(href);
     }
+  };
+
+  const renderLinks = <
+    T extends { href: string; icon?: React.ComponentType<{ size: number }> }
+  >(
+    items: T[],
+    renderFn: (item: T, index: number) => React.ReactNode
+  ) => {
+    return items.map((item, index) => renderFn(item, index));
   };
 
   return (
@@ -114,31 +110,25 @@ export default function Sidebar() {
             words={[{ text: "Gemma Wolferstan" }]}
             className="font-roboto"
           />
-
           <h3
             className={`text-2xl mt-2 text-[#FEF8EE] transform transition-transform duration-700 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-200%] opacity-0"
             }`}
-            style={{
-              transitionDelay: `1000ms`, // Starts 600ms after the TypewriterEffect
-            }}
+            style={{ transitionDelay: `1200ms` }}
           >
             Junior Game Designer
           </h3>
-
           <nav
             className={`text-lg space-y-4 pt-16 transform transition-transform duration-700 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100%] opacity-0"
             }`}
-            style={{
-              transitionDelay: `1200ms`, // Starts after the heading animation
-            }}
+            style={{ transitionDelay: `1200ms` }}
           >
-            {sections.map((section, index) => (
+            {renderLinks(sections, (section, index) => (
               <a
                 key={section.name}
                 href={section.href}
@@ -158,21 +148,18 @@ export default function Sidebar() {
                     ? "before:scale-x-100"
                     : ""
                 }`}
-                style={{
-                  transitionDelay: `${1200 + index * 200}ms`, // Delay each link based on its position
-                }}
+                style={{ transitionDelay: `${1200 + index * 200}ms` }}
               >
                 {section.name}
               </a>
             ))}
           </nav>
         </div>
-
         <div className="flex space-x-6">
-          {socialLinks.map(({ href, icon: Icon }, index) => (
+          {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
               <span
-                className={`inline-block transform transition-transform duration-700 ease-out hover:-translate-y-1 ${
+                className={`inline-block transform transition-transform duration-700 ease-out ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-[700%] opacity-0"
@@ -183,7 +170,10 @@ export default function Sidebar() {
                   }ms`, // Starts after the last nav link
                 }}
               >
-                <Icon className="text-[#FEF8EE]" size={24} />
+                <Icon
+                  className="text-[#FEF8EE] transition-transform duration-200 ease-out hover:-translate-y-2"
+                  size={24}
+                />
               </span>
             </a>
           ))}

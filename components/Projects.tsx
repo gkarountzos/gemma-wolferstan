@@ -18,30 +18,12 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="max-w-4xl mx-auto">
-      <h2
-        className={`text-4xl text-[#FEF8EE] mb-8 transform transition-transform duration-1000 ease-out ${
-          isVisible
-            ? "translate-x-0 opacity-100"
-            : "translate-x-[200%] opacity-0"
-        }`}
-        style={{
-          transitionDelay: `1200ms`, // Starts after a 1200ms delay
-        }}
-      >
+      <h2 className={`text-4xl text-[#FEF8EE] mb-8`}>
         <FaFolderOpen className="inline-block text-[#FEF8EE]" size={24} />
         Projects
       </h2>
 
-      <div
-        className={`space-y-16 transform transition-transform duration-1000 ease-out ${
-          isVisible
-            ? "translate-x-0 opacity-100"
-            : "translate-x-[200%] opacity-0"
-        }`}
-        style={{
-          transitionDelay: `1200ms`, // Container animates after the heading
-        }}
-      >
+      <div className={`space-y-16`}>
         <div className="relative px-8 py-6 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
           {projects.map((project, index) => (
             <div
@@ -52,7 +34,7 @@ const Projects: React.FC = () => {
                   : "translate-x-[200%] opacity-0"
               }`}
               style={{
-                transitionDelay: `${1800 + index * 200}ms`, // Each project card animates in sequence
+                transitionDelay: `${1200 + index * 100}ms`,
               }}
             >
               <ProjectCard project={project} />
