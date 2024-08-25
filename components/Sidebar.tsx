@@ -2,44 +2,53 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
+import { TbMailFilled } from "react-icons/tb";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
-import { projects } from "@/lib/projects"; // Import the projects list to check paths
+import { projects } from "@/lib/projects";
+import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 const sections: Section[] = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
-  // add more categories to the sidebar here if needed
 ];
 
 const socialLinks: SocialLink[] = [
-  { href: "https://github.com/Gemma-Wolferstan", icon: FaGithub },
   {
     href: "https://www.linkedin.com/in/gemma-wolferstan-8727982b0/",
     icon: FaLinkedin,
   },
   { href: "https://gemma-wolferstan.itch.io/", icon: FaItchIo },
+  { href: "https://github.com/Gemma-Wolferstan", icon: FaGithub },
   {
     href: "https://www.youtube.com/channel/UCpiF_8l6y212ZxKuF0sy4Xw",
     icon: FaYoutube,
   },
-  // add more links here if needed
+  {
+    href: "mailto:g.wolferstan@gmail.com",
+    icon: TbMailFilled,
+  },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const [activeSection, setActiveSection] = useState<string>(sections[0].href);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const sectionIds = useMemo(
     () => sections.map((section) => section.href.substring(1)),
     []
   );
 
-  // Determine if the current path is a project page
   const isProjectPage = useMemo(() => {
-    if (!pathname) return false; // Return false if pathname is undefined
+    if (!pathname) return false;
     return (
       pathname.startsWith("/projects") ||
       projects.some((p) => pathname.includes(p.slug))
@@ -48,84 +57,127 @@ export default function Sidebar() {
 
   const handleIntersection = useCallback(
     (entries: IntersectionObserverEntry[]) => {
-      if (isProjectPage) return; // Prevent intersection observer from changing active section on project pages
-
+      if (isProjectPage) return;
       const visibleEntry = entries
         .filter((entry) => entry.isIntersecting)
         .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-
       if (visibleEntry) {
         const matchedSection = sections.find(
           (section) => section.href === `#${visibleEntry.target.id}`
         );
-        if (matchedSection) {
-          setActiveSection(matchedSection.href);
-        }
+        if (matchedSection) setActiveSection(matchedSection.href);
       }
     },
-    [isProjectPage] // Add isProjectPage to dependency array
+    [isProjectPage]
   );
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
       threshold: [0.7, 1],
     });
-
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
-
     elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, [sectionIds, handleIntersection]);
 
   const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
     if (pathname === "/") {
-      e.preventDefault();
-      document.getElementById(href.substring(1))?.scrollIntoView({
-        behavior: "smooth",
-      });
+      document
+        .getElementById(href.substring(1))
+        ?.scrollIntoView({ behavior: "smooth" });
     } else {
-      e.preventDefault();
-      router.push(`/${href}`);
+      router.push(href);
     }
   };
 
+  const renderLinks = <
+    T extends { href: string; icon?: React.ComponentType<{ size: number }> }
+  >(
+    items: T[],
+    renderFn: (item: T, index: number) => React.ReactNode
+  ) => {
+    return items.map((item, index) => renderFn(item, index));
+  };
+
   return (
-    <div className="flex flex-col h-screen justify-between">
-      <div>
-        <h1 className="text-5xl font-alike font-medium">Gemma Wolferstan</h1>
-        <h3 className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</h3>
-        <nav className="text-lg space-y-4 pt-16">
-          {sections.map((section) => (
-            <a
-              key={section.name}
-              href={section.href}
-              onClick={handleNavClick(section.href)}
-              className={`w-fit h-fit block py-1 text-lg transition-all duration-150 ease-in-out ${
-                (isProjectPage && section.href === "#projects") ||
-                (!isProjectPage && activeSection === section.href)
-                  ? "text-[#FEF8EE] font-bold"
-                  : "text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-150 hover:-translate-y-0.5"
-              }`}
-            >
-              {section.name}
+    <div className="sticky py-24 lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24">
+      <div className="flex flex-col h-screen justify-between">
+        <div>
+          <TypewriterEffectSmooth
+            words={[{ text: "Gemma Wolferstan" }]}
+            className="font-roboto text-main"
+          />
+          <h3
+            className={`text-2xl mt-2 text-[#FEF8EE] transform transition-transform duration-700 ease-out ${
+              isVisible
+                ? "translate-x-0 opacity-100"
+                : "translate-x-[-200%] opacity-0"
+            }`}
+            style={{ transitionDelay: `1200ms` }}
+          >
+            Junior Game Designer
+          </h3>
+          <nav
+            className={`text-lg space-y-4 pt-16 transform transition-transform duration-700 ease-out ${
+              isVisible
+                ? "translate-x-0 opacity-100"
+                : "translate-x-[-100%] opacity-0"
+            }`}
+            style={{ transitionDelay: `1200ms` }}
+          >
+            {renderLinks(sections, (section, index) => (
+              <a
+                key={section.name}
+                href={section.href}
+                onClick={handleNavClick(section.href)}
+                className={`relative w-fit h-fit block py-1 text-xl transition-transform duration-1000 ease-in-out ${
+                  (isProjectPage && section.href === "#projects") ||
+                  (!isProjectPage && activeSection === section.href)
+                    ? "text-[#FEF8EE] font-extrabold"
+                    : "text-[#FEF8EE] hover:translate-x-1.5"
+                } ${
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-[-100%] opacity-0"
+                } before:content-[''] before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[2px] before:bg-[#FEF8EE] before:scale-x-0 before:origin-left before:transition-transform before:duration-200 hover:before:scale-x-100 ${
+                  (!isProjectPage && activeSection === section.href) ||
+                  (isProjectPage && section.href === "#projects")
+                    ? "before:scale-x-100"
+                    : ""
+                }`}
+                style={{ transitionDelay: `${1200 + index * 200}ms` }}
+              >
+                {section.name}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <div className="flex space-x-6">
+          {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer">
+              <span
+                className={`inline-block transform transition-transform duration-1000 ease-out ${
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-[700%] opacity-0"
+                }`}
+                style={{
+                  transitionDelay: `${
+                    1000 + sections.length * 100 + index * 100
+                  }ms`, // Starts after the last nav link
+                }}
+              >
+                <Icon
+                  className="text-[#FEF8EE] transition-transform duration-200 ease-out hover:-translate-y-2"
+                  size={24}
+                />
+              </span>
             </a>
           ))}
-        </nav>
-      </div>
-      <div className="flex space-x-6 ">
-        {socialLinks.map(({ href, icon: Icon }) => (
-          <a key={href} href={href} target="_blank" rel="noopener noreferrer">
-            <Icon
-              className="text-[#FEF8EE] hover:text-[#e6c9eb] transition-transform duration-200 hover:-translate-y-1"
-              size={24}
-            />
-          </a>
-        ))}
+        </div>
       </div>
     </div>
   );
