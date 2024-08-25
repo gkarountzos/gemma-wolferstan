@@ -28,3 +28,8 @@ export interface sectionsDataProps {
   title: string;
   content: string[];
 }
+
+export interface Section {
+  name: string;
+  href: string;
+}

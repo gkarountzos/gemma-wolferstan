@@ -7,6 +7,7 @@ import { TbMailFilled } from "react-icons/tb";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
 import { projects } from "@/lib/projects"; // Import the projects list to check paths
+import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 const sections: Section[] = [
   { name: "About", href: "#about" },
@@ -105,7 +106,7 @@ export default function Sidebar() {
       <div className="flex flex-col h-screen justify-between">
         <div>
           <h1 className="text-5xl font-medium text-[#FEF8EE]">
-            Gemma Wolferstan
+            <TypewriterEffectSmooth words={[{ text: "Gemma Wolferstan" }]} />
           </h1>
           <h3 className="text-2xl mt-2 text-[#FEF8EE]">Junior Game Designer</h3>
           <nav className="text-lg space-y-4 pt-16">
