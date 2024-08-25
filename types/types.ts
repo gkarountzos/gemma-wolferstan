@@ -39,3 +39,8 @@ export interface BackgroundGradientAnimationProps {
   interactive?: boolean;
   containerClassName?: string;
 }
+
+export interface Section {
+  name: string;
+  href: string;
+}
