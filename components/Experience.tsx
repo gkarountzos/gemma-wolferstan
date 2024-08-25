@@ -9,14 +9,16 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="max-w-4xl mx-auto ">
       <h2 className="text-4xl text-[#FEF8EE] mb-4">Experience</h2>
-      {experienceText.map((paragraph, index) => (
-        <p
-          key={index}
-          className={`text-lg ${index > 0 ? "pt-2" : ""} text-[#FEF8EE]`}
-        >
-          {paragraph}
-        </p>
-      ))}
+      <div className="relative p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
+        {experienceText.map((paragraph, index) => (
+          <p
+            key={index}
+            className={`text-lg ${index > 0 ? "pt-2" : ""} text-[#FEF8EE]`}
+          >
+            {paragraph}
+          </p>
+        ))}
+      </div>
     </section>
   );
 };

@@ -1,10 +1,12 @@
 import defaultTheme from "tailwindcss/defaultTheme";
-import colors from "tailwindcss/colors";
-//@ts-ignore
-import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
+
 import type { Config } from "tailwindcss";
 
 import svgToDataUri from "mini-svg-data-uri";
+
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config: Config = {
   content: [
