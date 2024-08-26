@@ -75,7 +75,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0.7, 1],
+      threshold: [0.3, 1],
     });
     const elements = sectionIds
       .map((id) => document.getElementById(id))
