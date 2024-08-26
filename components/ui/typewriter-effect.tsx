@@ -55,8 +55,8 @@ export const TypewriterEffectSmooth = ({
           width: "100%",
         }}
         transition={{
-          duration: 2,
-          ease: "linear",
+          duration: 1.5,
+          ease: "easeIn",
           delay: 0.5,
         }}
       >
