@@ -14,6 +14,7 @@ export interface ProjectProps {
 }
 export interface SectionProps {
   id: string;
+  icon: React.ComponentType<{ size: number; className?: string }>;
   title: string;
   content: string[];
 }
@@ -21,12 +22,6 @@ export interface SectionProps {
 export interface SocialLink {
   href: string;
   icon: React.ComponentType<{ size: number; className?: string }>;
-}
-
-export interface sectionsDataProps {
-  id: string;
-  title: string;
-  content: string[];
 }
 
 export interface Section {
