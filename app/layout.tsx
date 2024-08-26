@@ -21,11 +21,9 @@ export default function RootLayout({
         <DotBackground>
           <div className="flex min-h-screen">
             <aside className="w-1/2">
-              {/* Fixed width for the sidebar */}
               <Sidebar />
             </aside>
-            <main className="flex-1 relative z-10 w-1/2">{children}</main>{" "}
-            {/* Main content takes up the remaining space */}
+            <main className="flex-1 relative z-10 w-1/2">{children}</main>
           </div>
         </DotBackground>
       </body>
