@@ -159,7 +159,7 @@ export default function Sidebar() {
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100px] opacity-0"
-            }  lg:flex-col lg:space-y-4 lg:pt-0 lg:translate-x-0 lg:opacity-100 hidden lg:block`}
+            }  lg:flex-col lg:space-y-2 lg:pt-0 lg:translate-x-0 lg:opacity-100 hidden lg:block`}
           >
             {renderLinks(sections, (section, index) => (
               <a
