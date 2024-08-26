@@ -5,7 +5,7 @@ const Content = () => {
   return (
     <>
       <div>
-        <div className="py-24">
+        <div className="md:pb-24 pt-8 lg:py-24">
           <MainContent />
         </div>
       </div>
