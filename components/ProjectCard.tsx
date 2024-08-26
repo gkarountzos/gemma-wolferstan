@@ -11,7 +11,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div
       key={project.title}
-      className="flex flex-col md:flex-row md:space-x-8 items-center p-4 rounded-xl transition-transform transform hover:scale-105"
+      className="flex flex-col md:flex-row md:space-x-8 items-center p-4 rounded-xl transition-transform transform hover:scale-[102%]"
     >
       <div className="flex-shrink-0">
         <Image

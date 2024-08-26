@@ -1,5 +1,5 @@
 "use client";
-import { projects } from "@/lib/projects";
+import { projects } from "@/lib/content/projects";
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { useEffect, useState } from "react";
@@ -11,20 +11,20 @@ const Projects: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 1000);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <section id="projects" className="max-w-4xl mx-auto">
-      <h2 className={`text-4xl text-[#FEF8EE] mb-8`}>
+      <div className="flex gap-4 items-center pb-8">
         <FaFolderOpen className="inline-block text-[#FEF8EE]" size={24} />
-        Projects
-      </h2>
+        <h2 className={`xs:text-2xl sm:text-4xl text-[#FEF8EE]`}>Projects</h2>
+      </div>
 
       <div className={`space-y-16`}>
-        <div className="relative px-8 py-6 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
+        <div className="relative p-2 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
           {projects.map((project, index) => (
             <div
               key={project.title}
@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
                   : "translate-x-[200%] opacity-0"
               }`}
               style={{
-                transitionDelay: `${1200 + index * 100}ms`,
+                transitionDelay: `${100 + index * 200}ms`,
               }}
             >
               <ProjectCard project={project} />

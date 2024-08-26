@@ -15,6 +15,14 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "375px",
+      sm: "576px",
+      md: "1024px",
+      lg: "1200px",
+      xl: "1440px",
+      xxl: "1600px",
+    },
     extend: {
       colors: {
         main: "#FEF8EE",

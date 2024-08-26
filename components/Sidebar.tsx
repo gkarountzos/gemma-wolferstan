@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
 import { TbMailFilled } from "react-icons/tb";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
-import { projects } from "@/lib/projects";
+import { projects } from "@/lib/content/projects";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 const sections: Section[] = [
@@ -38,7 +38,9 @@ export default function Sidebar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 1000);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -82,14 +84,18 @@ export default function Sidebar() {
     return () => observer.disconnect();
   }, [sectionIds, handleIntersection]);
 
-  const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+  const handleNavClick = (href: string) => async (e: React.MouseEvent) => {
     e.preventDefault();
-    if (pathname === "/") {
-      document
-        .getElementById(href.substring(1))
-        ?.scrollIntoView({ behavior: "smooth" });
+    const targetElement = document.getElementById(href.substring(1));
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
     } else {
-      router.push(href);
+      router.push(`/${href}`);
+      const checkTargetElement = document.getElementById(href.substring(1));
+      if (checkTargetElement) {
+        checkTargetElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -103,37 +109,64 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sticky py-24 lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24">
-      <div className="flex flex-col h-screen justify-between">
+    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24">
+      <div className="flex flex-col lg:h-screen justify-between">
         <div>
           <TypewriterEffectSmooth
             words={[{ text: "Gemma Wolferstan" }]}
             className="font-roboto text-main"
           />
           <h3
-            className={`text-2xl mt-2 text-[#FEF8EE] transform transition-transform duration-700 ease-out ${
+            className={`text-lg xs:text-xl sm:text-2xl pt-2 pb-4 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
-                : "translate-x-[-200%] opacity-0"
+                : "translate-x-[-100px] opacity-0"
             }`}
-            style={{ transitionDelay: `1200ms` }}
           >
             Junior Game Designer
           </h3>
+
+          <div className="flex space-x-6 mt-4 lg:hidden">
+            {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit h-fit transition-transform duration-200 ease-out hover:-translate-y-2"
+              >
+                <span
+                  className={`inline-block transform transition-transform duration-1000 ease-out ${
+                    isVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-[700%] opacity-0"
+                  }`}
+                  style={{
+                    transitionDelay: `${
+                      100 + sections.length * 100 + index * 100
+                    }ms`,
+                  }}
+                >
+                  <Icon className="text-[#FEF8EE] " size={24} />
+                </span>
+              </a>
+            ))}
+          </div>
+
+          {/* Navigation Links */}
           <nav
-            className={`text-lg space-y-4 pt-16 transform transition-transform duration-700 ease-out ${
+            className={`text-lg transform transition-transform duration-700 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
-                : "translate-x-[-100%] opacity-0"
-            }`}
-            style={{ transitionDelay: `1200ms` }}
+                : "translate-x-[-100px] opacity-0"
+            }  lg:flex-col lg:space-y-2 lg:pt-0 lg:translate-x-0 lg:opacity-100 hidden lg:block`}
           >
             {renderLinks(sections, (section, index) => (
               <a
                 key={section.name}
                 href={section.href}
                 onClick={handleNavClick(section.href)}
-                className={`relative w-fit h-fit block py-1 text-xl transition-transform duration-1000 ease-in-out ${
+                className={`relative w-fit h-fit block py-1 text-xl transform transition-transform duration-700 ease-out ${
                   (isProjectPage && section.href === "#projects") ||
                   (!isProjectPage && activeSection === section.href)
                     ? "text-[#FEF8EE] font-extrabold"
@@ -148,16 +181,23 @@ export default function Sidebar() {
                     ? "before:scale-x-100"
                     : ""
                 }`}
-                style={{ transitionDelay: `${1200 + index * 200}ms` }}
               >
                 {section.name}
               </a>
             ))}
           </nav>
         </div>
-        <div className="flex space-x-6">
+
+        {/* Social Icons for larger screens */}
+        <div className="hidden lg:flex lg:space-x-6">
           {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
-            <a key={href} href={href} target="_blank" rel="noopener noreferrer">
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit h-fit transition-transform duration-200 ease-out hover:-translate-y-2"
+            >
               <span
                 className={`inline-block transform transition-transform duration-1000 ease-out ${
                   isVisible
@@ -166,14 +206,11 @@ export default function Sidebar() {
                 }`}
                 style={{
                   transitionDelay: `${
-                    1000 + sections.length * 100 + index * 100
-                  }ms`, // Starts after the last nav link
+                    100 + sections.length * 100 + index * 100
+                  }ms`,
                 }}
               >
-                <Icon
-                  className="text-[#FEF8EE] transition-transform duration-200 ease-out hover:-translate-y-2"
-                  size={24}
-                />
+                <Icon className="text-[#FEF8EE] " size={24} />
               </span>
             </a>
           ))}

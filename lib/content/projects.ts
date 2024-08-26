@@ -89,11 +89,36 @@ export const projects: Project[] = [
       "The player must balance the circus ball on the board for 10 consecutive seconds while the board tips and tilts erratically. A drum roll accompanies the gameplay to signify how much longer the player needs to balance the ball.",
       "This project demonstrates my ability to create a full, polished game experience quickly.",
     ],
-    screenshots: [],
+    screenshots: [
+      "/project-images/Tilted/SS1.png",
+      "/project-images/Tilted/SS3.png",
+      "/project-images/Tilted/SS4.png",
+      "/project-images/Tilted/SS5.png",
+      "/project-images/Tilted/SS6.png",
+    ],
     link: "https://gemma-wolferstan.itch.io/tilted",
     video:
       "https://drive.google.com/file/d/1LXALZP2GdHQkvxXXgwmVVaCYno89UKQw/preview",
   },
+  // {
+  //   slug: "gamejam",
+  //   title: "Global Game Jam 2020 Merchandise ",
+  //   image: "/project-images/ggj/image.png",
+  //   description:
+  //     "A design entered to a competition that would go on to be chosen for the marketing and promotional material advertising my university's involvement in the 2020 Global Game Jam, as well as merchandise such as T-shirts and mugs.",
+  //   content: [
+  //     "This page details the work I did for an in-house competition held at the University of Suffolk in late 2019 for the design of a poster that would be displayed across campus to advertise the university's involvement in the 2020 Global Game Jam.",
+  //     "My design won the competition, and I went on to coordinate with a production company to generate further designs that would be printed onto not only the initial poster board, but also onto T-shirts and mugs, which were distributed amongst attendees and winners of the jam respectively.​",
+  //     "Below you will see images of the merchandises that were produced. Above there is a button that will let you download the notes I took during development of the work which detail the thought processes and use of design principles that informed creation of the final product. This serves as a showcase of my design knowledge and as proof that I approach the creative process with the mind of a designer.",
+  //   ],
+  //   screenshots: [
+  //     "/project-images/ggj/image2.png",
+  //     "/project-images/ggj/image3.png",
+  //     "/project-images/ggj/image4.png",
+  //     "/project-images/ggj/image5.png",
+  //   ],
+  // },
+
   // {
   //   slug: "r6s-lvl-design",
   //   title: "Rainbow Six Siege Level Design",

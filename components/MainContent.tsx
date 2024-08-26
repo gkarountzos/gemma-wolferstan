@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Projects from "./Projects";
 import { TracingBeam } from "./ui/tracing-beam";
 import Section from "./Sections";
-import { sectionsData } from "@/lib/sections";
+import { sectionsData } from "@/lib/content/sections";
 
 const MainContent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +13,7 @@ const MainContent = () => {
     // Delay visibility change by 1200ms
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 2400);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -28,12 +28,13 @@ const MainContent = () => {
           : "translate-x-[100px] opacity-0"
       }`}
     >
-      <TracingBeam className="flex gap-4">
-        <div className="space-y-28">
+      <TracingBeam>
+        <div className="space-y-16 sm:space-y-24">
           {sectionsData.map((section) => (
             <React.Fragment key={section.id}>
               <Section
                 id={section.id}
+                icon={section.icon}
                 title={section.title}
                 content={section.content}
               />

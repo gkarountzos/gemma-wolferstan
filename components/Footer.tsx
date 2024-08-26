@@ -7,7 +7,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="text-sm px-4 py-1">
+    <footer className="text-sm">
       <p className="text-gray-300">
         Built by{" "}
         <Link
@@ -28,10 +28,8 @@ const Footer = () => {
           {footerLinks[1].text}
         </Link>
         .
-        <br /> Designed by Gemma
+        <br /> Designed by Gemma.
       </p>
-      <br />
-      <p className="text-gray-300">Yours truly.</p>
     </footer>
   );
 };
