@@ -9,7 +9,7 @@ const Section: React.FC<SectionProps> = ({
 }) => {
   return (
     <>
-      <section id={id} className="relative max-w-4xl mx-auto">
+      <section id={id} className="relative mx-auto">
         <div className="flex gap-4 items-center pb-8">
           <Icon className="text-[#FEF8EE] " size={24} />
           <h2 className={`xs:text-2xl sm:text-4xl text-[#FEF8EE] `}>{title}</h2>

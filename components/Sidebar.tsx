@@ -117,7 +117,7 @@ export default function Sidebar() {
             className="font-roboto text-main"
           />
           <h3
-            className={`text-2xl pt-2 pb-4 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
+            className={`text-lg xs:text-xl sm:text-2xl pt-2 pb-4 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100px] opacity-0"

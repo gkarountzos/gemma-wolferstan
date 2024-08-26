@@ -52,7 +52,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
           alt={`Screenshot ${currentIndex + 1}`}
           width={800}
           height={450}
-          className="object-contain w-full h-full cursor-pointer"
+          className="relative object-contain w-full h-full cursor-pointer"
           onClick={handleImageClick}
         />
       </div>
@@ -61,7 +61,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
 
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+          className="absolute inset-0 z-50 top-0 left-0 bg-black bg-opacity-75"
           onClick={handleBackdropClick}
         >
           <div className="relative">
@@ -70,7 +70,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
               alt={`Screenshot ${currentIndex + 1}`}
               width={1200}
               height={675}
-              className="object-contain w-full h-full cursor-pointer"
+              className="relative object-contain w-full h-full cursor-pointer"
             />
             <ArrowButton direction="left" onClick={() => changeImage(-1)} />
             <ArrowButton direction="right" onClick={() => changeImage(1)} />
