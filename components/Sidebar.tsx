@@ -87,12 +87,19 @@ export default function Sidebar() {
 
   const handleNavClick = (href: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    if (pathname === "/") {
+    if (
+      pathname === "/" ||
+      pathname === "/#about" ||
+      pathname === "/#experience" ||
+      pathname === "/#projects"
+    ) {
+      // Directly scroll if we're on the root page
       document
         .getElementById(href.substring(1))
         ?.scrollIntoView({ behavior: "smooth" });
     } else {
-      router.push(href);
+      // Navigate to the root page with hash for smooth scroll
+      router.push(`/${href}`);
     }
   };
 
