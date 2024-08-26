@@ -34,6 +34,7 @@ const MainContent = () => {
             <React.Fragment key={section.id}>
               <Section
                 id={section.id}
+                icon={section.icon}
                 title={section.title}
                 content={section.content}
               />

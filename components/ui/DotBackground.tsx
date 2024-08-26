@@ -36,7 +36,7 @@ const DotBackground = ({
       onMouseMove={handleMouseMove}
     >
       {/* dots color */}
-      <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-rose-300 pointer-events-none" />
+      <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-rose-300 pointer-events-none opacity-60" />
       <motion.div
         //glow effect color
         className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-white absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
