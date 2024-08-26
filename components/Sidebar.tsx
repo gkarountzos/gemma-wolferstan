@@ -89,12 +89,9 @@ export default function Sidebar() {
     const targetElement = document.getElementById(href.substring(1));
 
     if (targetElement) {
-      // Scroll to the section if on the same page
       targetElement.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Navigate to the home page with a hash if not on the same page
       router.push(`/${href}`);
-      // Ensure the scroll happens after the page load
       const checkTargetElement = document.getElementById(href.substring(1));
       if (checkTargetElement) {
         checkTargetElement.scrollIntoView({ behavior: "smooth" });
@@ -140,7 +137,7 @@ export default function Sidebar() {
                 key={section.name}
                 href={section.href}
                 onClick={handleNavClick(section.href)}
-                className={`relative w-fit h-fit block py-1 text-xl transform transition-transform duration-1000 ease-out ${
+                className={`relative w-fit h-fit block py-1 text-xl transform transition-transform duration-700 ease-out ${
                   (isProjectPage && section.href === "#projects") ||
                   (!isProjectPage && activeSection === section.href)
                     ? "text-[#FEF8EE] font-extrabold"
@@ -155,7 +152,6 @@ export default function Sidebar() {
                     ? "before:scale-x-100"
                     : ""
                 }`}
-                style={{ transitionDelay: `${100 + index * 100}ms` }}
               >
                 {section.name}
               </a>
