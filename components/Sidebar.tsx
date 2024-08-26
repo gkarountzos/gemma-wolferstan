@@ -117,7 +117,7 @@ export default function Sidebar() {
             className="font-roboto text-main"
           />
           <h3
-            className={`text-2xl pt-2 pb-4 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
+            className={`text-lg xs:text-xl sm:text-2xl pt-2 pb-4 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100px] opacity-0"
@@ -159,7 +159,7 @@ export default function Sidebar() {
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100px] opacity-0"
-            }  lg:flex-col lg:space-y-4 lg:pt-0 lg:translate-x-0 lg:opacity-100 hidden lg:block`}
+            }  lg:flex-col lg:space-y-2 lg:pt-0 lg:translate-x-0 lg:opacity-100 hidden lg:block`}
           >
             {renderLinks(sections, (section, index) => (
               <a

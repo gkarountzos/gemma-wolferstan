@@ -19,12 +19,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <DotBackground>
-          <div className="flex flex-col lg:flex-row min-h-screen pb-8 px-2 xs:px-6 sm:px-10 md:px-24">
-            <aside className="w-full lg:w-1/2">
+          <div className="flex flex-col lg:flex-row min-h-screen px-4 xs:px-6 sm:px-10 md:px-24 xxl:px-60">
+            <div className="w-full lg:w-1/2">
               <Sidebar />
-            </aside>
+            </div>
 
-            <main className="flex-1 relative z-10 w-full lg:w-1/2 mt-8 lg:mt-0">
+            <main className=" z-10 w-full lg:w-1/2 mt-8 lg:mt-0">
               {children}
             </main>
           </div>

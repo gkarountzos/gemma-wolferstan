@@ -28,7 +28,7 @@ const MainContent = () => {
           : "translate-x-[100px] opacity-0"
       }`}
     >
-      <TracingBeam className="flex gap-4">
+      <TracingBeam>
         <div className="space-y-16 sm:space-y-24">
           {sectionsData.map((section) => (
             <React.Fragment key={section.id}>

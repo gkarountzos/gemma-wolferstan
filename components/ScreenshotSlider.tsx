@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import ReactDOM from "react-dom";
 
 interface SliderProps {
   images: string[];
@@ -31,6 +32,11 @@ const ArrowButton = ({ direction, onClick }: ArrowButtonProps) => {
 const ScreenshotSlider = ({ images }: SliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const changeImage = (step: number) => {
     setCurrentIndex(
@@ -44,6 +50,25 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
     if (e.target === e.currentTarget) handleCloseModal();
   };
 
+  const modalContent = isModalOpen && (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+      onClick={handleBackdropClick}
+    >
+      <div className="relative max-w-3xl w-full p-4">
+        <Image
+          src={images[currentIndex]}
+          alt={`Screenshot ${currentIndex + 1}`}
+          width={1200}
+          height={675}
+          className="relative object-contain w-full h-full cursor-pointer"
+        />
+        <ArrowButton direction="left" onClick={() => changeImage(-1)} />
+        <ArrowButton direction="right" onClick={() => changeImage(1)} />
+      </div>
+    </div>
+  );
+
   return (
     <div className="relative w-full max-w-lg mx-auto">
       <div className="overflow-hidden rounded-lg">
@@ -52,31 +77,13 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
           alt={`Screenshot ${currentIndex + 1}`}
           width={800}
           height={450}
-          className="object-contain w-full h-full cursor-pointer"
+          className="relative object-contain w-full h-full cursor-pointer"
           onClick={handleImageClick}
         />
       </div>
       <ArrowButton direction="left" onClick={() => changeImage(-1)} />
       <ArrowButton direction="right" onClick={() => changeImage(1)} />
-
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
-          onClick={handleBackdropClick}
-        >
-          <div className="relative">
-            <Image
-              src={images[currentIndex]}
-              alt={`Screenshot ${currentIndex + 1}`}
-              width={1200}
-              height={675}
-              className="object-contain w-full h-full cursor-pointer"
-            />
-            <ArrowButton direction="left" onClick={() => changeImage(-1)} />
-            <ArrowButton direction="right" onClick={() => changeImage(1)} />
-          </div>
-        </div>
-      )}
+      {isMounted && ReactDOM.createPortal(modalContent, document.body)}
     </div>
   );
 };
