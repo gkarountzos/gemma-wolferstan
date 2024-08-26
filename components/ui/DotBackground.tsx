@@ -30,7 +30,7 @@ const DotBackground = ({
     <div
       className={cn(
         //background color
-        "relative h-full flex items-center bg-white dark:bg-gradient-to-tr from-[#343c83] from-10% via-[#602697] via-50% to-[#343c83] to 90% justify-center w-full group",
+        "relative h-fit items-center bg-white dark:bg-gradient-to-tr from-[#343c83] from-10% via-[#602697] via-50% to-[#343c83] to 90% justify-center w-full group",
         containerClassName
       )}
       onMouseMove={handleMouseMove}
