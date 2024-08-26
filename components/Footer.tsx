@@ -28,10 +28,8 @@ const Footer = () => {
           {footerLinks[1].text}
         </Link>
         .
-        <br /> Designed by Gemma
+        <br /> Designed by Gemma.
       </p>
-      <br />
-      <p className="text-gray-300">Yours truly.</p>
     </footer>
   );
 };

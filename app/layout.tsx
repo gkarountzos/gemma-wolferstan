@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <DotBackground>
-          <div className="flex flex-col lg:flex-row min-h-screen px-4 xs:px-6 sm:px-10 md:px-24">
+          <div className="flex flex-col lg:flex-row min-h-screen pb-8 px-2 xs:px-6 sm:px-10 md:px-24">
             <aside className="w-full lg:w-1/2">
               <Sidebar />
             </aside>

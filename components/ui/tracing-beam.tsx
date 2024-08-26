@@ -17,7 +17,7 @@ export const TracingBeam = ({
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"], // Adjusted to consider the entire scroll range
+    offset: ["start start", "end end"],
   });
 
   useEffect(() => {
