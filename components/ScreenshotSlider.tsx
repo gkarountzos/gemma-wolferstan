@@ -61,7 +61,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
 
       {isModalOpen && (
         <div
-          className="absolute inset-0 z-50 top-0 left-0 bg-black bg-opacity-75"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
           onClick={handleBackdropClick}
         >
           <div className="relative">
