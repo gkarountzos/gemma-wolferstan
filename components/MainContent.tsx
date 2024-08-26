@@ -29,7 +29,7 @@ const MainContent = () => {
       }`}
     >
       <TracingBeam className="flex gap-4">
-        <div className="space-y-28">
+        <div className="space-y-24">
           {sectionsData.map((section) => (
             <React.Fragment key={section.id}>
               <Section
