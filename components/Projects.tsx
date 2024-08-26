@@ -20,11 +20,11 @@ const Projects: React.FC = () => {
     <section id="projects" className="max-w-4xl mx-auto">
       <div className="flex gap-4 items-center pb-8">
         <FaFolderOpen className="inline-block text-[#FEF8EE]" size={24} />
-        <h2 className={`text-4xl text-[#FEF8EE]`}>Projects</h2>
+        <h2 className={`xs:text-2xl sm:text-4xl text-[#FEF8EE]`}>Projects</h2>
       </div>
 
       <div className={`space-y-16`}>
-        <div className="relative px-8 py-6 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
+        <div className="relative p-2 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
           {projects.map((project, index) => (
             <div
               key={project.title}

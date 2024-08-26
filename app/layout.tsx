@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import DotBackground from "@/components/ui/DotBackground";
-import Sidebar from "@/components/Sidebar"; // Fixed typo in Sidebar component name
+import Sidebar from "@/components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +19,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <DotBackground>
-          <div className="flex min-h-screen">
-            <aside className="w-1/2">
+          <div className="flex flex-col lg:flex-row min-h-screen px-4 xs:px-6 sm:px-10 md:px-24">
+            <aside className="w-full lg:w-1/2">
               <Sidebar />
             </aside>
-            <main className="flex-1 relative z-10 w-1/2">{children}</main>
+
+            <main className="flex-1 relative z-10 w-full lg:w-1/2 mt-8 lg:mt-0">
+              {children}
+            </main>
           </div>
         </DotBackground>
       </body>

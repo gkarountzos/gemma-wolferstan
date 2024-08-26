@@ -109,15 +109,15 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sticky py-24 lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24">
-      <div className="flex flex-col h-screen justify-between">
+    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24">
+      <div className="flex flex-col xl:h-screen justify-between">
         <div>
           <TypewriterEffectSmooth
             words={[{ text: "Gemma Wolferstan" }]}
             className="font-roboto text-main"
           />
           <h3
-            className={`text-2xl mt-2 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
+            className={`text-2xl pt-2 pb-4 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100px] opacity-0"
@@ -125,12 +125,41 @@ export default function Sidebar() {
           >
             Junior Game Designer
           </h3>
+
+          <div className="flex space-x-6 mt-4 lg:hidden">
+            {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit h-fit transition-transform duration-200 ease-out hover:-translate-y-2"
+              >
+                <span
+                  className={`inline-block transform transition-transform duration-1000 ease-out ${
+                    isVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-[700%] opacity-0"
+                  }`}
+                  style={{
+                    transitionDelay: `${
+                      100 + sections.length * 100 + index * 100
+                    }ms`,
+                  }}
+                >
+                  <Icon className="text-[#FEF8EE] " size={24} />
+                </span>
+              </a>
+            ))}
+          </div>
+
+          {/* Navigation Links */}
           <nav
-            className={`text-lg space-y-4 pt-16 transform transition-transform duration-700 ease-out ${
+            className={`text-lg transform transition-transform duration-700 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100px] opacity-0"
-            }`}
+            }  lg:flex-col lg:space-y-4 lg:pt-0 lg:translate-x-0 lg:opacity-100 hidden lg:block`}
           >
             {renderLinks(sections, (section, index) => (
               <a
@@ -158,7 +187,9 @@ export default function Sidebar() {
             ))}
           </nav>
         </div>
-        <div className="flex space-x-6">
+
+        {/* Social Icons for larger screens */}
+        <div className="hidden lg:flex lg:space-x-6">
           {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
             <a
               key={href}

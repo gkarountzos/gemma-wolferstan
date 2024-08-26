@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -40,10 +41,13 @@ export const TracingBeam = ({
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full max-w-4xl mx-auto h-full", className)}
+      className={cn(
+        "relative w-full max-w-4xl mx-auto h-full",
+        "hidden lg:block",
+        className
+      )}
     >
       <div className="absolute -right-4 md:-right-20 top-3">
-        {/* Adjusted to right positioning */}
         <motion.div
           transition={{
             duration: 0.1,
@@ -105,8 +109,8 @@ export const TracingBeam = ({
               y2={y2}
             >
               <stop stopColor="#343c83" stopOpacity="0"></stop>
-              <stop stopColor="#FEF8EE "></stop>
-              <stop offset="0.325" stopColor="#FEF8EE "></stop>
+              <stop stopColor="#FEF8EE"></stop>
+              <stop offset="0.325" stopColor="#FEF8EE"></stop>
               <stop offset="1" stopColor="#343c83" stopOpacity="0"></stop>
             </motion.linearGradient>
           </defs>
