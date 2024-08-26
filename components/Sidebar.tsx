@@ -40,7 +40,7 @@ export default function Sidebar() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 2400);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -156,7 +156,7 @@ export default function Sidebar() {
                     ? "before:scale-x-100"
                     : ""
                 }`}
-                style={{ transitionDelay: `${100 + index * 200}ms` }}
+                style={{ transitionDelay: `${100 + index * 100}ms` }}
               >
                 {section.name}
               </a>
@@ -165,7 +165,13 @@ export default function Sidebar() {
         </div>
         <div className="flex space-x-6">
           {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
-            <a key={href} href={href} target="_blank" rel="noopener noreferrer">
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit h-fit transition-transform duration-200 ease-out hover:-translate-y-2"
+            >
               <span
                 className={`inline-block transform transition-transform duration-1000 ease-out ${
                   isVisible
@@ -174,14 +180,11 @@ export default function Sidebar() {
                 }`}
                 style={{
                   transitionDelay: `${
-                    400 + sections.length * 100 + index * 200
+                    100 + sections.length * 100 + index * 100
                   }ms`,
                 }}
               >
-                <Icon
-                  className="text-[#FEF8EE] transition-transform duration-200 ease-out hover:-translate-y-2"
-                  size={24}
-                />
+                <Icon className="text-[#FEF8EE] " size={24} />
               </span>
             </a>
           ))}

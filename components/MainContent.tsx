@@ -13,7 +13,7 @@ const MainContent = () => {
     // Delay visibility change by 1200ms
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 2400);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
