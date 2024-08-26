@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
 import { TbMailFilled } from "react-icons/tb";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
-import { projects } from "@/lib/projects";
+import { projects } from "@/lib/content/projects";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 const sections: Section[] = [
@@ -155,7 +155,6 @@ export default function Sidebar() {
                     ? "before:scale-x-100"
                     : ""
                 }`}
-                style={{ transitionDelay: `${100 + index * 100}ms` }}
               >
                 {section.name}
               </a>
@@ -164,28 +163,29 @@ export default function Sidebar() {
         </div>
         <div className="flex space-x-6">
           {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
-            <a
-              key={href}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit h-fit transition-transform duration-200 ease-out hover:-translate-y-2"
-            >
-              <span
-                className={`inline-block transform transition-transform duration-1000 ease-out ${
-                  isVisible
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-[700%] opacity-0"
-                }`}
-                style={{
-                  transitionDelay: `${
-                    100 + sections.length * 100 + index * 100
-                  }ms`,
-                }}
+            <div className="w-8 h-8 flex justify-center items-center transition-transform duration-200 ease-out hover:-translate-y-2">
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Icon className="text-[#FEF8EE] " size={24} />
-              </span>
-            </a>
+                <span
+                  className={`inline-block transform transition-transform duration-1000 ease-out ${
+                    isVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-[700%] opacity-0"
+                  }`}
+                  style={{
+                    transitionDelay: `${
+                      100 + sections.length * 100 + index * 100
+                    }ms`,
+                  }}
+                >
+                  <Icon className="text-[#FEF8EE] " size={24} />
+                </span>
+              </a>
+            </div>
           ))}
         </div>
       </div>
