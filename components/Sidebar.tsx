@@ -41,7 +41,6 @@ export default function Sidebar() {
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 1200);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -85,21 +84,21 @@ export default function Sidebar() {
     return () => observer.disconnect();
   }, [sectionIds, handleIntersection]);
 
-  const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+  const handleNavClick = (href: string) => async (e: React.MouseEvent) => {
     e.preventDefault();
-    if (
-      pathname === "/" ||
-      pathname === "/#about" ||
-      pathname === "/#experience" ||
-      pathname === "/#projects"
-    ) {
-      // Directly scroll if we're on the root page
-      document
-        .getElementById(href.substring(1))
-        ?.scrollIntoView({ behavior: "smooth" });
+    const targetElement = document.getElementById(href.substring(1));
+
+    if (targetElement) {
+      // Scroll to the section if on the same page
+      targetElement.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Navigate to the root page with hash for smooth scroll
+      // Navigate to the home page with a hash if not on the same page
       router.push(`/${href}`);
+      // Ensure the scroll happens after the page load
+      const checkTargetElement = document.getElementById(href.substring(1));
+      if (checkTargetElement) {
+        checkTargetElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 

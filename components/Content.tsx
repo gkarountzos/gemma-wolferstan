@@ -4,11 +4,8 @@ import Sidebar from "./Sidebar";
 const Content = () => {
   return (
     <>
-      <div className="flex justify-center gap-4 ">
-        <div className="w-1/2">
-          <Sidebar />
-        </div>
-        <div className="w-1/2 py-24">
+      <div>
+        <div className="py-24">
           <MainContent />
         </div>
       </div>

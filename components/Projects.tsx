@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
                   : "translate-x-[200%] opacity-0"
               }`}
               style={{
-                transitionDelay: `${1200 + index * 100}ms`,
+                transitionDelay: `${100 + index * 200}ms`,
               }}
             >
               <ProjectCard project={project} />
