@@ -18,7 +18,7 @@ const MainContent = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const slimLine = " h-px w-3/6 bg-[#FEF8EE]";
+  const slimLine = " h-px w-1/2 bg-[#FEF8EE]";
 
   return (
     <div
