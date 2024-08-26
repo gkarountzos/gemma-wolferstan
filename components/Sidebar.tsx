@@ -38,7 +38,10 @@ export default function Sidebar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 1000);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 2400);
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -111,12 +114,11 @@ export default function Sidebar() {
             className="font-roboto text-main"
           />
           <h3
-            className={`text-2xl mt-2 text-[#FEF8EE] transform transition-transform duration-700 ease-out ${
+            className={`text-2xl mt-2 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
-                : "translate-x-[-200%] opacity-0"
+                : "translate-x-[-100px] opacity-0"
             }`}
-            style={{ transitionDelay: `1200ms` }}
           >
             Junior Game Designer
           </h3>
@@ -124,16 +126,15 @@ export default function Sidebar() {
             className={`text-lg space-y-4 pt-16 transform transition-transform duration-700 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
-                : "translate-x-[-100%] opacity-0"
+                : "translate-x-[-100px] opacity-0"
             }`}
-            style={{ transitionDelay: `1200ms` }}
           >
             {renderLinks(sections, (section, index) => (
               <a
                 key={section.name}
                 href={section.href}
                 onClick={handleNavClick(section.href)}
-                className={`relative w-fit h-fit block py-1 text-xl transition-transform duration-1000 ease-in-out ${
+                className={`relative w-fit h-fit block py-1 text-xl transform transition-transform duration-1000 ease-out ${
                   (isProjectPage && section.href === "#projects") ||
                   (!isProjectPage && activeSection === section.href)
                     ? "text-[#FEF8EE] font-extrabold"
@@ -148,7 +149,7 @@ export default function Sidebar() {
                     ? "before:scale-x-100"
                     : ""
                 }`}
-                style={{ transitionDelay: `${1200 + index * 200}ms` }}
+                style={{ transitionDelay: `${100 + index * 200}ms` }}
               >
                 {section.name}
               </a>
@@ -166,8 +167,8 @@ export default function Sidebar() {
                 }`}
                 style={{
                   transitionDelay: `${
-                    1000 + sections.length * 100 + index * 100
-                  }ms`, // Starts after the last nav link
+                    400 + sections.length * 100 + index * 200
+                  }ms`,
                 }}
               >
                 <Icon

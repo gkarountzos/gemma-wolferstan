@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 1000);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
