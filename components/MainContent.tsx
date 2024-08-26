@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Projects from "./Projects";
 import { TracingBeam } from "./ui/tracing-beam";
 import Section from "./Sections";
-import { sectionsData } from "@/lib/sections";
+import { sectionsData } from "@/lib/content/sections";
 
 const MainContent = () => {
   const [isVisible, setIsVisible] = useState(false);

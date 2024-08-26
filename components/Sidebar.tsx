@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaItchIo, FaYoutube } from "react-icons/fa";
 import { TbMailFilled } from "react-icons/tb";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
-import { projects } from "@/lib/projects";
+import { projects } from "@/lib/content/projects";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 const sections: Section[] = [

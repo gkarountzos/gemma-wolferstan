@@ -1,5 +1,5 @@
 "use client";
-import { projects } from "@/lib/projects";
+import { projects } from "@/lib/content/projects";
 import { ProjectProps } from "@/types/types";
 import { notFound } from "next/navigation";
 import Sidebar from "@/components/Sidebar";

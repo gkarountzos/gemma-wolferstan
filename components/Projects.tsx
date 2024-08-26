@@ -1,5 +1,5 @@
 "use client";
-import { projects } from "@/lib/projects";
+import { projects } from "@/lib/content/projects";
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { useEffect, useState } from "react";
