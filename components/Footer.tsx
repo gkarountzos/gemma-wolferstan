@@ -5,10 +5,14 @@ const footerLinks = [
   { href: "https://vercel.com/", text: "Vercel" },
 ];
 
-const Footer = () => {
+interface FooterProps {
+  className?: string;
+}
+
+const Footer = ({ className }: FooterProps) => {
   return (
-    <footer className="text-sm">
-      <p className="text-gray-300">
+    <footer className={`text-sm pb-8 lg:pb-0 `}>
+      <p className={`text-gray-300 ${className}`}>
         Built by{" "}
         <Link
           href={footerLinks[0].href}
