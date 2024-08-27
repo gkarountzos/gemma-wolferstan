@@ -12,7 +12,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <Link href={`/projects/${project.slug}`}>
       <div
         key={project.title}
-        className="flex flex-col md:flex-row md:space-x-8 items-center p-4 rounded-xl transition-transform transform hover:scale-[102%]"
+        className="flex flex-col md:flex-row md:space-x-8 items-center p-4 rounded-xl transition-transform transform md:hover:scale-[102%]"
       >
         <div className="flex-shrink-0">
           <Image
@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             alt={project.title}
             width={256}
             height={160}
-            className="rounded-lg object-cover w-full md:w-64 h-40 transition-transform duration-300 ease-in-out group-hover:scale-105"
+            className="rounded-lg object-cover w-full md:w-64 h-40 transition-transform duration-300 ease-in-out"
           />
         </div>
         <div className="text-center md:text-left md:flex-grow">
