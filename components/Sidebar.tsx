@@ -74,13 +74,33 @@ export default function Sidebar() {
   );
 
   useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0.3, 1],
-    });
+    const configureObserver = () => {
+      const screenWidth = window.innerWidth;
+      let threshold = 0.5;
+      let rootMargin = "10% 0px -55% 0px";
+
+      if (screenWidth > 2560) {
+        threshold = 0.8; // threshold on larger screens
+        rootMargin = "10% 0px -30% 0px"; //  bottom margin for better accuracy
+      } else if (screenWidth > 1920) {
+        threshold = 0.5; // threshold for 1920 < screens < 2560
+        rootMargin = "10% 0px -40% 0px"; //  margin for for 1920 < screens < 2560
+      }
+
+      return new IntersectionObserver(handleIntersection, {
+        threshold: [threshold],
+        rootMargin: rootMargin,
+      });
+    };
+
+    const observer = configureObserver();
+
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
+
     elements.forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, [sectionIds, handleIntersection]);
 
@@ -109,7 +129,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24">
+    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24 xxxl:py-52 fourk:py-72">
       <div className="flex flex-col lg:h-screen justify-between">
         <div>
           <TypewriterEffectSmooth
@@ -203,7 +223,7 @@ export default function Sidebar() {
                 className={`inline-block transform transition-transform duration-1000 ease-out ${
                   isVisible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[150%] opacity-0"
+                    : "translate-y-[700%] opacity-0"
                 }`}
                 style={{
                   transitionDelay: `${

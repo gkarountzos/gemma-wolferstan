@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Projects from "./Projects";
@@ -10,7 +11,6 @@ const MainContent = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Delay visibility change by 1200ms
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 1200);
@@ -18,7 +18,7 @@ const MainContent = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const slimLine = " h-px w-1/2 bg-[#FEF8EE]";
+  const slimLine = "h-px w-1/2 bg-[#FEF8EE]";
 
   return (
     <div
@@ -29,7 +29,7 @@ const MainContent = () => {
       }`}
     >
       <TracingBeam>
-        <div className="space-y-16 sm:space-y-24">
+        <section className="space-y-16 sm:space-y-24 xxxl:space-y-40">
           {sectionsData.map((section) => (
             <React.Fragment key={section.id}>
               <Section
@@ -37,13 +37,14 @@ const MainContent = () => {
                 icon={section.icon}
                 title={section.title}
                 content={section.content}
+                className="relative mx-auto scroll-mt-28 sm:scroll-mt-24 xxxl:scroll-mt-52 fourk:scroll-mt-72"
               />
               <div className={slimLine}></div>
             </React.Fragment>
           ))}
           <Projects />
           <Footer />
-        </div>
+        </section>
       </TracingBeam>
     </div>
   );
