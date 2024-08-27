@@ -7,6 +7,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Section, SocialLink } from "@/types/types";
 import { projects } from "@/lib/content/projects";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import Link from "next/link";
 
 const sections: Section[] = [
   { name: "About", href: "#about" },
@@ -132,10 +133,14 @@ export default function Sidebar() {
     <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24 xxl:py-32 xxxl:py-52 ">
       <div className="flex flex-col lg:h-screen justify-between">
         <div>
-          <TypewriterEffectSmooth
-            words={[{ text: "Gemma Wolferstan" }]}
-            className="font-roboto text-main"
-          />
+          <div className="w-fit h-fit">
+            <Link href={"/"}>
+              <TypewriterEffectSmooth
+                words={[{ text: "Gemma Wolferstan" }]}
+                className="font-roboto text-main"
+              />
+            </Link>
+          </div>
           <h3
             className={`text-lg xs:text-xl sm:text-2xl pt-2 pb-4 text-[#FEF8EE] transform transition-transform duration-1000 ease-out ${
               isVisible
