@@ -5,7 +5,6 @@ import React from "react";
 
 interface ProjectCardProps {
   project: Project;
-  slug: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
