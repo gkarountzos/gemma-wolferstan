@@ -37,7 +37,7 @@ const MainContent = () => {
                 icon={section.icon}
                 title={section.title}
                 content={section.content}
-                className="relative mx-auto scroll-mt-28 sm:scroll-mt-24 xxxl:scroll-mt-52 fourk:scroll-mt-72"
+                className="relative mx-auto scroll-mt-28 sm:scroll-mt-24 xxl:scroll-mt-32 xxxl:scroll-mt-52 "
               />
               <div className={slimLine}></div>
             </React.Fragment>

@@ -22,7 +22,7 @@ const config: Config = {
       lg: "1200px",
       xl: "1440px",
       xxl: "1600px",
-      xxxl: "1920px",
+      xxxl: "1921px",
       fourk: "2560px",
     },
     extend: {

@@ -28,9 +28,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.title}
           </h3>
           <p className="text-sm text-[#FEF8EE] mb-4">{project.description}</p>
-          <div className="inline-flex items-center font-medium text-[#e0dcd6] hover:text-[#D1A1D8] group/link text-base">
-            View Project
-          </div>
         </div>
       </div>
     </Link>
