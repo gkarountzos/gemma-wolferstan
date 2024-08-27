@@ -109,7 +109,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24">
+    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24 xxxl:py-52">
       <div className="flex flex-col lg:h-screen justify-between">
         <div>
           <TypewriterEffectSmooth
@@ -203,7 +203,7 @@ export default function Sidebar() {
                 className={`inline-block transform transition-transform duration-1000 ease-out ${
                   isVisible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[150%] opacity-0"
+                    : "translate-y-[700%] opacity-0"
                 }`}
                 style={{
                   transitionDelay: `${
