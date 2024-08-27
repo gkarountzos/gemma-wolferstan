@@ -20,7 +20,7 @@ const ArrowButton = ({ direction, onClick }: ArrowButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`absolute top-1/2 hidden lg:flex ${
+      className={`absolute top-1/2 hidden tablet:block lg:flex ${
         isLeft ? "left-[-40px]" : "right-[-50px]"
       } transform -translate-y-1/2 text-white rounded-full p-2`}
       style={{ fontSize: "32px", width: "60px", height: "60px" }}
