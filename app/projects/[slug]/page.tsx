@@ -65,7 +65,6 @@ const ProjectPage = ({ params }: ProjectProps) => {
               {project.link && (
                 <a
                   href={project.link}
-                  //"px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200"
                   className="mx-auto px-4 py-2 rounded-full bg-gradient-to-tl from-[#743ca8] to-[#4351ce] text-white transition duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -77,7 +76,7 @@ const ProjectPage = ({ params }: ProjectProps) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer className="text-center lg:text-left" />
     </>
   );
 };
