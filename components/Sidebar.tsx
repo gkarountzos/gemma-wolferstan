@@ -126,6 +126,7 @@ export default function Sidebar() {
             Junior Game Designer
           </h3>
 
+          {/* Social Icons for smaller screens */}
           <div className="flex space-x-6 mt-4 lg:hidden">
             {renderLinks(socialLinks, ({ href, icon: Icon }, index) => (
               <a
@@ -133,21 +134,21 @@ export default function Sidebar() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-fit h-fit transition-transform duration-200 ease-out hover:-translate-y-2"
+                className="w-fit h-fit transition-transform duration-200 ease-out md:hover:-translate-y-2"
               >
                 <span
-                  className={`inline-block transform transition-transform duration-1000 ease-out ${
+                  className={`inline-block transform transition-transform duration-700 ease-out ${
                     isVisible
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-[700%] opacity-0"
+                      ? "translate-x-0 opacity-100"
+                      : "-translate-x-[700%] opacity-0"
                   }`}
                   style={{
                     transitionDelay: `${
-                      100 + sections.length * 100 + index * 100
+                      (socialLinks.length - index - 1) * 100
                     }ms`,
                   }}
                 >
-                  <Icon className="text-[#FEF8EE] " size={24} />
+                  <Icon className="text-[#FEF8EE]" size={24} />
                 </span>
               </a>
             ))}
@@ -202,7 +203,7 @@ export default function Sidebar() {
                 className={`inline-block transform transition-transform duration-1000 ease-out ${
                   isVisible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[700%] opacity-0"
+                    : "translate-y-[150%] opacity-0"
                 }`}
                 style={{
                   transitionDelay: `${
