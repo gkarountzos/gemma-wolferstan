@@ -23,6 +23,7 @@ const config: Config = {
       xl: "1440px",
       xxl: "1600px",
       xxxl: "1920px",
+      fourk: "2560px",
     },
     extend: {
       colors: {

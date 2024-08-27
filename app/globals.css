@@ -16,10 +16,6 @@ html {
   scroll-behavior: smooth;
 }
 
-section {
-  scroll-margin-top: 106px;
-}
-
 body {
   color: #fef8ee;
   font-family: Inter, sans-serif;

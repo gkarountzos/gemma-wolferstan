@@ -75,12 +75,16 @@ export default function Sidebar() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0.3, 1],
+      threshold: [0.4],
+      rootMargin: "0px 0px -55% 0px",
     });
+
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
+
     elements.forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, [sectionIds, handleIntersection]);
 
@@ -109,7 +113,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24 xxxl:py-52">
+    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24 xxxl:py-52 fourk:py-72">
       <div className="flex flex-col lg:h-screen justify-between">
         <div>
           <TypewriterEffectSmooth

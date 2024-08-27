@@ -29,21 +29,23 @@ const MainContent = () => {
       }`}
     >
       <TracingBeam>
-        <div className="space-y-16 sm:space-y-24">
-          {sectionsData.map((section) => (
-            <React.Fragment key={section.id}>
-              <Section
-                id={section.id}
-                icon={section.icon}
-                title={section.title}
-                content={section.content}
-              />
-              <div className={slimLine}></div>
-            </React.Fragment>
-          ))}
-          <Projects />
-          <Footer />
-        </div>
+        <section className="scroll-mt-28">
+          <div className="space-y-16 sm:space-y-24 xxxl:space-y-40 ">
+            {sectionsData.map((section) => (
+              <React.Fragment key={section.id}>
+                <Section
+                  id={section.id}
+                  icon={section.icon}
+                  title={section.title}
+                  content={section.content}
+                />
+                <div className={slimLine}></div>
+              </React.Fragment>
+            ))}
+            <Projects />
+            <Footer />
+          </div>
+        </section>
       </TracingBeam>
     </div>
   );
