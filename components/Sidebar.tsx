@@ -81,7 +81,7 @@ export default function Sidebar() {
 
       if (screenWidth > 2560) {
         threshold = 0.9; // threshold on larger screens
-        rootMargin = "10% 0px -30% 0px"; //  bottom margin for better accuracy
+        rootMargin = "10% 0px -40% 0px"; //  bottom margin for better accuracy
       } else if (screenWidth > 1920) {
         threshold = 0.5; // threshold for 1920 < screens < 2560
         rootMargin = "10% 0px -40% 0px"; //  margin for 1920 < screens < 2560
@@ -129,7 +129,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24 xxl:py-32 xxxl:py-52 fourk:py-72">
+    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24 xxl:py-32 xxxl:py-52 ">
       <div className="flex flex-col lg:h-screen justify-between">
         <div>
           <TypewriterEffectSmooth

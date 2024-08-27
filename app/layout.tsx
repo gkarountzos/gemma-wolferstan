@@ -24,7 +24,7 @@ export default function RootLayout({
               <Sidebar />
             </div>
 
-            <main className=" z-10 w-full lg:w-1/2 mt-8 lg:mt-0 ">
+            <main className=" z-10 w-full lg:w-1/2 mt-8 lg:mt-0 md:pb-24 pt-8 lg:py-24 xxl:py-32 xxxl:py-52">
               {children}
             </main>
           </div>
