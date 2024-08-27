@@ -74,10 +74,26 @@ export default function Sidebar() {
   );
 
   useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0.4],
-      rootMargin: "0px 0px -55% 0px",
-    });
+    const configureObserver = () => {
+      const screenWidth = window.innerWidth;
+      let threshold = 0.5;
+      let rootMargin = "10% 0px -55% 0px";
+
+      if (screenWidth > 2560) {
+        threshold = 0.8; // threshold on larger screens
+        rootMargin = "10% 0px -30% 0px"; //  bottom margin for better accuracy
+      } else if (screenWidth > 1920) {
+        threshold = 0.5; // threshold for 1920 < screens < 2560
+        rootMargin = "10% 0px -40% 0px"; //  margin for for 1920 < screens < 2560
+      }
+
+      return new IntersectionObserver(handleIntersection, {
+        threshold: [threshold],
+        rootMargin: rootMargin,
+      });
+    };
+
+    const observer = configureObserver();
 
     const elements = sectionIds
       .map((id) => document.getElementById(id))

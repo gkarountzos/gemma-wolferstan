@@ -6,10 +6,11 @@ const Section: React.FC<SectionProps> = ({
   icon: Icon,
   title,
   content,
+  className,
 }) => {
   return (
     <>
-      <section id={id} className="relative mx-auto">
+      <section id={id} className={className}>
         <div className="flex gap-4 items-center pb-8">
           <Icon className="text-[#FEF8EE] " size={24} />
           <h2 className={`xs:text-2xl sm:text-4xl text-[#FEF8EE] `}>{title}</h2>
