@@ -17,6 +17,7 @@ export interface SectionProps {
   icon: React.ComponentType<{ size: number; className?: string }>;
   title: string;
   content: string[];
+  className?: string;
 }
 
 export interface SocialLink {

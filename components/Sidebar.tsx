@@ -74,13 +74,33 @@ export default function Sidebar() {
   );
 
   useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0.3, 1],
-    });
+    const configureObserver = () => {
+      const screenWidth = window.innerWidth;
+      let threshold = 0.2;
+      let rootMargin = "10% 0px -50% 0px";
+
+      if (screenWidth > 2560) {
+        threshold = 0.9; // threshold on larger screens
+        rootMargin = "10% 0px -40% 0px"; //  bottom margin for better accuracy
+      } else if (screenWidth > 1920) {
+        threshold = 0.5; // threshold for 1920 < screens < 2560
+        rootMargin = "10% 0px -40% 0px"; //  margin for 1920 < screens < 2560
+      }
+
+      return new IntersectionObserver(handleIntersection, {
+        threshold: [threshold],
+        rootMargin: rootMargin,
+      });
+    };
+
+    const observer = configureObserver();
+
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
+
     elements.forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, [sectionIds, handleIntersection]);
 
@@ -109,7 +129,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24">
+    <div className="sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between pt-8 xs:pt-10 sm:py-24 xxl:py-32 xxxl:py-52 ">
       <div className="flex flex-col lg:h-screen justify-between">
         <div>
           <TypewriterEffectSmooth
@@ -156,7 +176,7 @@ export default function Sidebar() {
 
           {/* Navigation Links */}
           <nav
-            className={`text-lg transform transition-transform duration-700 ease-out ${
+            className={`transform transition-transform duration-700 ease-out ${
               isVisible
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100px] opacity-0"
@@ -167,7 +187,7 @@ export default function Sidebar() {
                 key={section.name}
                 href={section.href}
                 onClick={handleNavClick(section.href)}
-                className={`relative w-fit h-fit block py-1 text-xl transform transition-transform duration-700 ease-out ${
+                className={`relative w-fit h-fit block py-1 text-lg transform transition-transform duration-700 ease-out ${
                   (isProjectPage && section.href === "#projects") ||
                   (!isProjectPage && activeSection === section.href)
                     ? "text-[#FEF8EE] font-extrabold"
@@ -203,7 +223,7 @@ export default function Sidebar() {
                 className={`inline-block transform transition-transform duration-1000 ease-out ${
                   isVisible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[150%] opacity-0"
+                    : "translate-y-[700%] opacity-0"
                 }`}
                 style={{
                   transitionDelay: `${

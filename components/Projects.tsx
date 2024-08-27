@@ -17,7 +17,10 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
-    <section id="projects" className=" w-full mx-auto">
+    <section
+      id="projects"
+      className="sm:scroll-mt-24 xxxl:scroll-mt-52 w-full mx-auto"
+    >
       <div className="flex gap-4 items-center pb-8">
         <FaFolderOpen className="inline-block text-[#FEF8EE]" size={24} />
         <h2 className={`xs:text-2xl sm:text-4xl text-[#FEF8EE]`}>Projects</h2>
