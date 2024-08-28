@@ -11,12 +11,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className="border-none rounded-xl backdrop-blur-lg transition-transform transform md:hover:scale-[102%]">
       <Link href={`/projects/${project.slug}`}>
-        <div
-          key={project.title}
-          className=" flex flex-col xl:flex-row lg:flex-col tablet:flex-row tablet:space-x-8 xl:space-x-8 lg:space-x-0 items-center p-4"
-        >
+        <div className="flex flex-col xl:flex-row lg:flex-col tablet:flex-row tablet:space-x-8 xl:space-x-8 lg:space-x-0 items-center p-4">
           <div className="flex-shrink-0">
-            <h3 className="block tablet:hidden lg:block xl:hidden text-center text-lg font-semibold text-[#FEF8EE] py-2 ">
+            <h3 className="text-center text-lg font-semibold text-[#FEF8EE] py-2 tablet:block lg:block hidden">
               {project.title}
             </h3>
             <Image
@@ -24,20 +21,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               alt={project.title}
               width={256}
               height={160}
-              className="rounded-lg object-cover md:w-64 h-40 "
+              className="rounded-lg object-cover md:w-64 h-40"
+              priority
             />
           </div>
           <div className="w-full">
-            <h3 className="hidden tablet:block lg:hidden xl:block text-lg font-semibold text-[#FEF8EE] py-2 ">
+            <h3 className="text-lg font-semibold text-[#FEF8EE] py-2 hidden tablet:block lg:hidden xl:block">
               {project.title}
             </h3>
-            <p className=" text-sm text-[#FEF8EE] py-4">
-              {project.description}
-            </p>
+            <p className="text-sm text-[#FEF8EE] py-4">{project.description}</p>
           </div>
           <button
             type="button"
-            className="tablet:hidden w-fit mx-auto px-4 py-2 rounded-full  bg-gradient-to-tl from-[#743ca8] to-[#4351ce] text-white transition duration-200"
+            className="tablet:hidden w-fit mx-auto px-4 py-2 rounded-full bg-gradient-to-tl from-[#743ca8] to-[#4351ce] text-white transition duration-200"
           >
             View Project
           </button>
