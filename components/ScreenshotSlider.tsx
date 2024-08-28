@@ -41,7 +41,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
   }, []);
 
   const changeImage = (step: number) => {
-    if (isTransitioning) return; // Prevent new transitions while animating
+    if (isTransitioning) return;
 
     setIsTransitioning(true);
     setTimeout(() => {
@@ -49,7 +49,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
         (prevIndex) => (prevIndex + step + images.length) % images.length
       );
       setIsTransitioning(false);
-    }, 300); // Duration of the sliding effect
+    }, 300);
   };
 
   const handleImageClick = () => setIsModalOpen(true);
@@ -58,7 +58,6 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
     if (e.target === e.currentTarget) handleCloseModal();
   };
 
-  // Main slider swipe handlers
   const swipeHandlersMain = useSwipeable({
     onSwipedLeft: () => changeImage(1),
     onSwipedRight: () => changeImage(-1),
@@ -66,7 +65,6 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
     trackMouse: true,
   });
 
-  // Modal slider swipe handlers
   const swipeHandlersModal = useSwipeable({
     onSwipedLeft: () => changeImage(1),
     onSwipedRight: () => changeImage(-1),
@@ -79,7 +77,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
       onClick={handleBackdropClick}
     >
-      <div className="relative max-w-3xl w-full p-4" {...swipeHandlersModal}>
+      <div className="relative max-w-xl w-full p-4" {...swipeHandlersModal}>
         <div className="overflow-hidden relative w-full">
           <div
             className={`whitespace-nowrap transition-transform duration-300 ${
@@ -98,7 +96,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
                 alt={`Screenshot ${index + 1}`}
                 width={1200}
                 height={675}
-                className="inline-block object-contain w-full h-full cursor-pointer"
+                className="inline-block object-contain w-full h-full max-h-[80vh] cursor-pointer"
               />
             ))}
           </div>
@@ -130,15 +128,31 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
                 alt={`Screenshot ${index + 1}`}
                 width={800}
                 height={450}
-                className="inline-block object-contain w-full h-full cursor-pointer"
+                className="inline-block object-contain w-full h-full max-h-[500px] cursor-pointer"
                 onClick={handleImageClick}
               />
             ))}
           </div>
         </div>
       </div>
+
+      {/* Arrow Buttons */}
       <ArrowButton direction="left" onClick={() => changeImage(-1)} />
       <ArrowButton direction="right" onClick={() => changeImage(1)} />
+
+      {/* Indicator Dots */}
+      <div className="flex justify-center mt-4">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`h-2 w-2 mx-1 rounded-full transition-colors duration-300 ${
+              index === currentIndex ? "bg-blue-500" : "bg-gray-300"
+            }`}
+          ></span>
+        ))}
+      </div>
+
+      {/* Modal Content */}
       {isMounted && ReactDOM.createPortal(modalContent, document.body)}
     </div>
   );

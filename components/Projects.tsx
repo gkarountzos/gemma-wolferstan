@@ -19,14 +19,14 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="sm:scroll-mt-24 xxxl:scroll-mt-52 w-full mx-auto"
+      className="scroll-mt-28 sm:scroll-mt-24 xxl:scroll-mt-32 xxxl:scroll-mt-52 w-full mx-auto"
     >
       <div className="flex gap-4 items-center pb-8">
         <FaFolderOpen className="inline-block text-[#FEF8EE]" size={24} />
         <h2 className={`xs:text-2xl sm:text-4xl text-[#FEF8EE]`}>Projects</h2>
       </div>
 
-      <div className={`space-y-16`}>
+      <div className="space-y-16">
         <div className="w-full p-2 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
           {projects.map((project, index) => (
             <div
@@ -40,7 +40,9 @@ const Projects: React.FC = () => {
                 transitionDelay: `${100 + index * 200}ms`,
               }}
             >
-              <ProjectCard project={project} />
+              <div className="py-2">
+                <ProjectCard project={project} />
+              </div>
             </div>
           ))}
         </div>
