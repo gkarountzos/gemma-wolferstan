@@ -40,7 +40,7 @@ const Projects: React.FC = () => {
                 transitionDelay: `${100 + index * 200}ms`,
               }}
             >
-              <div className="p">
+              <div className="py-2">
                 <ProjectCard project={project} />
               </div>
             </div>
