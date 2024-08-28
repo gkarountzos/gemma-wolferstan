@@ -15,6 +15,7 @@ export interface ProjectProps {
 export interface SectionProps {
   id: string;
   icon: React.ComponentType<{ size: number; className?: string }>;
+  picture?: string;
   title: string;
   content: string[];
   className?: string;
