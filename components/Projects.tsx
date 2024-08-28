@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="sm:scroll-mt-24 xxxl:scroll-mt-52 w-full mx-auto"
+      className="scroll-mt-28 sm:scroll-mt-24 xxl:scroll-mt-32 xxxl:scroll-mt-52 w-full mx-auto"
     >
       <div className="flex gap-4 items-center pb-8">
         <FaFolderOpen className="inline-block text-[#FEF8EE]" size={24} />
@@ -40,7 +40,7 @@ const Projects: React.FC = () => {
                 transitionDelay: `${100 + index * 200}ms`,
               }}
             >
-              <div className="py-2">
+              <div className="p">
                 <ProjectCard project={project} />
               </div>
             </div>

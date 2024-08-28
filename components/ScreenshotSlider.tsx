@@ -128,15 +128,31 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
                 alt={`Screenshot ${index + 1}`}
                 width={800}
                 height={450}
-                className="inline-block object-contain w-full h-full max-h-[600px] cursor-pointer"
+                className="inline-block object-contain w-full h-full max-h-[500px] cursor-pointer"
                 onClick={handleImageClick}
               />
             ))}
           </div>
         </div>
       </div>
+
+      {/* Arrow Buttons */}
       <ArrowButton direction="left" onClick={() => changeImage(-1)} />
       <ArrowButton direction="right" onClick={() => changeImage(1)} />
+
+      {/* Indicator Dots */}
+      <div className="flex justify-center mt-4">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`h-2 w-2 mx-1 rounded-full transition-colors duration-300 ${
+              index === currentIndex ? "bg-blue-500" : "bg-gray-300"
+            }`}
+          ></span>
+        ))}
+      </div>
+
+      {/* Modal Content */}
       {isMounted && ReactDOM.createPortal(modalContent, document.body)}
     </div>
   );

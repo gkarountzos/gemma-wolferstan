@@ -41,7 +41,7 @@ const ProjectPage = ({ params }: ProjectProps) => {
                 {project.title}
               </h2>
               {project.video && (
-                <div className="pb-8">
+                <div className="pb-8 w-full max-w-3xl mx-auto">
                   <Video src={project.video} title={project.title} />
                 </div>
               )}
