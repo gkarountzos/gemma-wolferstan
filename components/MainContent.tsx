@@ -18,8 +18,6 @@ const MainContent = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const slimLine = "h-px w-1/2 bg-[#FEF8EE]";
-
   return (
     <div
       className={`transform transition-transform duration-1000 ease-out ${
@@ -39,7 +37,7 @@ const MainContent = () => {
                 content={section.content}
                 className="relative mx-auto scroll-mt-28 sm:scroll-mt-24 xxl:scroll-mt-32 xxxl:scroll-mt-52 "
               />
-              <div className={slimLine}></div>
+              <div className="h-px w-1/2 bg-[#FEF8EE]" />
             </React.Fragment>
           ))}
           <Projects />
