@@ -32,14 +32,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </h3>
           <p className="text-sm text-[#FEF8EE] py-4">{project.description}</p>
         </div>
-        <a
-          href={project.slug}
-          className="tablet:hidden w-fit mx-auto px-4 py-2 rounded-full bg-gradient-to-tl from-[#743ca8] to-[#4351ce] text-white transition duration-200"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <button className="tablet:hidden w-fit mx-auto px-4 py-2 rounded-full  bg-gradient-to-tl from-[#743ca8] to-[#4351ce] text-white transition duration-200">
           View Project
-        </a>
+        </button>
       </div>
     </Link>
   );
