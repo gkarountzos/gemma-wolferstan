@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
         <h2 className={`xs:text-2xl sm:text-4xl text-[#FEF8EE]`}>Projects</h2>
       </div>
 
-      <div className={`space-y-16`}>
+      <div className="space-y-16">
         <div className="w-full p-2 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
           {projects.map((project, index) => (
             <div
@@ -40,7 +40,9 @@ const Projects: React.FC = () => {
                 transitionDelay: `${100 + index * 200}ms`,
               }}
             >
-              <ProjectCard project={project} />
+              <div className="py-2">
+                <ProjectCard project={project} />
+              </div>
             </div>
           ))}
         </div>
