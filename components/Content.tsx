@@ -3,13 +3,9 @@ import Sidebar from "./Sidebar";
 
 const Content = () => {
   return (
-    <>
-      <div>
-        <div className="">
-          <MainContent />
-        </div>
-      </div>
-    </>
+    <div>
+      <MainContent />
+    </div>
   );
 };
 
