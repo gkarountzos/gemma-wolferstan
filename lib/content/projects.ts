@@ -112,9 +112,9 @@ export const projects: Project[] = [
       "Below you will see images of the merchandises that were produced. Above there is a button that will let you download the notes I took during development of the work which detail the thought processes and use of design principles that informed creation of the final product. This serves as a showcase of my design knowledge and as proof that I approach the creative process with the mind of a designer.",
     ],
     screenshots: [
-      "/project-images/ggj/mug.png",
-      "/project-images/ggj/poster.png",
       "/project-images/ggj/posterfinal.png",
+      "/project-images/ggj/poster.png",
+      "/project-images/ggj/mug.png",
       "/project-images/ggj/tshirt.png",
     ],
   },
