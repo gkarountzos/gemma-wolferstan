@@ -9,11 +9,11 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="border-none rounded-xl backdrop-blur-lg transition-transform transform md:hover:scale-[102%]">
+    <div className=" rounded-xl hover:bg-black/15 transition-all transform md:hover:scale-[102%]">
       <Link href={`/projects/${project.slug}`}>
         <div className="flex flex-col xl:flex-row lg:flex-col tablet:flex-row tablet:space-x-8 xl:space-x-8 lg:space-x-0 items-center p-4">
           <div className="flex-shrink-0">
-            <h3 className="text-center text-lg font-semibold text-[#FEF8EE] py-2 tablet:block lg:block hidden">
+            <h3 className="text-center text-lg font-semibold text-[#FEF8EE] py-2  xl:hidden lg:block tablet:hidden block">
               {project.title}
             </h3>
             <Image
