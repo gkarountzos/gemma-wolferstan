@@ -56,7 +56,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
             {project.link && (
               <a
                 href={project.link}
-                className="mx-auto px-4 py-2 rounded-full bg-gradient-to-tl from-[#743ca8] to-[#4351ce] text-white transition duration-200"
+                className="mx-auto px-4 grid place-items-center py-2 h-12 rounded-full bg-gradient-to-tl from-[#743ca8] to-[#4351ce] hover:border hover:shadow-lg hover:border-bg-white text-white transition-all duration-100 ease-out"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Play the game: ${project.title}`}
