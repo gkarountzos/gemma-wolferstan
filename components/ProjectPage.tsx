@@ -27,7 +27,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
         }`}
       >
         <div className="pb-24">
-          <section className=" flex flex-col items-center gap-8">
+          <section className="flex flex-col items-center gap-8">
             <h2 className="text-left text-3xl sm:text-4xl font-medium text-[#FEF8EE]">
               {project.title}
             </h2>
@@ -36,12 +36,19 @@ const ProjectPage = ({ project }: { project: Project }) => {
                 <Video src={project.video} title={project.title} />
               </div>
             )}
-            <div className="relative px-8 py-4 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden w-full max-w-3xl">
+            <div className="relative px-8 pt-2 pb-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden w-full max-w-3xl">
               <div className="text-lg text-[#FEF8EE]">
-                {project.content.map((paragraph, index) => (
-                  <p key={index} className={index > 0 ? "pt-2" : ""}>
-                    {paragraph}
-                  </p>
+                {project.content.map((section, index) => (
+                  <div key={index} className="pt-6">
+                    <h3 className="text-2xl font-semibold text-[#FEF8EE]">
+                      {section.title}
+                    </h3>
+                    {section.details.map((detail, detailIndex) => (
+                      <p key={detailIndex} className="pt-2 text-md">
+                        {detail}
+                      </p>
+                    ))}
+                  </div>
                 ))}
               </div>
             </div>

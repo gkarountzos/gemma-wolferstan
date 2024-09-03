@@ -1,7 +1,7 @@
 import React from "react";
-import { SectionProps } from "@/types/types";
+import { AboutDataProps } from "@/types/types";
 
-const Section: React.FC<SectionProps> = ({
+const AboutSection: React.FC<AboutDataProps> = ({
   id,
   icon: Icon,
   title,
@@ -37,4 +37,4 @@ const Section: React.FC<SectionProps> = ({
   );
 };
 
-export default Section;
+export default AboutSection;

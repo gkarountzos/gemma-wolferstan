@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Projects from "./Projects";
 import { TracingBeam } from "./ui/tracing-beam";
-import Section from "./Sections";
-import { sectionsData } from "@/lib/content/sections";
+import AboutSection from "./AboutSection";
+import { aboutData, experienceData } from "@/lib/content/sections";
+import ExperienceSection from "./ExperienceSection";
 
 const MainContent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,17 +29,26 @@ const MainContent = () => {
     >
       <TracingBeam>
         <section className="space-y-16 sm:space-y-24 xxxl:space-y-40">
-          {sectionsData.map((section) => (
+          {aboutData.map((section) => (
             <React.Fragment key={section.id}>
-              <Section
+              <AboutSection
                 id={section.id}
                 icon={section.icon}
                 title={section.title}
                 content={section.content}
                 className="relative mx-auto scroll-mt-28 sm:scroll-mt-24 xxl:scroll-mt-32 xxxl:scroll-mt-52 "
               />
-              <div className="h-px w-1/2 bg-[#FEF8EE]" />
             </React.Fragment>
+          ))}
+          {experienceData.map((section) => (
+            <ExperienceSection
+              key={section.id}
+              id={section.id}
+              icon={section.icon}
+              title={section.title}
+              content={section.content}
+              className="relative mx-auto scroll-mt-28 sm:scroll-mt-24 xxl:scroll-mt-32 xxxl:scroll-mt-52"
+            />
           ))}
           <Projects />
           <Footer />

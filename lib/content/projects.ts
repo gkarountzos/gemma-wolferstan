@@ -2,19 +2,68 @@ import { Project } from "@/types/types";
 
 export const projects: Project[] = [
   {
+    slug: "scrimshaw",
+    title: "Project Scrimshaw",
+    subtitle: "A blend of classic genres",
+    image: "/project-images/scrimshaw/scrimshaw.png",
+    description:
+      "A work-in-progress project showcasing my ability to combine turn-based combat, intricate level design, and narrative elements inspired by some of my favourite games. This project is a testament to my skills in game design, coding, and project management.",
+    content: [
+      {
+        title: "Project Overview",
+        details: [
+          "Project Scrimshaw is a work-in-progress game that I began after completing my degree. It serves as a platform to showcase my abilities without the constraints of short-term academic deadlines and to further develop my skills in game design, coding, project management, and more.",
+        ],
+      },
+      {
+        title: "Project Details",
+        details: [
+          "This project blends elements from various genres, including turn-based combat inspired by games like Darkest Dungeon and Gwent, with level design influenced by classic survival horror titles like those of the Resident Evil franchise and more recent Crow Country.",
+          "The narrative design takes cues from games like Dark Souls, with minimal hand-holding and a focus on environmental storytelling. This project demonstrates my versatility as a game designer and my ability to integrate various design elements into a cohesive and engaging experience.",
+        ],
+      },
+      {
+        title: "My Contributions",
+        details: [
+          "Design: Conceptualisation and development of the core gameplay mechanics, balancing turn-based combat with strategic depth.",
+          "Development: Using both the Unity engine and paper prototyping to iterate on mechanical systems and refine gameplay.",
+          "Project Management: Managing the entire development process, iterating on feedback and making continuous improvements to the game.",
+        ],
+      },
+    ],
+    screenshots: ["/project-images/scrimshaw/scrimshaw.png"],
+  },
+  {
     slug: "ascension-dude",
     title: "Ascension Dude",
+    subtitle: "Endless waves, endless fun",
     image: "/project-images/asc-dude/AD.png",
     description:
-      "A 2D, time survival game made in a team of three over eight weeks. The player takes control of the ‘dude,’ picking various abilities as they level up which help them fight off hordes of monsters. This project showcases the breadth of my design and technical knowledge, and ability to work in a team.",
+      "A 2D endless shoot 'em up where players must survive waves of enemies using a variety of magical abilities. This project highlights my skills in animation, UI creation, teamwork, and project management.",
     content: [
-      "Ascension Dude is a top down, pixel graphics, 2D, endless shoot ‘em up game in which endless waves of monsters charge at the player, whose purpose is to survive their attacks for as long as possible using an arsenal of skills and upgrades.",
-      "The player takes control of the 'dude' by moving through the game level and choose between a number of magic abilities as they level up from XP drops from destroyed enemies. The game takes place in a magic-driven world during a medieval time period, in the middle of an open plain infested by incoming waves of monsters during daylight. The level is set in an open circle shaped plain that houses ruins in the middle of a forest. There are several paths that players can follow to various points of interest.",
-      "I successfully pitched my game design for this project to my teammates and we began prototyping the core game systems, first on paper, then by implementation into our game engine of choice (Unity).",
-      "Beyond the initial design, I was also responsible for many elements of the final product, including all animations and audio, UI and HUD elements, various C# scripts and bug fixes, and the design and balancing of enemy types, attack patterns, and player abilities.",
-      "Good management of version control was essential to this project, and I oversaw this by introducing my teammates to Plastic SCM (a version control software built in to Unity) while also making regular backups via GitHub. Likewise, we also made good use of Trello to track bugs and features left to implement or fix, and continually updated our game design document as the project went through iterations.",
-      "A major requirement of this project was to work under the agile method, producing a working prototype within a week and then to continually update with playable builds to be showcased at weekly meetings. We met these deadlines without fail over the two month process.",
-      "This project demonstrates my overall competency with the game development process, design understanding, technical experience, and ability to work in a team.",
+      {
+        title: "Project Overview",
+        details: [
+          "Ascension Dude is a top-down, pixel-art, 2D endless shoot 'em up game where players must survive increasingly difficult waves of enemies.",
+          "The game features a dynamic, skill-based progression system where players choose abilities as they level up. Ascension Dude showcases my ability to design and develop a complete game, balancing creativity with technical execution.",
+        ],
+      },
+      {
+        title: "Project Details",
+        details: [
+          "Set in a magic-driven medieval world, the game places the player in an open plain, battling monsters that spawn in waves.",
+          "The level design focuses on giving players the freedom to navigate the space while strategically choosing upgrades to match their play style.",
+        ],
+      },
+      {
+        title: "My Contributions",
+        details: [
+          "Game Design: Pitched the initial concept and led the design process, from paper prototyping to implementation in Unity.",
+          "Animation and Audio: Implemented all animations, sound effects, and music, enhancing the game's atmosphere.",
+          "Technical Implementation: Wrote C# scripts for implementations such as player movement, enemy behaviors, player abilities, and UI elements. Managed version control and team collaboration using Plastic SCM and GitHub.",
+          "Project Management: Oversaw the project’s progress using agile methods, ensuring timely delivery of weekly builds and meeting all deadlines.",
+        ],
+      },
     ],
     screenshots: [
       "/project-images/asc-dude/1.png",
@@ -30,14 +79,34 @@ export const projects: Project[] = [
   {
     slug: "roly-holey",
     title: "Roly-Holey",
+    subtitle: "Minimal mechanics, maximal depth",
     image: "/project-images/roly/RH.png",
     description:
-      "A minimalist prototype made alone during a short game jam. Simple mechanics result in a surprisingly deep gameplay experience where careful navigation of the maze design, critical thinking, and precision with the controls are paramount to success.",
+      "A physics-based puzzle prototype created during a game jam for the mobile platform. Simple mechanics lead to surprisingly deep gameplay, demonstrating my strengths in mechanical and level design, and ability to prototype quickly.",
     content: [
-      "This page showcases a game prototype I designed and programmed during a short game jam, in which the theme was 'minimalist'. My university chose to upload this project to their official Itch.io page as a showcase of student talent.",
-      "Mechanically this game is very simple; the player must guide a ball through a simple 'maze' into a hole, bomb balls will result in a game over if they touch the player ball, skull balls will result in a game over if they touch the hole. ",
-      "These simple mechanics result in a surprisingly deep gameplay experience where careful navigation of the maze design, critical thinking, and precision with the controls are paramount to success (at least by the higher, more difficult levels).",
-      "I particularly enjoyed designing the main menu to also act as a basic tutorial for the game's controls and core mechanic, as well as balancing the difficulty progression across the ten levels. The next stage of this prototype would be to port it to mobile so that it could be played with gyroscopic controls, some refinement of the visual design and addition of 'game juice', as well as development of an automated program that could produce endless levels.",
+      {
+        title: "Project Overview",
+        details: [
+          "Roly-Holey is a minimalist, physics-based puzzle game prototype created during a game jam, intended for use on the mobile platform.",
+          "The game challenges players to guide a ball through a maze while avoiding hazards, with gameplay that becomes increasingly complex as levels progress.",
+          "Roly-Holey highlights my ability to create engaging gameplay experiences with streamlined, elegant mechanical design.",
+        ],
+      },
+      {
+        title: "Project Details",
+        details: [
+          "The core mechanics are simple: players navigate a ball through a maze to a goal, while avoiding bomb and skull balls that can trigger a game over.",
+          "Despite its simplicity, the game offers a deep and challenging experience, especially in the higher levels.",
+        ],
+      },
+      {
+        title: "My Contributions",
+        details: [
+          "Design and Programming: Designed the game’s mechanics and levels, programmed the core gameplay in Unity, and created a seamless difficulty curve across ten levels.",
+          "User Experience: Developed the main menu to double as a tutorial, easing players into the game mechanics.",
+          "Future Development: Planned enhancements include porting to mobile, introducing gyroscopic controls, refining the visual design, and developing an endless level generator, along with increasing complexity in the form of new hazards the player must avoid.",
+        ],
+      },
     ],
     screenshots: [
       "/project-images/roly/1.png",
@@ -53,19 +122,33 @@ export const projects: Project[] = [
   {
     slug: "queen-of-hearts",
     title: "Queen of Hearts",
+    subtitle: "A streamlined 2D platformer",
     image: "/project-images/queen/SS2.png",
     description:
-      "A simple 2D platformer made in the early days of my degree which showcases my technical ability with programming and use of an engine to create a game experience, while also demonstrating use of level design techniques to communicate the game's goal without using words.",
+      "An early project that showcases my ability to create engaging gameplay without relying on text-based exposition. Includes dynamic health systems, collectibles, and intuitive level design.",
     content: [
-      "Queen of Hearts is a simple 2D platformer made in the early days of my degree which showcases my technical ability with programming and use of an engine to create a game experience, while also demonstrating use of level design techniques to communicate the game's goal without text-based exposition.",
-      "At the beginning of the level, I have provided a couple of small pits which the player must jump over to progress. This gives them an early understanding of how the jump feels, how far it goes, the strength of the game's gravity, etc.",
-      "They then encounter their first enemy and must use what they just learned - i.e. to jump to get past it. I made the ceiling low, so the player will likely take damage.",
-      "I then present the first health potion, which will heal the player and thus teach them their effect.",
-      "Shortly after, the player climbs a ladder and encounters the first heart pick up. They do not know what it is yet, but they will have it in mind as they descend the ladder and immediately meet the queen.",
-      "The queen does not use words, but has an animated speech bubble with some hearts in it that look identical to the pickup.",
-      "The level design funnels the player to the left, where they will encounter some challenges in the form of patrolling skeleton enemies and minor platforming, but will soon find another heart and some health potion pickups.",
-      "The level design loops back around to the queen so that the player does not have to backtrack.",
-      "The player will have found all 3 hearts by now and hopefully has realised that the queen requires them. They bring the hearts back to the queen and the game's goal is met, completing the experience.",
+      {
+        title: "Project Overview",
+        details: [
+          "Queen of Hearts is a 2D platformer developed early in my degree. The game focuses on intuitive level design that communicates goals and mechanics without relying on text-based exposition, and showcases both my technical and design skills.",
+        ],
+      },
+      {
+        title: "Project Details",
+        details: [
+          "The game features a dynamic health system, collectible items, climbable ladders, patrolling enemies, and a final objective of collecting hearts to bring to the queen.",
+          "The level design is carefully crafted to teach the player the mechanics through gameplay alone.",
+          "Queen of Hearts demonstrates my ability to create engaging gameplay with well-thought-out level design and solid technical execution.",
+        ],
+      },
+      {
+        title: "My Contributions",
+        details: [
+          "Programming: Developed key gameplay systems, including the health bar, enemy AI, collectible items, and player abilities such as jumping and climbing.",
+          "Level Design: Designed levels to intuitively teach players game mechanics, with a focus on natural progression and challenge.",
+          "Sound and UI: Implemented a full UI system, along with sound effects and a custom soundtrack to enhance immersion.",
+        ],
+      },
     ],
     screenshots: [
       "/project-images/queen/SS1.png",
@@ -81,13 +164,32 @@ export const projects: Project[] = [
   {
     slug: "tilted",
     title: "Tilted",
+    subtitle: "Balance or die!",
     image: "/project-images/Tilted/SS2.png",
     description:
-      "A small game made during a game jam with the theme “10 seconds”. The player must balance the circus ball on the board while the board tips and tilts erratically. This demonstrates my ability to create a full, polished game experience quickly.",
+      "A challenging game jam entry where players must balance a circus ball for 10 seconds. A polished experience demonstrating my ability to produce complete games under tight deadlines.",
     content: [
-      " A small game made during a game jam with the theme “10 seconds”.",
-      "The player must balance the circus ball on the board for 10 consecutive seconds while the board tips and tilts erratically. A drum roll accompanies the gameplay to signify how much longer the player needs to balance the ball.",
-      "This project demonstrates my ability to create a full, polished game experience quickly.",
+      {
+        title: "Project Overview",
+        details: [
+          "Tilted is a game jam project where players must balance a circus ball on a tilting board for 10 seconds.",
+          "The game is simple yet challenging, with erratic board movements and a drum roll to heighten tension as the player nears success.",
+        ],
+      },
+      {
+        title: "Project Details",
+        details: [
+          "The gameplay is straightforward but requires precision and timing. The player must keep the ball balanced for 10 seconds as the board tilts unpredictably.",
+          "The challenge lies in the player's ability to react quickly to the shifting board. Tilted highlights my efficiency in game development and my ability to create a fully realized, polished game in a limited time frame.",
+        ],
+      },
+      {
+        title: "My Contributions",
+        details: [
+          "Design and Implementation: Designed the core gameplay loop and implemented the game in Unity, ensuring a polished and challenging experience.",
+          "Time Management: Completed the entire game, from concept to final product, within the short time frame of a game jam, showcasing my ability to deliver under pressure.",
+        ],
+      },
     ],
     screenshots: [
       "/project-images/Tilted/SS1.png",
@@ -103,13 +205,34 @@ export const projects: Project[] = [
   {
     slug: "gamejam",
     title: "Global Game Jam 2020 Merchandise ",
+    subtitle: "Designing for the Global Game Jam",
     image: "/project-images/ggj/ggj.png",
     description:
-      "A design entered to a competition that would go on to be chosen for the marketing and promotional material advertising my university's involvement in the 2020 Global Game Jam, as well as merchandise such as T-shirts and mugs.",
+      "Winner of an in-house competition to design promotional materials for the GGJ 2020. This project showcases my emotive design capabilities and my ability to see a project through from concept to final production.",
     content: [
-      "This page details the work I did for an in-house competition held at the University of Suffolk in late 2019 for the design of a poster that would be displayed across campus to advertise the university's involvement in the 2020 Global Game Jam.",
-      "My design won the competition, and I went on to coordinate with a production company to generate further designs that would be printed onto not only the initial poster board, but also onto T-shirts and mugs, which were distributed amongst attendees and winners of the jam respectively.​",
-      "Below you will see images of the merchandises that were produced. Above there is a button that will let you download the notes I took during development of the work which detail the thought processes and use of design principles that informed creation of the final product. This serves as a showcase of my design knowledge and as proof that I approach the creative process with the mind of a designer.",
+      {
+        title: "Project Overview",
+        details: [
+          "The GGJ 2020 Merchandise Design project involved creating promotional materials for the University of Suffolk’s participation in the Global Game Jam 2020.",
+          "My design won an in-house competition and was used on posters, T-shirts, and mugs.",
+        ],
+      },
+      {
+        title: "Project Details",
+        details: [
+          "My design was selected from several entries to be the face of the university's GGJ 2020 involvement.",
+          "I coordinated with a production company to bring the designs to life, ensuring they were applied consistently across various merchandise.",
+          "This project showcases my design skills and my ability to see a creative vision through from concept to final production.",
+        ],
+      },
+      {
+        title: "My Contributions",
+        details: [
+          "Design: Created the winning design that was featured on promotional materials, demonstrating my strong design principles and creative vision.",
+          "Project Coordination: Worked with a production company to produce the final products, overseeing quality control and ensuring the designs met the intended vision.",
+          "Documentation: Provided detailed notes on my design process, showcasing my methodical approach and understanding of design theory.",
+        ],
+      },
     ],
     screenshots: [
       "/project-images/ggj/posterfinal.png",
@@ -118,30 +241,5 @@ export const projects: Project[] = [
       "/project-images/ggj/tshirt.png",
     ],
   },
-
-  // {
-  //   slug: "r6s-lvl-design",
-  //   title: "Rainbow Six Siege Level Design",
-  //   image: "/project-images/R6S/Key-Legend.png",
-  //   description:
-  //     "Three original level design sketches and one greybox for Rainbow 6 Siege. The design caters to the different classes of weaponry and creates spaces which allow for inventive plays with tools and gadgets.",
-  //   content: [
-  //     "I made three 2D top-down sketches of original map concepts for Ubisoft's Rainbow 6 Siege's 'Secure Area' game mode",
-  //     "I focused on creating spaces that would cater to the different classes of weaponry; for example, by creating spaces with long line of sight (snipers), spaces that force proximity to 'danger zones' (shotguns), and spaces which allow for creative plays with the various tools and gadgets operators are given.",
-  //   ],
-  //   screenshots: [
-  //     "/project-images/R6S/Sketch 1 Attic.jpg",
-  //     "/project-images/R6S/Sketch 1 Basement.jpg",
-  //     "/project-images/R6S/Sketch 1 Ground Floor.jpg",
-  //     "/project-images/R6S/Sketch 1.png",
-  //     "/project-images/R6S/Sketch 2 1st Floor.jpg",
-  //     "/project-images/R6S/Sketch 2 Ground Floor A.jpg",
-  //     "/project-images/R6S/Sketch 2 Ground Floor B.jpg",
-  //     "/project-images/R6S/Sketch 2.png",
-  //     "/project-images/R6S/Sketch 3 1st Floor.jpg",
-  //     "/project-images/R6S/Sketch 3 Ground Floor.jpg",
-  //     "/project-images/R6S/Sketch 3.png",
-  //   ],
-  // },
   // Add more projects as needed
 ];
