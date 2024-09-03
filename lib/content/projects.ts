@@ -2,11 +2,22 @@ import { Project } from "@/types/types";
 
 export const projects: Project[] = [
   {
+    slug: "scrimshaw",
+    title: "Scrimshaw",
+    subtitle: "A blend of classic genres",
+    image: "/project-images/scrimshaw/scrimshaw.png",
+    description:
+      "A work-in-progress project showcasing my ability to combine turn-based combat, intricate level design, and narrative elements inspired by some of my favourite games. This project is a testament to my skills in game design, coding, and project management.",
+    content: [""],
+    screenshots: ["/project-images/scrimshaw/scrimshaw.png"],
+  },
+  {
     slug: "ascension-dude",
     title: "Ascension Dude",
+    subtitle: "Endless waves, endless fun",
     image: "/project-images/asc-dude/AD.png",
     description:
-      "A 2D, time survival game made in a team of three over eight weeks. The player takes control of the ‘dude,’ picking various abilities as they level up which help them fight off hordes of monsters. This project showcases the breadth of my design and technical knowledge, and ability to work in a team.",
+      "A 2D endless shoot 'em up where players must survive waves of enemies using a variety of magical abilities. This project highlights my skills in animation, UI creation, teamwork, and project management.",
     content: [
       "Ascension Dude is a top down, pixel graphics, 2D, endless shoot ‘em up game in which endless waves of monsters charge at the player, whose purpose is to survive their attacks for as long as possible using an arsenal of skills and upgrades.",
       "The player takes control of the 'dude' by moving through the game level and choose between a number of magic abilities as they level up from XP drops from destroyed enemies. The game takes place in a magic-driven world during a medieval time period, in the middle of an open plain infested by incoming waves of monsters during daylight. The level is set in an open circle shaped plain that houses ruins in the middle of a forest. There are several paths that players can follow to various points of interest.",
@@ -30,9 +41,10 @@ export const projects: Project[] = [
   {
     slug: "roly-holey",
     title: "Roly-Holey",
+    subtitle: "Minimal mechanics, maximal depth",
     image: "/project-images/roly/RH.png",
     description:
-      "A minimalist prototype made alone during a short game jam. Simple mechanics result in a surprisingly deep gameplay experience where careful navigation of the maze design, critical thinking, and precision with the controls are paramount to success.",
+      "A physics-based puzzle prototype created during a game jam for the mobile platform. Simple mechanics lead to surprisingly deep gameplay, demonstrating my strengths in mechanical and level design, and ability to prototype quickly.",
     content: [
       "This page showcases a game prototype I designed and programmed during a short game jam, in which the theme was 'minimalist'. My university chose to upload this project to their official Itch.io page as a showcase of student talent.",
       "Mechanically this game is very simple; the player must guide a ball through a simple 'maze' into a hole, bomb balls will result in a game over if they touch the player ball, skull balls will result in a game over if they touch the hole. ",
@@ -53,9 +65,10 @@ export const projects: Project[] = [
   {
     slug: "queen-of-hearts",
     title: "Queen of Hearts",
+    subtitle: "A streamlined 2D platformer",
     image: "/project-images/queen/SS2.png",
     description:
-      "A simple 2D platformer made in the early days of my degree which showcases my technical ability with programming and use of an engine to create a game experience, while also demonstrating use of level design techniques to communicate the game's goal without using words.",
+      "An early project that showcases my ability to create engaging gameplay without relying on text-based exposition. Includes dynamic health systems, collectibles, and intuitive level design.",
     content: [
       "Queen of Hearts is a simple 2D platformer made in the early days of my degree which showcases my technical ability with programming and use of an engine to create a game experience, while also demonstrating use of level design techniques to communicate the game's goal without text-based exposition.",
       "At the beginning of the level, I have provided a couple of small pits which the player must jump over to progress. This gives them an early understanding of how the jump feels, how far it goes, the strength of the game's gravity, etc.",
@@ -81,9 +94,10 @@ export const projects: Project[] = [
   {
     slug: "tilted",
     title: "Tilted",
+    subtitle: "Balance or die!",
     image: "/project-images/Tilted/SS2.png",
     description:
-      "A small game made during a game jam with the theme “10 seconds”. The player must balance the circus ball on the board while the board tips and tilts erratically. This demonstrates my ability to create a full, polished game experience quickly.",
+      "A challenging game jam entry where players must balance a circus ball for 10 seconds. A polished experience demonstrating my ability to produce complete games under tight deadlines.",
     content: [
       " A small game made during a game jam with the theme “10 seconds”.",
       "The player must balance the circus ball on the board for 10 consecutive seconds while the board tips and tilts erratically. A drum roll accompanies the gameplay to signify how much longer the player needs to balance the ball.",
@@ -103,9 +117,10 @@ export const projects: Project[] = [
   {
     slug: "gamejam",
     title: "Global Game Jam 2020 Merchandise ",
+    subtitle: "Designing for the Global Game Jam",
     image: "/project-images/ggj/ggj.png",
     description:
-      "A design entered to a competition that would go on to be chosen for the marketing and promotional material advertising my university's involvement in the 2020 Global Game Jam, as well as merchandise such as T-shirts and mugs.",
+      "Winner of an in-house competition to design promotional materials for the GGJ 2020. This project showcases my emotive design capabilities and my ability to see a project through from concept to final production.",
     content: [
       "This page details the work I did for an in-house competition held at the University of Suffolk in late 2019 for the design of a poster that would be displayed across campus to advertise the university's involvement in the 2020 Global Game Jam.",
       "My design won the competition, and I went on to coordinate with a production company to generate further designs that would be printed onto not only the initial poster board, but also onto T-shirts and mugs, which were distributed amongst attendees and winners of the jam respectively.​",
