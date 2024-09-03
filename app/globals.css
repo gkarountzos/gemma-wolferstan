@@ -43,6 +43,12 @@ p {
   color: #fef8ee;
 }
 
+li {
+  font-family: "Oxygen", sans-serif;
+  text-align: justify;
+  color: #fef8ee;
+}
+
 a {
   font-family: "Mukta", sans-serif;
   color: inherit;

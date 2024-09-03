@@ -12,12 +12,26 @@ export interface Project {
 export interface ProjectProps {
   params: { slug: string };
 }
-export interface SectionProps {
+export interface AboutDataProps {
   id: string;
   icon: React.ComponentType<{ size: number; className?: string }>;
   picture?: string;
   title: string;
   content: string[];
+  className?: string;
+}
+
+export interface ContentItem {
+  title?: string;
+  details?: string[];
+  text?: string;
+}
+
+export interface ExperienceDataProps {
+  id: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement> & { size?: number }>;
+  title: string;
+  content: ContentItem[];
   className?: string;
 }
 
