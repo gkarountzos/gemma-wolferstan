@@ -1,5 +1,5 @@
 import React from "react";
-import { ExperienceDataProps, ContentItem } from "@/types/types";
+import { ExperienceDataProps, ExperienceContent } from "@/types/types";
 
 const ExperienceSection: React.FC<ExperienceDataProps> = ({
   id,
@@ -18,29 +18,24 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
 
         <div className="">
           <div className="relative z-10 flex flex-col gap-6">
-            {content.map((item: ContentItem, index) => (
+            {content.map((item: ExperienceContent, index) => (
               <div
                 key={index}
                 className=" p-2 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden"
               >
                 {item.title && (
-                  <h3 className="text-xl font-semibold text-[#FEF8EE]">
+                  <h3 className="text-xl font-semibold text-[#FEF8EE] pb-3">
                     {item.title}
                   </h3>
                 )}
                 {item.details && (
-                  <ul className="list-disc pl-5 text-[#FEF8EE]">
+                  <ul className="list-disc pl-5  text-[#FEF8EE]">
                     {item.details.map((detail, i) => (
                       <li key={i} className="text-base sm:text-lg">
                         {detail}
                       </li>
                     ))}
                   </ul>
-                )}
-                {item.text && (
-                  <p className="text-base sm:text-lg text-[#FEF8EE]">
-                    {item.text}
-                  </p>
                 )}
               </div>
             ))}
