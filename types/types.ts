@@ -21,7 +21,6 @@ export interface ProjectProps {
 export interface AboutDataProps {
   id: string;
   icon: React.ComponentType<{ size: number; className?: string }>;
-  picture?: string;
   title: string;
   content: string[];
   className?: string;
