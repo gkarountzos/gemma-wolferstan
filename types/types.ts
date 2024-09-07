@@ -27,7 +27,11 @@ export interface AboutDataProps {
 }
 
 export interface ExperienceContent {
+  company: string;
+  linkIcon: boolean;
+  url?: string;
   title?: string;
+  year?: string;
   details?: string[];
   text?: string;
 }

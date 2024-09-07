@@ -22,7 +22,11 @@ export const experienceData: ExperienceDataProps[] = [
     title: "Experience",
     content: [
       {
-        title: "Game Designer – Elemental Glyph Studios",
+        company: "Elemental Glyph Studios",
+        linkIcon: true,
+        url: "https://www.elementalglyphstudio.com/",
+        title: "Game Designer",
+        year: "2024",
         details: [
           "Developed a reward system for the upcoming game ‘Quick Smith’ that retains player engagement without relying on live service models.",
           "Designed daily and weekly challenges with token-based rewards for purchasing in-game skins.",
@@ -32,13 +36,18 @@ export const experienceData: ExperienceDataProps[] = [
         ],
       },
       {
-        title: "Computer Technician – Currys PC World",
+        company: "Currys PC World",
+        linkIcon: true,
+        url: "https://www.currys.co.uk/",
+        title: "Computer Technician",
+        year: "2019",
         details: [
           "Provided customer service and technical support, including computer repairs, demonstrating a high level of competency with technology. This experience reinforces my technical aptitude, a crucial asset in game development.",
         ],
       },
       {
-        title: "Previous Roles",
+        company: "Previous Roles",
+        linkIcon: false,
         details: [
           "Held positions as a shop assistant, waitress, and fire warden. While not directly related to game design, these roles helped develop strong soft skills like teamwork, communication, and working under pressure.",
         ],
