@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface ProjectContent {
   title: string;
   details: string[];
@@ -28,6 +30,7 @@ export interface AboutDataProps {
 
 export interface ExperienceContent {
   company: string;
+  companyIcon?: StaticImageData;
   linkIcon: boolean;
   url?: string;
   title?: string;

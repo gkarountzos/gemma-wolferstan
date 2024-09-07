@@ -1,6 +1,7 @@
 import { FaUserCircle } from "react-icons/fa";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { AboutDataProps, ExperienceDataProps } from "@/types/types";
+import currys from "@/public/currys.svg";
 
 export const aboutData: AboutDataProps[] = [
   {
@@ -37,6 +38,7 @@ export const experienceData: ExperienceDataProps[] = [
       },
       {
         company: "Currys PC World",
+        companyIcon: currys,
         linkIcon: true,
         url: "https://www.currys.co.uk/",
         title: "Computer Technician",
