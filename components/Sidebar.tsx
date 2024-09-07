@@ -81,7 +81,7 @@ export default function Sidebar() {
       let rootMargin = "10% 0px -50% 0px";
 
       if (screenWidth > 2560) {
-        threshold = 0.9; // threshold on larger screens
+        threshold = 0.4; // threshold on larger screens
         rootMargin = "10% 0px -40% 0px"; //  bottom margin for better accuracy
       } else if (screenWidth > 1920) {
         threshold = 0.5; // threshold for 1920 < screens < 2560
