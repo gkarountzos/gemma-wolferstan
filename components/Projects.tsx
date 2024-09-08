@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
       </div>
 
       <div className="space-y-16">
-        <div className="w-full p-2 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
+        <div className="w-full p-4 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
           {projects.map((project, index) => (
             <div
               key={project.title}

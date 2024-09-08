@@ -77,14 +77,14 @@ export default function Sidebar() {
   useEffect(() => {
     const configureObserver = () => {
       const screenWidth = window.innerWidth;
-      let threshold = 0.2;
+      let threshold = 0.3;
       let rootMargin = "10% 0px -50% 0px";
 
       if (screenWidth > 2560) {
         threshold = 0.4; // threshold on larger screens
         rootMargin = "10% 0px -40% 0px"; //  bottom margin for better accuracy
       } else if (screenWidth > 1920) {
-        threshold = 0.5; // threshold for 1920 < screens < 2560
+        threshold = 0.25; // threshold for 1920 < screens < 2560
         rootMargin = "10% 0px -40% 0px"; //  margin for 1920 < screens < 2560
       }
 
