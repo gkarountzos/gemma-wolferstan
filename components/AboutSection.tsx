@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { AboutDataProps } from "@/types/types";
+import { AboutContent, AboutDataProps } from "@/types/types";
 
 const AboutSection: React.FC<AboutDataProps> = ({
   id,
@@ -18,21 +18,26 @@ const AboutSection: React.FC<AboutDataProps> = ({
 
       <div className="relative p-4 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
         <div className="relative z-10">
-          {content.map((paragraph, index) => (
-            <div key={index} className="flex gap-4 items-center">
-              {index === 0 && (
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/theface.png"
-                    alt="Profile"
-                    width={96}
-                    height={96}
-                    className="rounded-full object-cover w-[150px] h-[150px]"
-                  />
-                </div>
-              )}
-              <p className="text-base sm:text-lg text-[#FEF8EE]">{paragraph}</p>
-            </div>
+          <div className="flex-shrink-0 float-left mr-4 mb-2">
+            <Image
+              src={content[0].image}
+              alt="Profile"
+              width={96}
+              height={96}
+              className="rounded-lg object-cover w-32 h-32"
+            />
+          </div>
+
+          {/* First paragraph wraps around the image */}
+          <p className="text-base sm:text-lg text-[#FEF8EE] mb-4">
+            {content[0].paragraph[0]}
+          </p>
+
+          {/* Remaining paragraphs go below the image */}
+          {content[0].paragraph.slice(1).map((para, index) => (
+            <p key={index} className="text-base sm:text-lg text-[#FEF8EE] mb-4">
+              {para}
+            </p>
           ))}
         </div>
       </div>

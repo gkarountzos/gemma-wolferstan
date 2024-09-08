@@ -20,11 +20,16 @@ export interface Project {
 export interface ProjectProps {
   params: { slug: string };
 }
+
+export interface AboutContent {
+  image: StaticImageData;
+  paragraph: string[];
+}
 export interface AboutDataProps {
   id: string;
   icon: React.ComponentType<{ size: number; className?: string }>;
   title: string;
-  content: string[];
+  content: AboutContent[];
   className?: string;
 }
 

@@ -2,6 +2,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { AboutDataProps, ExperienceDataProps } from "@/types/types";
 import currys from "@/public/currys.svg";
+import egs from "@/public/egs.png";
+import gemmaImg from "@/public/theface.png";
 
 export const aboutData: AboutDataProps[] = [
   {
@@ -9,9 +11,14 @@ export const aboutData: AboutDataProps[] = [
     icon: FaUserCircle,
     title: "About",
     content: [
-      "Hi, I'm Gemma! I am a passionate Junior Game Designer with a love for crafting immersive and memorable gaming experiences. As a recent graduate with a first-class degree in Computer Game Design, I am eager to apply my skills to the mechanical systems and level designs of a major studio project. My work is driven by a desire to create emotionally impactful games that offer players unique and engaging experiences.",
-      "I am proficient with Unity and Adobe Photoshop, with additional experience in Unreal Engine 4 and 3ds Max. While I'm not primarily a programmer, I continue to develop my coding skills to complement my design work, with a focus on C#. I also have experience using Trello, Visual Studio, and various version control solutions, all of which I use to streamline and manage the game development process.",
-      "I'm excited to share my portfolio with you and look forward to the opportunity to collaborate on future projects!",
+      {
+        image: gemmaImg,
+        paragraph: [
+          "Hi, I'm Gemma! I am a passionate Junior Game Designer with a love for crafting immersive and memorable gaming experiences. As a recent graduate with a first-class degree in Computer Game Design, I am eager to apply my skills to the mechanical systems and level designs of a major studio project. My work is driven by a desire to create emotionally impactful games that offer players unique and engaging experiences.",
+          "I am proficient with Unity and Adobe Photoshop, with additional experience in Unreal Engine 4 and 3ds Max. While I'm not primarily a programmer, I continue to develop my coding skills to complement my design work, with a focus on C#. I also have experience using Trello, Visual Studio, and various version control solutions, all of which I use to streamline and manage the game development process.",
+          "I'm excited to share my portfolio with you and look forward to the opportunity to collaborate on future projects!",
+        ],
+      },
     ],
   },
 ];
@@ -24,6 +31,7 @@ export const experienceData: ExperienceDataProps[] = [
     content: [
       {
         company: "Elemental Glyph Studios",
+        companyIcon: egs,
         linkIcon: true,
         url: "https://www.elementalglyphstudio.com/",
         title: "Game Designer",
