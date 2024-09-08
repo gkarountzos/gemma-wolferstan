@@ -3,7 +3,7 @@ import { BsFillBriefcaseFill } from "react-icons/bs";
 import { AboutDataProps, ExperienceDataProps } from "@/types/types";
 import currys from "@/public/currys.svg";
 import egs from "@/public/egs2.png";
-import gemmaImg from "@/public/theface.png";
+import gemmaImg from "@/public/placeholder.jpg";
 
 export const aboutData: AboutDataProps[] = [
   {
