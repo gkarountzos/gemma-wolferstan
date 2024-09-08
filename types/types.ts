@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface ProjectContent {
   title: string;
   details: string[];
@@ -18,17 +20,26 @@ export interface Project {
 export interface ProjectProps {
   params: { slug: string };
 }
+
+export interface AboutContent {
+  image: StaticImageData;
+  paragraph: string[];
+}
 export interface AboutDataProps {
   id: string;
   icon: React.ComponentType<{ size: number; className?: string }>;
-  picture?: string;
   title: string;
-  content: string[];
+  content: AboutContent[];
   className?: string;
 }
 
 export interface ExperienceContent {
+  company: string;
+  companyIcon?: StaticImageData;
+  linkIcon: boolean;
+  url?: string;
   title?: string;
+  year?: string;
   details?: string[];
   text?: string;
 }
