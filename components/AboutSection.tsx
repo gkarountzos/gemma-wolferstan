@@ -18,12 +18,14 @@ const AboutSection: React.FC<AboutDataProps> = ({
 
       <div className="relative p-4 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
         <div className="relative z-10">
-          <div className="flex-shrink-0 float-left mr-4 mb-2">
+          <div className="flex-shrink-0 float-left pr-4 pt-2">
             <Image
               src={content[0].image}
               alt="Profile"
-              width={96}
-              height={96}
+              width={128}
+              height={128}
+              quality={100}
+              priority
               className="rounded-lg object-cover w-32 h-32"
             />
           </div>
