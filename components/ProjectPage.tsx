@@ -40,7 +40,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
               <div className="text-lg text-[#FEF8EE]">
                 {project.content.map((section, index) => (
                   <div key={index} className="pt-6 pb-4">
-                    <h3 className="text-2xl font-semibold text-[#FEF8EE]">
+                    <h3 className="text-2xl underline font-semibold text-[#FEF8EE]">
                       {section.title}
                     </h3>
                     {section.details.map((detail, detailIndex) => (
