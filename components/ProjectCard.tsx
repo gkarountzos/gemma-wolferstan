@@ -22,6 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               width={256}
               height={160}
               className="rounded-lg object-cover md:w-64 h-40"
+              quality={100}
               priority
             />
           </div>
