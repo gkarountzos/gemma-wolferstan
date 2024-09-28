@@ -22,7 +22,7 @@ const ArrowButton = ({ direction, onClick }: ArrowButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`absolute top-1/2 ${
+      className={`hidden sm:block absolute top-1/2 ${
         isLeft ? "left-6" : "right-6"
       } transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-2`}
       style={{ fontSize: "32px", width: "48px", height: "48px" }}
