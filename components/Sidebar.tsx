@@ -21,7 +21,7 @@ const socialLinks: SocialLink[] = [
     icon: FaLinkedin,
   },
   { href: "https://gemma-wolferstan.itch.io/", icon: FaItchIo },
-  { href: "https://github.com/Gemma-Wolferstan", icon: FaGithub },
+  // { href: "https://github.com/Gemma-Wolferstan", icon: FaGithub },
   {
     href: "https://www.youtube.com/channel/UCpiF_8l6y212ZxKuF0sy4Xw",
     icon: FaYoutube,

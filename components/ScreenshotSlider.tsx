@@ -1,13 +1,15 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import ReactDOM from "react-dom";
 import { useSwipeable } from "react-swipeable";
 
 interface SliderProps {
-  images: string[];
+  images: (string | StaticImageData)[];
+  showArrows?: boolean;
+  showInicators?: boolean;
 }
 
 interface ArrowButtonProps {
@@ -20,7 +22,7 @@ const ArrowButton = ({ direction, onClick }: ArrowButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`absolute top-1/2 ${
+      className={`hidden sm:block absolute top-1/2 ${
         isLeft ? "left-6" : "right-6"
       } transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-2`}
       style={{ fontSize: "32px", width: "48px", height: "48px" }}
@@ -31,7 +33,11 @@ const ArrowButton = ({ direction, onClick }: ArrowButtonProps) => {
   );
 };
 
-const ScreenshotSlider = ({ images }: SliderProps) => {
+const ScreenshotSlider = ({
+  images,
+  showArrows = true,
+  showInicators = true,
+}: SliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [canOpenModal, setCanOpenModal] = useState(false);
@@ -42,7 +48,7 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
       setCanOpenModal(isTabletOrLarger);
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -91,8 +97,12 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
             className="object-contain w-full h-full max-h-[80vh] cursor-pointer"
           />
         </div>
-        <ArrowButton direction="left" onClick={() => changeImage(-1)} />
-        <ArrowButton direction="right" onClick={() => changeImage(1)} />
+        {showArrows && (
+          <>
+            <ArrowButton direction="left" onClick={() => changeImage(-1)} />
+            <ArrowButton direction="right" onClick={() => changeImage(1)} />
+          </>
+        )}
       </div>
     </div>
   );
@@ -120,22 +130,28 @@ const ScreenshotSlider = ({ images }: SliderProps) => {
             ))}
           </div>
           {/* Arrow Buttons */}
-          <ArrowButton direction="left" onClick={() => changeImage(-1)} />
-          <ArrowButton direction="right" onClick={() => changeImage(1)} />
+          {showArrows && (
+            <>
+              <ArrowButton direction="left" onClick={() => changeImage(-1)} />
+              <ArrowButton direction="right" onClick={() => changeImage(1)} />
+            </>
+          )}
         </div>
       </div>
 
       {/* Indicator Dots */}
-      <div className="flex justify-center mt-4">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`h-2 w-2 mx-1 rounded-full transition-colors duration-300 ${
-              index === currentIndex ? "bg-blue-500" : "bg-gray-300"
-            }`}
-          ></span>
-        ))}
-      </div>
+      {showInicators && (
+        <div className="flex justify-center mt-4">
+          {images.map((_, index) => (
+            <span
+              key={index}
+              className={`h-2 w-2 mx-1 rounded-full transition-colors duration-300 ${
+                index === currentIndex ? "bg-blue-500" : "bg-gray-300"
+              }`}
+            ></span>
+          ))}
+        </div>
+      )}
 
       {/* Modal Content */}
       {isModalOpen && ReactDOM.createPortal(modalContent, document.body)}

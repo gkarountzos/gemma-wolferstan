@@ -26,7 +26,7 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
                 className="p-4 sm:p-6 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden"
               >
                 <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2 sm:gap-4">
                     {item.companyIcon && (
                       <Image
                         src={item.companyIcon}
@@ -43,7 +43,7 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
                             href={item.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xl font-semibold text-[#FEF8EE]"
+                            className="text-lg sm:text-xl font-semibold text-[#FEF8EE]"
                           >
                             {item.company}
                           </a>
@@ -57,7 +57,7 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
                         )}
                       </div>
                       {item.title && (
-                        <h4 className="text-md font-light italic text-[#FEF8EE]">
+                        <h4 className="text-sm sm:text-md font-light italic text-[#FEF8EE]">
                           {item.title}
                         </h4>
                       )}
