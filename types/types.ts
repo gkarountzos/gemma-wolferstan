@@ -12,7 +12,7 @@ export interface Project {
   description: string;
   image: string;
   content: ProjectContent[];
-  screenshots: string[];
+  screenshots?: string[];
   link?: string;
   video?: string;
 }
