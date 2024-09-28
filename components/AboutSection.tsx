@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { AboutContent, AboutDataProps } from "@/types/types";
+import { AboutDataProps } from "@/types/types";
+import ScreenshotSlider from "./ScreenshotSlider";
+import tigaImage from "@/public/TIGA.png";
 
 const AboutSection: React.FC<AboutDataProps> = ({
   id,
@@ -41,6 +43,12 @@ const AboutSection: React.FC<AboutDataProps> = ({
               {para}
             </p>
           ))}
+
+          <ScreenshotSlider
+            images={[tigaImage]}
+            showArrows={false}
+            showInicators={false}
+          />
         </div>
       </div>
     </section>

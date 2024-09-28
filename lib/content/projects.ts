@@ -1,38 +1,38 @@
 import { Project } from "@/types/types";
 
 export const projects: Project[] = [
-  {
-    slug: "scrimshaw",
-    title: "Project Scrimshaw",
-    subtitle: "A blend of classic genres",
-    image: "/project-images/scrimshaw/scrimshaw.png",
-    description:
-      "A work-in-progress project showcasing my ability to combine turn-based combat, intricate level design, and narrative elements inspired by some of my favourite games. This project is a testament to my skills in game design, coding, and project management.",
-    content: [
-      {
-        title: "Project Overview",
-        details: [
-          "Project Scrimshaw is a work-in-progress game that I began after completing my degree. It serves as a platform to showcase my abilities without the constraints of short-term academic deadlines and to further develop my skills in game design, coding, project management, and more.",
-        ],
-      },
-      {
-        title: "Project Details",
-        details: [
-          "This project blends elements from various genres, including turn-based combat inspired by games like Darkest Dungeon and Gwent, with level design influenced by classic survival horror titles like those of the Resident Evil franchise and more recent Crow Country.",
-          "The narrative design takes cues from games like Dark Souls, with minimal hand-holding and a focus on environmental storytelling. This project demonstrates my versatility as a game designer and my ability to integrate various design elements into a cohesive and engaging experience.",
-        ],
-      },
-      {
-        title: "My Contributions",
-        details: [
-          "Design: Conceptualisation and development of the core gameplay mechanics, balancing turn-based combat with strategic depth.",
-          "Development: Using both the Unity engine and paper prototyping to iterate on mechanical systems and refine gameplay.",
-          "Project Management: Managing the entire development process, iterating on feedback and making continuous improvements to the game.",
-        ],
-      },
-    ],
-    screenshots: ["/project-images/scrimshaw/scrimshaw.png"],
-  },
+  // {
+  //   slug: "scrimshaw",
+  //   title: "Project Scrimshaw",
+  //   subtitle: "A blend of classic genres",
+  //   image: "/project-images/scrimshaw/scrimshaw.png",
+  //   description:
+  //     "A work-in-progress project showcasing my ability to combine turn-based combat, intricate level design, and narrative elements inspired by some of my favourite games. This project is a testament to my skills in game design, coding, and project management.",
+  //   content: [
+  //     {
+  //       title: "Project Overview",
+  //       details: [
+  //         "Project Scrimshaw is a work-in-progress game that I began after completing my degree. It serves as a platform to showcase my abilities without the constraints of short-term academic deadlines and to further develop my skills in game design, coding, project management, and more.",
+  //       ],
+  //     },
+  //     {
+  //       title: "Project Details",
+  //       details: [
+  //         "This project blends elements from various genres, including turn-based combat inspired by games like Darkest Dungeon and Gwent, with level design influenced by classic survival horror titles like those of the Resident Evil franchise and more recent Crow Country.",
+  //         "The narrative design takes cues from games like Dark Souls, with minimal hand-holding and a focus on environmental storytelling. This project demonstrates my versatility as a game designer and my ability to integrate various design elements into a cohesive and engaging experience.",
+  //       ],
+  //     },
+  //     {
+  //       title: "My Contributions",
+  //       details: [
+  //         "Design: Conceptualisation and development of the core gameplay mechanics, balancing turn-based combat with strategic depth.",
+  //         "Development: Using both the Unity engine and paper prototyping to iterate on mechanical systems and refine gameplay.",
+  //         "Project Management: Managing the entire development process, iterating on feedback and making continuous improvements to the game.",
+  //       ],
+  //     },
+  //   ],
+  //   screenshots: ["/project-images/scrimshaw/scrimshaw.png"],
+  // },
   {
     slug: "ascension-dude",
     title: "Ascension Dude",
@@ -118,6 +118,45 @@ export const projects: Project[] = [
     link: "https://gemma-wolferstan.itch.io/roly-holey",
     video:
       "https://drive.google.com/file/d/1Z0840ppBOAji1WBsaScZFUFPQ4s2Qqf7/preview",
+  },
+  {
+    slug: "designers-toolkit",
+    title: "A Strategic Theatre for Survival – Designer’s Toolkit",
+    subtitle: "PLACEHOLDER",
+    image: "/project-images/designers-toolkit/thumbnail.jpg",
+    description: "PLACEHOLDER",
+    content: [
+      {
+        title: "Project Overview",
+        details: ["PLACEHOLDER"],
+      },
+    ],
+    screenshots: [
+      "/project-images/designers-toolkit/1.png",
+      "/project-images/designers-toolkit/2.png",
+      "/project-images/designers-toolkit/3.png",
+      "/project-images/designers-toolkit/4.png",
+      "/project-images/designers-toolkit/5.jpg",
+      "/project-images/designers-toolkit/6.png",
+      "/project-images/designers-toolkit/7.png",
+      "/project-images/designers-toolkit/8.png",
+      "/project-images/designers-toolkit/9.png",
+      "/project-images/designers-toolkit/10.png",
+    ],
+  },
+  {
+    slug: "quick-smith-reward",
+    title: "Quick Smith – Reward System",
+    subtitle: "PLACEHOLDER",
+    image: "/project-images/quicksmith/thumbnail.png",
+    description: "PLACEHOLDER",
+    content: [
+      {
+        title: "Project Overview",
+        details: ["PLACEHOLDER"],
+      },
+    ],
+    link: "https://www.elementalglyphstudio.com/quick-smith",
   },
   {
     slug: "queen-of-hearts",
