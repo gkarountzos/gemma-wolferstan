@@ -34,6 +34,7 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
                         width={64}
                         height={64}
                         className="rounded-full object-cover"
+                        quality={100}
                       />
                     )}
                     <div className="flex flex-col">
