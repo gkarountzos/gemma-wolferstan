@@ -12,8 +12,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <div className=" rounded-xl hover:bg-black/15 transition-all transform md:hover:scale-[102%]">
       <Link href={`/projects/${project.slug}`}>
         <div className="flex flex-col xl:flex-row lg:flex-col tablet:flex-row tablet:space-x-8 xl:space-x-8 lg:space-x-0 items-center sm:p-4">
-          <div className="flex-shrink-0">
-            <h3 className="text-center text-lg font-semibold text-[#FEF8EE] py-2  xl:hidden lg:block tablet:hidden block">
+          <div className="flex-shrink-0 flex flex-col items-center space-y-4 sm:p-4">
+            <h3 className="text-center text-lg font-semibold text-[#FEF8EE] py-2  xl:hidden lg:block tablet:hidden block md:text-left">
               {project.title}
             </h3>
             <Image
@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             />
           </div>
           <div className="w-full">
-            <h3 className="text-lg font-semibold text-[#FEF8EE] py-2 hidden tablet:block lg:hidden xl:block">
+            <h3 className="text-lg font-semibold text-[#FEF8EE] py-2 hidden tablet:block lg:hidden xl:block text-center md:text-left">
               {project.title}
             </h3>
             <p className="text-sm text-[#FEF8EE] py-4">{project.description}</p>
