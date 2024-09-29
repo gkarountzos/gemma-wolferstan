@@ -95,6 +95,7 @@ const ScreenshotSlider = ({
             width={1200}
             height={675}
             className="object-contain w-full h-full max-h-[80vh] cursor-pointer"
+            quality={100}
           />
         </div>
         {showArrows && (
@@ -125,6 +126,7 @@ const ScreenshotSlider = ({
                 width={800}
                 height={450}
                 className="inline-block object-contain w-full h-full max-h-[500px] cursor-pointer"
+                quality={100}
                 onClick={handleImageClick}
               />
             ))}
