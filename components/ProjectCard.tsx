@@ -9,10 +9,10 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className=" rounded-xl hover:bg-black/15 transition-all transform md:hover:scale-[102%]">
+    <div className=" rounded-xl md:hover:bg-black/15 transition-all transform md:hover:scale-[102%]">
       <Link href={`/projects/${project.slug}`}>
-        <div className="flex flex-col xl:flex-row lg:flex-col tablet:flex-row tablet:space-x-8 xl:space-x-8 lg:space-x-0 items-center sm:p-4">
-          <div className="flex-shrink-0 flex flex-col items-center space-y-4 sm:p-4">
+        <div className="flex flex-col xl:flex-row lg:flex-col tablet:flex-row tablet:space-x-8 xl:space-x-8 lg:space-x-0 items-center sm:px-4 sm:py-2">
+          <div className="flex-shrink-0 flex flex-col items-center sm:py-4">
             <h3 className="text-center text-lg font-semibold text-[#FEF8EE] py-2  xl:hidden lg:block tablet:hidden block md:text-left">
               {project.title}
             </h3>
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <h3 className="text-lg font-semibold text-[#FEF8EE] py-2 hidden tablet:block lg:hidden xl:block text-center md:text-left">
               {project.title}
             </h3>
-            <p className="text-sm text-[#FEF8EE] py-4">{project.description}</p>
+            <p className="text-sm text-[#FEF8EE] py-2">{project.description}</p>
           </div>
           <button
             type="button"
