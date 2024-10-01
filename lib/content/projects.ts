@@ -39,7 +39,7 @@ export const projects: Project[] = [
     subtitle: "Endless waves, endless fun",
     image: "/project-images/asc-dude/AD.png",
     description:
-      "A 2D endless shoot 'em up where players must survive waves of enemies using a variety of magical abilities. This project highlights my skills in animation, UI creation, teamwork, and project management.",
+      "A 2D endless shoot 'em up where players must survive waves of enemies using a variety of magical abilities. This project highlights my skills in design, programming, animation, UI creation, teamwork, and project management.",
     content: [
       {
         title: "Project Overview",
@@ -124,11 +124,17 @@ export const projects: Project[] = [
     title: "A Strategic Theatre for Survival – Designer’s Toolkit",
     subtitle: "PLACEHOLDER",
     image: "/project-images/designers-toolkit/thumbnail.jpg",
-    description: "PLACEHOLDER",
+    description:
+      "A designer’s toolkit providing modular strategies to enhance horror game level design by leveraging human survival instincts. These strategies aim to boost challenge, engagement, tension, and overall enjoyment of scary encounters within the context of a horror game.",
     content: [
       {
         title: "Project Overview",
-        details: ["PLACEHOLDER"],
+        details: [
+          "A Strategic Theatre for Survival is a toolkit I developed during my dissertation which explore how human survival instincts can be harnessed to enhance horror game level design. Grounded in psychological and design theories like Csikszentmihalyi’s Flow Theory, Maslow’s Hierarchy of Needs, and Jay Appleton’s Prospect-Refuge theory, the toolkit provides game designers with modular strategies to evoke deeper emotional engagement and more immersive survival experiences. These theories highlight how human behaviour can be influenced by environmental stressors, which in turn can be co-opted by designers to shape player responses in games.",
+          "The toolkit offers a flexible, modular approach, allowing designers to select and apply various techniques to suit their specific project needs. For instance, manipulating player line of sight or creating spaces which dynamically swing between danger and refuge can heighten tension, while designing tight, restrictive spaces or using environmental hazards increases the challenge and vulnerability players feel. These modular techniques ensure that the toolkit is adaptable to different scenarios, making it valuable for crafting everything from subtle tension to intense survival situations.",
+          "Ultimately, A Strategic Theatre for Survival equips game designers with the tools to build more dynamic and emotionally charged gameplay. Whether the goal is to create a gradual buildup of fear or a constant sense of peril, this toolkit provides insights that enhance player immersion and elevate the psychological impact of survival horror games.",
+          "I am currently working with my university to formally publish this dissertation, but in the meantime, if you wish to read the piece for yourself, please request a copy via my email (g.wolferstan@gmail.com).",
+        ],
       },
     ],
     screenshots: [
@@ -149,12 +155,24 @@ export const projects: Project[] = [
     title: "Quick Smith – Reward System",
     subtitle: "PLACEHOLDER",
     image: "/project-images/quicksmith/thumbnail.png",
-    description: "PLACEHOLDER",
+    description:
+      "A reward system for the upcoming roguelike Quick Smith, a blacksmithing game inspired by Overcooked. The system includes unlockable new game+ modes, VIP customers, and evolving challenges to enhance player engagement and progression.",
     content: [
       {
         title: "Project Overview",
-        details: ["PLACEHOLDER"],
+        details: [
+          "Quick Smith is a roguelike game that blends blacksmithing and Overcooked-inspired gameplay, where players take on the role of an apprentice learning from a legendary ex-adventurer. As they craft weapons and armour, players navigate talent trees and challenges to refine their skills. For more information, the game’s webpage can be found here: https://www.elementalglyphstudio.com/quick-smith",
+          "I worked with the studio over a number of weeks to iteratively develop a reward system for the game that enhances player engagement by introducing new game+ modifier cards, VIP customers with high-reward orders, challenges offering tokens for cosmetic items, and an array of Steam achievements to unlock.",
+          "The system was designed to encourage ongoing player progression and replayability. Feedback from the Managing Director of Elemental Glyph Studio was extremely positive, with particular praise for my “attention to detail” and “going the extra mile”, noting that the work I put in was “extremely impressive, effective and concise” and that “it was an absolute pleasure working with [me]”. The managing director can be reached at his LinkedIn page for further reference if required: https://www.linkedin.com/in/jason-green-829713162/",
+          "Below are a few screenshots of the game design document I wrote containing the reward system, shared with permission from Elemental Glyph Studio (the full document is under NDA).",
+        ],
       },
+    ],
+    screenshots: [
+      "/project-images/quicksmith/1.png",
+      "/project-images/quicksmith/2.png",
+      "/project-images/quicksmith/3.png",
+      "/project-images/quicksmith/4.png",
     ],
     link: "https://www.elementalglyphstudio.com/quick-smith",
   },
