@@ -14,9 +14,10 @@ export const aboutData: AboutDataProps[] = [
       {
         image: gemmaImg,
         paragraph: [
-          "Hi, I'm Gemma! I am a passionate Junior Game Designer with a love for crafting immersive and memorable gaming experiences. As a recent graduate with a first-class degree in Computer Game Design, I am eager to apply my skills to the mechanical systems and level designs of a major studio project. My work is driven by a desire to create emotionally impactful games that offer players unique and engaging experiences.",
-          "I am proficient with Unity and Adobe Photoshop, with additional experience in Unreal Engine 4 and 3ds Max. While I'm not primarily a programmer, I continue to develop my coding skills to complement my design work, with a focus on C#. I also have experience using Trello, Visual Studio, and various version control solutions, all of which I use to streamline and manage the game development process.",
-          "I'm excited to share my portfolio with you and look forward to the opportunity to collaborate on future projects!",
+          "Hi! I’m Gemma, a recent graduate from the University of Suffolk with a 1st-class degree in Game Development (Design). As part of my dissertation, I developed a designer’s toolkit titled ‘A Strategic Theatre for Survival’. This toolkit focuses on how survival instinct psychology can enhance horror game level design, creating more tense, challenging, and engaging experiences for players. In recognition of my work, I was honoured to receive the TIGA Graduate of the Year (Designer) 2024 award. I was also shortlisted for the more prestigious Outstanding Graduate of the Year (Designer) award – fingers crossed for the results in November!",
+          "While my main strengths are in designing mechanical systems and level design, I’m well-versed in all aspects of the game design process. My work is driven by a desire to create emotionally impactful games that offer players unique, memorable, and engaging experiences.",
+          "I am capable with a range of development tools, programming languages, and methods including Unity and C#, Unreal Engine and Blueprint, 3ds Max, and Adobe Photoshop. Additionally, I am also experienced with project management solutions like Trello, Agile methodology, and various version control solutions, helping me stay organized and collaborative in any development environment.",
+          "Currently based in the UK, I’m open to opportunities both here and abroad, whether remote, in-office, or hybrid. I am excited to work together and get started on a major studio project!",
         ],
       },
     ],
@@ -37,7 +38,7 @@ export const experienceData: ExperienceDataProps[] = [
         title: "Game Designer",
         year: "2024",
         details: [
-          "Developed a reward system for the upcoming game ‘Quick Smith’ that retains player engagement without relying on live service models.",
+          "Developed a reward system for the upcoming game ‘Quick Smith’ that retains player engagement without relying on traditional live service models.",
           "Designed daily and weekly challenges with token-based rewards for purchasing in-game skins.",
           "Designed unlockable 'new game+ modifier cards' to improve the game’s replayability.",
           "Created a variety of Steam achievements to further enhance player engagement.",
