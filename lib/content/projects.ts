@@ -121,7 +121,7 @@ export const projects: Project[] = [
   },
   {
     slug: "designers-toolkit",
-    title: "A Strategic Theatre for Survival – Designer’s Toolkit",
+    title: "A Strategic Theatre for Survival",
     subtitle: "PLACEHOLDER",
     image: "/project-images/designers-toolkit/thumbnail.jpg",
     description:
@@ -152,7 +152,7 @@ export const projects: Project[] = [
   },
   {
     slug: "quick-smith-reward",
-    title: "Quick Smith – Reward System",
+    title: "Quick Smith Reward System",
     subtitle: "PLACEHOLDER",
     image: "/project-images/quicksmith/thumbnail.png",
     description:
