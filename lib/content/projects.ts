@@ -263,7 +263,7 @@ export const projects: Project[] = [
     slug: "gamejam",
     title: "Global Game Jam 2020 Merchandise ",
     subtitle: "Designing for the Global Game Jam",
-    image: "/project-images/ggj/ggj.png",
+    image: "/project-images/ggj/GGJT.png",
     description:
       "Winner of an in-house competition to design promotional materials for the GGJ 2020. This project showcases my emotive design capabilities and my ability to see a project through from concept to final production.",
     content: [
