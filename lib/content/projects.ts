@@ -37,7 +37,7 @@ export const projects: Project[] = [
     slug: "ascension-dude",
     title: "Ascension Dude",
     subtitle: "Endless waves, endless fun",
-    image: "/project-images/asc-dude/AD.png",
+    image: "/project-images/asc-dude/ADT.png",
     description:
       "A 2D endless shoot 'em up where players must survive waves of enemies using a variety of magical abilities. This project highlights my skills in design, programming, animation, UI creation, teamwork, and project management.",
     content: [
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     slug: "roly-holey",
     title: "Roly-Holey",
     subtitle: "Minimal mechanics, maximal depth",
-    image: "/project-images/roly/RH.png",
+    image: "/project-images/roly/RHT.png",
     description:
       "A physics-based puzzle prototype created during a game jam for the mobile platform. Simple mechanics lead to surprisingly deep gameplay, demonstrating my strengths in mechanical and level design, and ability to prototype quickly.",
     content: [
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     slug: "designers-toolkit",
     title: "A Strategic Theatre for Survival",
     subtitle: "PLACEHOLDER",
-    image: "/project-images/designers-toolkit/thumbnail.jpg",
+    image: "/project-images/designers-toolkit/STSF.png",
     description:
       "A designer’s toolkit providing modular strategies to enhance horror game level design by leveraging human survival instincts. These strategies aim to boost challenge, engagement, tension, and overall enjoyment of scary encounters within the context of a horror game.",
     content: [
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     slug: "quick-smith-reward",
     title: "Quick Smith Reward System",
     subtitle: "PLACEHOLDER",
-    image: "/project-images/quicksmith/thumbnail.png",
+    image: "/project-images/quicksmith/QST.png",
     description:
       "A reward system for the upcoming roguelike Quick Smith, a blacksmithing game inspired by Overcooked. The system includes unlockable new game+ modes, VIP customers, and evolving challenges to enhance player engagement and progression.",
     content: [
@@ -169,10 +169,10 @@ export const projects: Project[] = [
       },
     ],
     screenshots: [
-      "/project-images/quicksmith/1.png",
-      "/project-images/quicksmith/2.png",
-      "/project-images/quicksmith/3.png",
       "/project-images/quicksmith/4.png",
+      "/project-images/quicksmith/3.png",
+      "/project-images/quicksmith/2.png",
+      "/project-images/quicksmith/1.png",
     ],
     link: "https://www.elementalglyphstudio.com/quick-smith",
   },
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     slug: "queen-of-hearts",
     title: "Queen of Hearts",
     subtitle: "A streamlined 2D platformer",
-    image: "/project-images/queen/SS2.png",
+    image: "/project-images/queen/QoHT.png",
     description:
       "An early project that showcases my ability to create engaging gameplay without relying on text-based exposition. Includes dynamic health systems, collectibles, and intuitive level design.",
     content: [
@@ -222,7 +222,7 @@ export const projects: Project[] = [
     slug: "tilted",
     title: "Tilted",
     subtitle: "Balance or die!",
-    image: "/project-images/Tilted/SS2.png",
+    image: "/project-images/Tilted/TT.png",
     description:
       "A challenging game jam entry where players must balance a circus ball for 10 seconds. A polished experience demonstrating my ability to produce complete games under tight deadlines.",
     content: [
