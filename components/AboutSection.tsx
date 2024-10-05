@@ -18,7 +18,7 @@ const AboutSection: React.FC<AboutDataProps> = ({
         <h2 className="xs:text-2xl sm:text-4xl text-[#FEF8EE]">{title}</h2>
       </div>
 
-      <div className="relative p-4 sm:p-8 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
+      <div className="relative p-4 sm:p-8 bg-black/15 backdrop-blur-sm rounded-lg overflow-hidden">
         <div className="relative z-10">
           {/* First paragraph with image on the left */}
           <div className="flex-shrink-0 float-left pr-4 pt-2">

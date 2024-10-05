@@ -6,6 +6,7 @@ import ScreenshotSlider from "@/components/ScreenshotSlider";
 import Video from "@/components/Video";
 import Footer from "@/components/Footer";
 import { Project } from "@/types/types";
+import Button from "./button";
 
 const ProjectPage = ({ project }: { project: Project }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,17 +62,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
                 <ScreenshotSlider images={project.screenshots} />
               </div>
             )}
-            {project.link && (
-              <a
-                href={project.link}
-                className="mx-auto px-4 grid place-items-center py-2 h-12 rounded-full bg-gradient-to-tl from-[#743ca8] to-[#4351ce] hover:border hover:shadow-lg hover:border-bg-white text-white transition-all duration-100 ease-out"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Play the game: ${project.title}`}
-              >
-                Play the Game
-              </a>
-            )}
+            {project.link && <Button>Play the Game</Button>}
           </section>
         </div>
       </div>
