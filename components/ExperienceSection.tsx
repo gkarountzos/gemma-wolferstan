@@ -3,6 +3,7 @@ import { ExperienceDataProps, ExperienceContent } from "@/types/types";
 import { FiLink } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./button";
 
 const ExperienceSection: React.FC<ExperienceDataProps> = ({
   id,
@@ -24,7 +25,7 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
             {content.map((item: ExperienceContent, index) => (
               <div
                 key={index}
-                className="p-4 sm:p-6 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden"
+                className="p-4 sm:p-6 bg-black/15 backdrop-blur-sm rounded-lg overflow-hidden"
               >
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2 sm:gap-4">
@@ -91,17 +92,7 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
           </div>
         </div>
 
-        {/* Add "View Resume" button below */}
-        <div className="mt-6">
-          <Link
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex justify-center items-center just w-fit mx-auto px-4 py-2 rounded-full bg-gradient-to-tl from-[#743ca8] to-[#4351ce] text-white transition duration-200"
-          >
-            View Résumé
-          </Link>
-        </div>
+        <Button>View Résumé</Button>
       </section>
     </>
   );
