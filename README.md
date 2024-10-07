@@ -1,5 +1,5 @@
 # Portfolio Project.
-### Custom made for [Gemma Wolferstan](https://github.com/Gemma-Wolferstan).
+### Custom made for [Gemma Wolferstan](https://www.linkedin.com/in/gemma-wolferstan-8727982b0/).
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
