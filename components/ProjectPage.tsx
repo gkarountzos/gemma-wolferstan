@@ -67,9 +67,9 @@ const ProjectPage = ({ project }: { project: Project }) => {
                       {section.title}
                     </h3>
                     {section.title === "My Contributions" ? (
-                      <ul className="list-disc list-inside pt-2 text-md">
+                      <ul className="list-disc pl-5 text-md">
                         {section.details.map((detail, detailIndex) => (
-                          <li className="py-1" key={detailIndex}>
+                          <li className="py-1 " key={detailIndex}>
                             {renderDetailWithLinks(detail)}
                           </li>
                         ))}

@@ -81,7 +81,7 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
                 {item.details && (
                   <ul className="list-disc pl-5 text-[#FEF8EE]">
                     {item.details.map((detail, i) => (
-                      <li key={i} className="text-base sm:text-lg">
+                      <li key={i} className="text-base sm:text-lg py-1">
                         {detail}
                       </li>
                     ))}
