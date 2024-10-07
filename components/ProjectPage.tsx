@@ -19,6 +19,27 @@ const ProjectPage = ({ project }: { project: Project }) => {
     return () => clearTimeout(timer);
   }, []);
 
+  const renderDetailWithLinks = (detail: string) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+
+    return detail.split(urlRegex).map((part, index) => {
+      if (urlRegex.test(part)) {
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 underline"
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <>
       <div
@@ -45,11 +66,21 @@ const ProjectPage = ({ project }: { project: Project }) => {
                     <h3 className="text-2xl underline font-semibold text-[#FEF8EE]">
                       {section.title}
                     </h3>
-                    {section.details.map((detail, detailIndex) => (
-                      <p key={detailIndex} className="pt-2 text-md">
-                        {detail}
-                      </p>
-                    ))}
+                    {section.title === "My Contributions" ? (
+                      <ul className="list-disc list-inside pt-2 text-md">
+                        {section.details.map((detail, detailIndex) => (
+                          <li className="py-1" key={detailIndex}>
+                            {renderDetailWithLinks(detail)}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      section.details.map((detail, detailIndex) => (
+                        <p key={detailIndex} className="pt-2 text-md ">
+                          {renderDetailWithLinks(detail)}
+                        </p>
+                      ))
+                    )}
                   </div>
                 ))}
               </div>
@@ -62,7 +93,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
                 <ScreenshotSlider images={project.screenshots} />
               </div>
             )}
-            {project.link && <Button>Play the Game</Button>}
+            {project.link && <Button link={project.link}>Play the Game</Button>}
           </section>
         </div>
       </div>
