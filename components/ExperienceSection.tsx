@@ -92,7 +92,7 @@ const ExperienceSection: React.FC<ExperienceDataProps> = ({
           </div>
         </div>
 
-        <Button>View Résumé</Button>
+        <Button link="/resume.pdf">View Résumé</Button>
       </section>
     </>
   );

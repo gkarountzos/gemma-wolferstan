@@ -32,12 +32,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </h3>
             <p className="text-sm text-[#FEF8EE] py-2">{project.description}</p>
           </div>
-          <button
-            type="button"
-            className="tablet:hidden w-fit mx-auto px-4 py-2 rounded-full bg-gradient-to-tl from-[#743ca8] to-[#4351ce] text-white transition duration-200"
-          >
+          <div className="flex justify-center items-center w-fit mx-auto px-4 py-2 rounded-full bg-[#4e2780] text-white transition duration-200 shadow-md md:hover:shadow-[0_0_15px_#ffffff] tablet:hidden">
             View Project
-          </button>
+          </div>
         </div>
       </Link>
     </div>
