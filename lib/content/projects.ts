@@ -7,7 +7,7 @@ export const projects: Project[] = [
   //   subtitle: "A blend of classic genres",
   //   image: "/project-images/scrimshaw/scrimshaw.png",
   //   description:
-  //     "A work-in-progress project showcasing my ability to combine turn-based combat, intricate level design, and narrative elements inspired by some of my favourite games. This project is a testament to my skills in game design, coding, and project management.",
+  //     "The largest project I have worked on, Scrimshaw is a work-in-progress showcasing my design capabilities by combining turn-based combat, ‘Resident Evil-style’ level design, and narrative elements inspired by some of my favourite games. This project is a testament to the range of my abilities across the entire game development process.",
   //   content: [
   //     {
   //       title: "Project Overview",
@@ -49,19 +49,12 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: "Project Details",
-        details: [
-          "Set in a magic-driven medieval world, the game places the player in an open plain, battling monsters that spawn in waves.",
-          "The level design focuses on giving players the freedom to navigate the space while strategically choosing upgrades to match their play style.",
-        ],
-      },
-      {
         title: "My Contributions",
         details: [
-          "Game Design: Pitched the initial concept and led the design process, from paper prototyping to implementation in Unity.",
-          "Animation and Audio: Implemented all animations, sound effects, and music, enhancing the game's atmosphere.",
-          "Technical Implementation: Wrote C# scripts for implementations such as player movement, enemy behaviors, player abilities, and UI elements. Managed version control and team collaboration using Plastic SCM and GitHub.",
-          "Project Management: Oversaw the project’s progress using agile methods, ensuring timely delivery of weekly builds and meeting all deadlines.",
+          "Game Design: I pitched the initial concept and led the design process, from paper prototyping to implementation in Unity.",
+          "Animation and Audio: I implemented all animations, sound effects, and music, enhancing the game's atmosphere.",
+          "Technical Implementation: I wrote C# scripts for implementations such as player movement, enemy behaviours, player abilities, and UI elements. I managed version control and team collaboration using Plastic SCM and GitHub.",
+          "Project Management: I oversaw the project’s progress using agile methods, ensuring timely delivery of weekly builds and meeting all deadlines.",
         ],
       },
     ],
@@ -93,18 +86,11 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: "Project Details",
-        details: [
-          "The core mechanics are simple: players navigate a ball through a maze to a goal, while avoiding bomb and skull balls that can trigger a game over.",
-          "Despite its simplicity, the game offers a deep and challenging experience, especially in the higher levels.",
-        ],
-      },
-      {
         title: "My Contributions",
         details: [
-          "Design and Programming: Designed the game’s mechanics and levels, programmed the core gameplay in Unity, and created a seamless difficulty curve across ten levels.",
-          "User Experience: Developed the main menu to double as a tutorial, easing players into the game mechanics.",
-          "Future Development: Planned enhancements include porting to mobile, introducing gyroscopic controls, refining the visual design, and developing an endless level generator, along with increasing complexity in the form of new hazards the player must avoid.",
+          "Design and Programming: I designed the game’s mechanics and levels, programmed the core gameplay in Unity, and created a progressive difficulty curve across ten levels.",
+          "Onboarding Experience: I designed the main menu to double as a tutorial, easing players into the game mechanics.",
+          "Future Development: I planned enhancements include porting to mobile, introducing gyroscopic controls, refining the visual design, and developing an endless level generator, along with increasing complexity in the form of new hazards the player must avoid.",
         ],
       },
     ],
@@ -191,14 +177,6 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: "Project Details",
-        details: [
-          "The game features a dynamic health system, collectible items, climbable ladders, patrolling enemies, and a final objective of collecting hearts to bring to the queen.",
-          "The level design is carefully crafted to teach the player the mechanics through gameplay alone.",
-          "Queen of Hearts demonstrates my ability to create engaging gameplay with well-thought-out level design and solid technical execution.",
-        ],
-      },
-      {
         title: "My Contributions",
         details: [
           "Programming: Developed key gameplay systems, including the health bar, enemy AI, collectible items, and player abilities such as jumping and climbing.",
@@ -234,13 +212,6 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: "Project Details",
-        details: [
-          "The gameplay is straightforward but requires precision and timing. The player must keep the ball balanced for 10 seconds as the board tilts unpredictably.",
-          "The challenge lies in the player's ability to react quickly to the shifting board. Tilted highlights my efficiency in game development and my ability to create a fully realized, polished game in a limited time frame.",
-        ],
-      },
-      {
         title: "My Contributions",
         details: [
           "Design and Implementation: Designed the core gameplay loop and implemented the game in Unity, ensuring a polished and challenging experience.",
@@ -272,14 +243,6 @@ export const projects: Project[] = [
         details: [
           "The GGJ 2020 Merchandise Design project involved creating promotional materials for the University of Suffolk’s participation in the Global Game Jam 2020.",
           "My design won an in-house competition and was used on posters, T-shirts, and mugs.",
-        ],
-      },
-      {
-        title: "Project Details",
-        details: [
-          "My design was selected from several entries to be the face of the university's GGJ 2020 involvement.",
-          "I coordinated with a production company to bring the designs to life, ensuring they were applied consistently across various merchandise.",
-          "This project showcases my design skills and my ability to see a creative vision through from concept to final production.",
         ],
       },
       {
