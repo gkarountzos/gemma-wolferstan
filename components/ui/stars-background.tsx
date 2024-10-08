@@ -146,10 +146,9 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
         cursorPos.y,
         180
       );
-      gradient.addColorStop(0, "rgba(78, 39, 128, 0.8)"); // Bright purple center
-      gradient.addColorStop(1, "rgba(78, 39, 128, 0)"); // Transparent purple
+      gradient.addColorStop(0, "rgba(78, 39, 128, 0.8)");
+      gradient.addColorStop(1, "rgba(78, 39, 128, 0)");
 
-      // Apply gradient to the canvas
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
