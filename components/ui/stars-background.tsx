@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useMotionValue } from "framer-motion";
 import React, {
   useState,
   useEffect,
@@ -35,6 +34,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   className,
 }) => {
   const [stars, setStars] = useState<StarProps[]>([]);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const canvasRef: RefObject<HTMLCanvasElement> =
     useRef<HTMLCanvasElement>(null);
 
@@ -124,6 +124,19 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
             Math.abs(Math.sin((Date.now() * 0.001) / star.twinkleSpeed) * 0.5);
         }
       });
+      const gradient = ctx.createRadialGradient(
+        cursorPos.x,
+        cursorPos.y,
+        5,
+        cursorPos.x,
+        cursorPos.y,
+        200
+      );
+      gradient.addColorStop(0, "#4e2780");
+      gradient.addColorStop(0.5, "rgba(0, 0, 0, 0.3)");
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -133,7 +146,22 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [stars]);
+  }, [stars, cursorPos]);
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      if (canvasRef.current) {
+        const { left, top } = canvasRef.current.getBoundingClientRect();
+        setCursorPos({ x: event.clientX - left, y: event.clientY - top });
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <canvas
