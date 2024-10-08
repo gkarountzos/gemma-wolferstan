@@ -67,6 +67,18 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   );
 
   useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setCursorPos({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  useEffect(() => {
     const updateStars = () => {
       if (canvasRef.current) {
         const canvas = canvasRef.current;
@@ -112,6 +124,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
       stars.forEach((star) => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -124,16 +137,17 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
             Math.abs(Math.sin((Date.now() * 0.001) / star.twinkleSpeed) * 0.5);
         }
       });
+
       const gradient = ctx.createRadialGradient(
         cursorPos.x,
         cursorPos.y,
-        5,
+        1,
         cursorPos.x,
         cursorPos.y,
-        200
+        180
       );
-      gradient.addColorStop(0, "#4e2780");
-      gradient.addColorStop(0.5, "rgba(0, 0, 0, 0.3)");
+      gradient.addColorStop(0, "rgba(78, 39, 128, 0.8)");
+      gradient.addColorStop(1, "rgba(78, 39, 128, 0)");
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -147,21 +161,6 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       cancelAnimationFrame(animationFrameId);
     };
   }, [stars, cursorPos]);
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      if (canvasRef.current) {
-        const { left, top } = canvasRef.current.getBoundingClientRect();
-        setCursorPos({ x: event.clientX - left, y: event.clientY - top });
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   return (
     <canvas
