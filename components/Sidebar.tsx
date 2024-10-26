@@ -148,7 +148,7 @@ export default function Sidebar() {
                 : "translate-x-[-100px] opacity-0"
             }`}
           >
-            Junior Game Designer
+            Junior Game Developer
           </h3>
 
           {/* Social Icons for smaller screens */}
